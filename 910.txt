@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int n, i;
+double orta,A[100],count=0,sum=0;
+int main(int argc, char *argv[])
+{
+scanf("%d", &n);
+for (i=0;i<n;i++)
+scanf("%lf", &A[i]);
+
+for(i=0;i<n;i++){     // count ==> sayan
+if (A[i]>0){
+count=count+1;
+sum=sum+A[i];}
+}
+orta=sum/count;
+
+if(sum>0)
+printf("%.2lf\n",orta );
+else
+printf("Not Found\n");
+
+
+return 0;
+}

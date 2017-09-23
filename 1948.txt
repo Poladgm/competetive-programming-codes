@@ -1,0 +1,63 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int color[100005];    // agdirsa color = 0 , yasil = 1 , qara = 2
+int n,m;
+int flag;
+int x,y;
+vector < vector <int> > graph;
+vector <int> used;
+vector <int> cavab;
+
+void dfs (int x){
+   if (flag==1) return;
+   used[x] = 1;
+   color[x] = 1;
+
+   for(int i = 0 ; i<graph[x].size(); i++){
+       if(color[graph[x][i]] == 1){
+               flag = 1;
+               return;
+           }
+
+       if(used[graph[x][i]] == 0){
+           dfs(graph[x][i]);
+       }
+   }
+
+   cavab.push_back(x);
+   color[x]=2;
+}
+
+
+int main()
+{
+   cin>>n>>m;
+   graph.resize(n+1);
+   used.resize(n+1);
+
+   for(int i=0; i<m; i++){
+       cin>>x>>y;
+       graph[x].push_back(y);
+   }
+
+   for(int i=1; i<=n; i++){
+       if(used[i] == 0){
+           dfs(i);
+
+           if(flag == 1){
+               cout<<"-1"<<endl;
+               return 0;
+           }
+       }
+   }
+
+   for(int i= cavab.size()-1; i>0; i--){
+       cout<<cavab[i]<<" ";
+   }
+   cout<<cavab[0]<<endl;
+
+   return 0;
+}

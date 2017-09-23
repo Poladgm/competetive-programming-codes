@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+long long i,n,p=2,a,b;
+cin>>n;
+if(n==0)
+cout<<1<<endl;
+if(n==1)
+cout<<2<<endl;
+if(n>=2)
+{
+p=n*(n-1)+2;
+cout<<p<<endl;
+}
+return 0;
+}

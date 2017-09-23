@@ -1,0 +1,34 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   long long a,b,say=0;
+   scanf("%lld%lld",&a,&b);
+   
+   while(1)
+   {
+       if(a<=0 || b<=0)
+       break;
+       
+       if(a>=b)
+       {
+           say=say+a/b;
+           a=a%b;
+       }
+       else
+       {
+           say=say+b/a;
+           b=b%a;
+       }
+   }
+   
+   printf("%lld\n",say);
+   
+   
+   
+
+   return EXIT_SUCCESS;
+}

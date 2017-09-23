@@ -1,0 +1,28 @@
+#include <cstdlib>
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+long long int S(long long n)
+ {
+     long long int d, s = 0;
+     if( n == 0 )
+     return 0;
+     for( d = 1; d <= 9; d++ )
+     s += d*( n / 10 + (d <= n % 10) );
+     s+=S(n/10);
+     return s;
+     
+ }
+long long p, q;
+int main(int argc, char *argv[])
+ {
+    while(cin>>p>>q)
+    {
+      if( p < 0 && q < 0 )
+      break;           
+      cout<<S(q) - S(p - 1)<<endl;
+                    
+    }
+    return EXIT_SUCCESS;
+ }

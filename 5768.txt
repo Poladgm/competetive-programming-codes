@@ -1,0 +1,52 @@
+#include <iostream>
+
+using namespace std;
+
+int x,n,m,say,cnt,bir[1000000],iki[1000000],uc[1000000],dord[1000000];
+
+int main()
+{
+    cin>>n>>m;
+    for(int i=1; i<=n; i++){
+        cin>>x;
+        cnt = 0;
+        for(int j=1; j<=x; j++){
+            say++;
+            bir[say] = i;
+            cnt++;
+            iki[say] = cnt;
+        }
+    }
+
+    say=0;
+    for(int i=1; i<=m; i++){
+        cin>>x;
+        cnt = 0;
+        for(int j=1; j<=x; j++){
+            say++;
+            uc[say] = i;
+            cnt++;
+            dord[say] = cnt;
+        }
+    }
+
+    for(int i=1; i<=say; i++){
+        cout<<bir[i]<<"ACV";
+        if(iki[i] < 10){
+            cout<<"0";
+        }
+        cout<<iki[i]<<" S";
+        if(uc[i] < 10){
+            cout<<"0";
+        }
+        cout<<uc[i]<<"E";
+        if(dord[i] < 10){
+            cout<<"0";
+        }
+        cout<<dord[i]<<endl;
+    }
+
+
+
+    return 0;
+}

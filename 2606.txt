@@ -1,0 +1,63 @@
+#include <cstdlib>
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long n,i,j=1,a[100001],say=1,yadda,say1=0;
+    scanf("%ld",&n);
+
+    while(n!=1)
+    {
+        for(i=2; i<=n; i++)
+        if(n%i==0)
+        {
+            a[j++]=i;
+            n=n/i;
+            break;
+        }
+    }
+
+    j--;
+
+    /*
+    for(i=1; i<j; i++)
+    printf("%ld ",a[i]);
+    printf("%ld\n",a[j]);
+    */
+
+    yadda=a[j];
+
+    for(i=1; i<=j; i++)
+    if(a[i]==yadda)
+    continue;
+    else
+    {
+        if(a[i]==a[i+1])
+        say++;
+        else
+        {
+            if(say==1)
+            printf("%ld*",a[i]);
+            else
+            printf("%ld^%ld*",a[i],say);
+            say=1;
+        }
+    }
+
+    for(i=j; i>=1; i--)
+    if(a[i]==yadda)
+    say1++;
+    else
+    break;
+
+    if(say1==1)
+    printf("%ld\n",yadda);
+    else
+    printf("%ld^%ld\n",yadda,say1);
+
+  system("pause");
+return 0;
+}

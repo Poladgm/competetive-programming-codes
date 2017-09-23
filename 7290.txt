@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string.h>
+#include <stdio.h>
+
+using namespace std;
+
+char a[100001];
+int i,n,say;
+
+int main()
+{
+    gets(a);
+    n=strlen(a);
+
+    for(i=0; i<n; i++){
+        if(a[i]=='a'||a[i]=='p'||a[i]=='q'||a[i]=='b'||a[i]=='o'||a[i]=='e'||a[i]=='d'||a[i]=='g'){
+            say++;
+        }
+    }
+
+    cout<<say<<endl;
+
+    return 0;
+}

@@ -1,0 +1,32 @@
+#include <iostream>
+#define INF 100000000
+
+using namespace std;
+
+int x[1000005],n,a,b,c;
+
+int main()
+{
+    x[1] = 0;
+    x[2] = 1;
+    x[3] = 1;
+
+    for(int i=4; i<=1000000; i++){
+        a = b = c = INF;
+        if(i%3 == 0){
+            a = x[i/3] + 1;
+        }
+        if(i%2 == 0){
+            b = x[i/2] + 1;
+        }
+        c = x[i-1] + 1;
+
+        x[i] = min (a , min(b,c));
+    }
+
+    while(cin>>n){
+        cout<<x[n]<<endl;
+    }
+
+    return 0;
+}

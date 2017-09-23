@@ -1,0 +1,24 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long long n,i;
+    char a[101];
+
+    cin>>n;
+
+    itoa(n,a,13);
+
+    for(i=0; i<strlen(a); i++)
+    if(a[i]>=97 && a[i]<=122)
+    a[i]=a[i]-32;
+
+    cout<<a<<endl;
+
+
+    system("pause");
+    return EXIT_SUCCESS;
+}

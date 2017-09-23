@@ -1,0 +1,16 @@
+package pkg3911;
+
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class Main {
+    static BigInteger a,b;
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        a = in.nextBigInteger();
+        b = in.nextBigInteger();
+        
+        System.out.println(a.divide(b) + " " + a.mod(b));
+    }
+    
+}

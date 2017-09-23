@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+    long long x,y,n,i=0;
+
+    while(1)
+    {
+        scanf("%lld",&n);
+
+        if(n==-1)
+            break;
+
+        i++;
+
+        x=sqrt(1+8*n);
+
+        if(x*x!=(1+8*n))
+        printf("Case %lld: bad\n",i);
+        else
+        printf("Case %lld: %lld\n",i,(x-1)/2);
+    }
+
+
+
+
+    return 0;
+}

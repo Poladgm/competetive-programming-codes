@@ -1,0 +1,72 @@
+#include <cstdlib>
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+class koordinat
+     {
+     public:
+            double x,y;
+            };
+            
+class ucbucaq
+     {
+     koordinat A,B,C;
+     double mesafe(double a, double b, double c, double d);
+     double perimetr(double a, double b, double c);
+     double sahe(double a, double b, double c);
+     void input();
+     void output();
+     public:
+            void start();
+            };
+            
+double ucbucaq :: mesafe(double a, double b, double c, double d)
+      {
+      return sqrt((c-a)*(c-a)+(d-b)*(d-b));
+      }
+            
+double ucbucaq :: perimetr(double a, double b, double c)
+      {
+      return a+b+c;
+      }
+      
+double ucbucaq :: sahe(double a, double b, double c)
+      {
+      double p;
+      p=(a+b+c)/2;
+      return sqrt(p*(p-a)*(p-b)*(p-c));
+      }
+
+void ucbucaq :: input()
+    {
+    cin>>A.x>>A.y>>B.x>>B.y>>C.x>>C.y;
+    }
+
+void ucbucaq :: output()
+    {
+    double AB,AC,BC;
+    AB=mesafe(A.x,A.y,B.x,B.y);
+    AC=mesafe(A.x,A.y,C.x,C.y);
+    BC=mesafe(B.x,B.y,C.x,C.y);
+    
+    cout.setf(ios::fixed);
+    cout.precision(4);
+    cout<<perimetr(AB,AC,BC)<<" "<<sahe(AB,AC,BC)<<endl;
+    }
+    
+void ucbucaq :: start()
+    {
+    input();
+    output();
+    }
+
+int main(int argc, char *argv[])
+{
+   ucbucaq t;
+   t.start();
+   
+   
+   return EXIT_SUCCESS;
+}

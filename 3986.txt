@@ -1,0 +1,61 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int n;
+int a[101][101];
+int x[101],y[101];
+int say,say1,say2;
+
+int main()
+{
+   cin>>n;
+   for(int i=1; i<=n; i++){
+       for(int j=1; j<=n; j++){
+           cin>>a[i][j];
+       }
+   }
+
+   for(int i=1; i<=n; i++){
+       say = 0;
+       for(int j=1; j<=n; j++){
+           if(a[i][j] == 1){
+               say++;
+           }
+       }
+
+       if(say == 0){
+           say1++;
+           x[say1] = i;
+       }
+   }
+
+   for(int i=1; i<=n; i++){
+       say = 0;
+       for(int j=1; j<=n; j++){
+           if(a[j][i] == 1){
+               say++;
+           }
+       }
+
+       if(say == 0){
+           say2++;
+           y[say2] = i;
+       }
+   }
+   
+   cout<<say2;
+   for(int i=1; i<=say2; i++){
+       cout<<" "<<y[i];
+   }
+   cout<<endl;
+
+   cout<<say1;
+   for(int i=1; i<=say1; i++){
+       cout<<" "<<x[i];
+   }
+   cout<<endl;
+
+   return 0;
+}

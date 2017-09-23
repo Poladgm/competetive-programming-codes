@@ -1,0 +1,77 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   int i,j,n;
+   
+   scanf("%d",&n);
+   
+   for(i=1; i<=n; i++)
+   {
+   for(j=1; j<=n+1; j++)
+   {
+   if(j==1)
+   printf("%c",97);
+   else if(i+j==n+2)
+   printf("%c",97);
+   else if(i+j==n+3)
+   printf("%c",98);
+   else if(i+j==n+4)
+   printf("%c",99);
+   else if(i+j==n+5)
+   printf("%c",100);
+   else if(i+j==n+6)
+   printf("%c",101);
+   else if(i+j==n+7)
+   printf("%c",102);
+   else if(i+j==n+8)
+   printf("%c",103);
+   else if(i+j==n+9)
+   printf("%c",104);
+   else if(i+j==n+10)
+   printf("%c",105);
+   else if(i+j==n+11)
+   printf("%c",106);
+   else if(i+j==n+12)
+   printf("%c",107);
+   else if(i+j==n+13)
+   printf("%c",108);
+   else if(i+j==n+14)
+   printf("%c",109);
+   else if(i+j==n+15)
+   printf("%c",110);
+   else if(i+j==n+16)
+   printf("%c",111);
+   else if(i+j==n+17)
+   printf("%c",112);
+   else if(i+j==n+18)
+   printf("%c",113);
+   else if(i+j==n+19)
+   printf("%c",114);
+   else if(i+j==n+20)
+   printf("%c",115);
+   else if(i+j==n+21)
+   printf("%c",116);
+   else if(i+j==n+22)
+   printf("%c",117);
+   else if(i+j==n+23)
+   printf("%c",118);
+   else if(i+j==n+24)
+   printf("%c",119);
+   else if(i+j==n+25)
+   printf("%c",120);
+   else if(i+j==n+26)
+   printf("%c",121);
+   else if(i+j==n+27)
+   printf("%c",122);
+   else
+   printf("%c",32);
+   }
+   printf("\n");
+   }
+
+   return EXIT_SUCCESS;
+}

@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(int argc, char *argv[])
+{
+   int M,N,n,i,k,t,j,p;
+   scanf("%d%d",&M,&N);
+   p=0;
+   for(j=M;j<=N;j++)
+   {
+       n=j;
+       k=1;
+       if(n==2)
+       {
+           p=1;
+           printf("%d\n",n);
+       }
+       else
+       if(n%2!=0)
+       {
+           k=0;
+           t=sqrt(n);
+       }
+       
+       for(i=3;i<=t;i=i+2)
+       if (n%i==0)
+       {
+           k=1;
+           break;
+       } 
+       if(k==0)
+       { 
+           p=1;
+           printf ("%d\n",n);
+       }
+   }
+   
+   if(p==0)
+   printf( "Absent\n");
+   
+   
+ return 0;
+}

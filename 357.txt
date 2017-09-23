@@ -1,0 +1,21 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   double x,y,max;
+   cin>>x;
+   max=x;
+   
+   while(cin>>y)
+   if(y>max)
+   max=y;
+   
+   cout.setf(ios::fixed);
+   cout.precision(2);
+   cout<<max<<endl;
+   
+   return EXIT_SUCCESS;
+}

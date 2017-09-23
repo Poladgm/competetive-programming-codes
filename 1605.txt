@@ -1,0 +1,20 @@
+#include <cstdlib>
+#include <iostream>
+#include <string.h>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   char a[30];
+   cin>>a;
+
+   if(a[0]=='-')
+   cout<<a[2]<<endl;
+   else
+   cout<<a[1]<<endl;
+
+
+
+   return EXIT_SUCCESS;
+}

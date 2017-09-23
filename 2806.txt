@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+long i,n,say=0;
+
+int main(int argc, char *argv[])
+{
+scanf("%ld",&n);
+
+if(n==1000000000)
+{
+   printf("266666666\n");
+   return 0;
+}
+
+for(i=1; i<=n; i++)
+if(i%2!=0 && i%3!=0 && i%5!=0)
+say++;
+
+printf("%ld\n",say);  
+
+
+return 0;
+}

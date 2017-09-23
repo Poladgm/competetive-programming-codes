@@ -1,0 +1,41 @@
+#include <cstdlib>
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long long i,j,n,say=0,flag,k,cem=0;
+    cin>>k;
+
+    for(i=2; ; i++)
+    {
+        flag=0;
+
+        for(j=2; j<=sqrt(i); j++)
+        if(i%j==0)
+        {
+            flag=1;
+            break;
+        }
+
+        if(flag==0)
+        {
+            cem=cem+i;
+            say++;
+        }
+
+        if(cem%k==0)
+        {
+            cout<<say<<endl;
+            break;
+        }
+    }
+
+
+
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

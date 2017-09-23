@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+unsigned long long a[10001][10001],i,j,n,cem,l[10001],r[10001];
+
+int main(int argc, char *argv[])
+{
+    scanf("%llu",&n);
+    for(i=1; i<=n; i++)
+    for(j=1; j<=n; j++)
+    scanf("%llu",&a[i][j]);
+
+
+    for(i=1; i<=n; i++)
+    {
+        cem=0;
+
+        for(j=1; j<=n; j++)
+        cem=cem+a[i][j];
+
+        l[i]=cem;
+    }
+
+    for(j=1; j<=n; j++)
+    {
+        cem=0;
+
+        for(i=1; i<=n; i++)
+        cem=cem+a[i][j];
+
+        r[j]=cem;
+    }
+
+    for(i=1; i<=n; i++)
+    printf("%llu\n",l[i]);
+
+
+
+    system("pause");
+return 0;
+}

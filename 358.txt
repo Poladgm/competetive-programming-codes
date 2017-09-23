@@ -1,0 +1,24 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    char x[10];
+    int a[]={6,2,5,5,4,5,6,3,7,6},i,n,cem=0;
+    gets(x);
+    n=strlen(x);
+    
+    for(i=0; i<n; i++)
+    {
+        x[i]=x[i]-48;
+        cem=cem+a[x[i]];
+    }
+    
+    cout<<cem<<endl;
+        
+    
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

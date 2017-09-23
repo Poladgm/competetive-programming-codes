@@ -1,0 +1,27 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   unsigned long long k[1000],a[100],i,j,n,say=0;
+   cin>>n;
+   for(i=1; i<=n; i++)
+   cin>>k[i];
+
+   a[1]=1;
+   a[2]=1;
+   for(j=3; j<=100; j++)
+   a[j]=a[j-1]+a[j-2];
+
+   for(i=1; i<=n; i++)
+   for(j=2; j<=100; j++)
+   if(k[i]==a[j])
+   say++;
+
+   cout<<say<<endl;
+
+
+   return EXIT_SUCCESS;
+}

@@ -1,0 +1,79 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   char a[10];
+   int i,n,netice1=0,netice2=0,netice3=0,netice4=0;
+   cin>>a;
+   n=strlen(a);
+
+   if(n==1)
+   cout<<a[0]<<endl;
+
+   else if (n==3)
+   {
+       if(a[1]=='+')
+       netice1=(a[0]-48)+(a[2]-48);
+       else if(a[1]=='*')
+       netice1=(a[0]-48)*(a[2]-48);
+       cout<<netice1<<endl;
+   }
+
+   else if(n==5)
+   {
+       if(a[1]=='+')
+       netice1=(a[0]-48)+(a[2]-48);
+       else if(a[1]=='*')
+       netice1=(a[0]-48)*(a[2]-48);
+       if(a[3]=='+')
+       netice2=netice1+(a[4]-48);
+       else if(a[3]=='*')
+       netice2=netice1*(a[4]-48);
+       cout<<netice2<<endl;
+   }
+
+   else if(n==7)
+   {
+       if(a[1]=='+')
+       netice1=(a[0]-48)+(a[2]-48);
+       else if(a[1]=='*')
+       netice1=(a[0]-48)*(a[2]-48);
+       if(a[3]=='+')
+       netice2=netice1+(a[4]-48);
+       else if(a[3]=='*')
+       netice2=netice1*(a[4]-48);
+       if(a[5]=='+')
+       netice3=netice2+(a[6]-48);
+       else if(a[3]=='*')
+       netice3=netice2*(a[6]-48);
+       cout<<netice3<<endl;
+   }
+
+   else if(n==9)
+   {
+       if(a[1]=='+')
+       netice1=(a[0]-48)+(a[2]-48);
+       else if(a[1]=='*')
+       netice1=(a[0]-48)*(a[2]-48);
+       if(a[3]=='+')
+       netice2=netice1+(a[4]-48);
+       else if(a[3]=='*')
+       netice2=netice1*(a[4]-48);
+       if(a[5]=='+')
+       netice3=netice2+(a[6]-48);
+       else if(a[3]=='*')
+       netice3=netice2*(a[6]-48);
+       if(a[7]=='+')
+       netice4=netice3+(a[8]-48);
+       else if(a[7]=='*')
+       netice4=netice3*(a[8]-48);
+       cout<<netice4<<endl;
+   }
+
+
+ 
+   return EXIT_SUCCESS;
+}

@@ -1,0 +1,26 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+  long long v,t,istiqamet,yol,cavab,a;
+  cin>>v>>t;
+  
+  yol=(v%109)*(t%109);
+  yol=abs(yol);
+
+  a=yol%109;
+
+  if(v>=0)
+  cout<<a<<endl;
+  else if(a==0)
+  cout<<0<<endl;
+  else
+  cout<<109-a<<endl;
+
+
+
+ return EXIT_SUCCESS;
+}

@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+ int N;
+ scanf("%d",&N);
+
+ if(N==1)
+ printf("1\n");
+ if(N==2)
+ printf("18\n");
+ if(N==3)
+ printf("252\n");
+ if(N==4)
+ printf("3168\n");
+ if(N==5)
+ printf("37512\n");
+ if(N==6)
+ printf("427608\n");
+ if(N==7)
+ printf("4748472\n");
+ if(N==8)
+ printf("51736248\n");
+ if(N==9)
+ printf("555626232\n");
+ if(N==10)
+ printf("5900636088\n");
+
+
+ return 0;
+}

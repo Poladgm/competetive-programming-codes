@@ -1,0 +1,45 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   int n,pul=0;
+   cin>>n;
+   
+   while(n%100>65)
+   {
+       n=n-100;
+       pul=pul+100;
+   }
+   
+   while(n>=100)
+   {
+       n=n-100;
+       pul=pul+100;
+   }
+   
+   while(n%20>15)
+   {
+       n=n-20;
+       pul=pul+30;
+   }
+   
+   while(n>=20)
+   {
+       n=n-20;
+       pul=pul+30;
+   }
+   
+   while(n>0)
+   {
+       n=n-1;
+       pul=pul+2;
+   }
+   
+   cout<<pul<<endl;
+ 
+   system("PAUSE");
+   return EXIT_SUCCESS;
+}

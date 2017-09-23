@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+    string a[100001];
+    int i,n,say=0;
+
+    cin>>n;
+    for(i=1; i<=n; i++)
+        cin>>a[i];
+
+    sort(a+1,a+n+1);
+
+    for(i=1; i<=n; i++)
+        if(a[i]!=a[i+1])
+            say++;
+
+    cout<<say<<endl;
+
+    return 0;
+}

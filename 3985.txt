@@ -1,0 +1,37 @@
+#include <iostream>
+
+using namespace std;
+
+int a[101][101],row[101],column[101],say,n;
+
+int main()
+{
+    cin>>n;
+    for(int i=1; i<=n; i++){
+        say = 0;
+        for(int j=1; j<=n; j++){
+            cin>>a[i][j];
+            say += a[i][j];
+        }
+
+        row[i] = say;
+    }
+
+    for(int i=1; i<=n; i++){
+        say = 0;
+        for(int j=1; j<=n; j++){
+            say += a[j][i];
+        }
+
+        column[i] = say;
+    }
+
+    for(int i=1; i<=n; i++){
+        cout<<column[i]<<" "<<row[i]<<endl;
+    }
+
+
+
+
+    return 0;
+}

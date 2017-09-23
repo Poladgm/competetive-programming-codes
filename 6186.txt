@@ -1,0 +1,21 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+  long long a,b,c, d = 0;
+  cin>>a>>b>>c;
+
+if(a > d)
+d = a;
+if(b > d)
+d = b;
+if(c > d)
+d = c;
+  cout<<d<<endl;
+
+
+  return EXIT_SUCCESS;
+}

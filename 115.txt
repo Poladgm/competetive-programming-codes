@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int p,x1,x2,i,n;
+
+int main()
+{
+    cin>>n;
+
+    x1=2;
+    x2=4;
+
+    for(i=3; i<=n; i++)
+    {
+        p=x1+x2;
+        x1=x2;
+        x2=p;
+    }
+
+    if(n==1)
+        cout<<"2"<<endl;
+    else if(n==2)
+        cout<<"4"<<endl;
+    else
+        cout<<p<<endl;
+
+    return 0;
+}

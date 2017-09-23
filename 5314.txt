@@ -1,0 +1,21 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   unsigned long long n,k,i,p=1,f=1;
+   cin>>n>>k;
+   for(i=1; i<=n; i++)
+   p=p*2;
+   for(i=1; i<=k; i++)
+   f=f*2;
+
+   cout<<(p+f)<<endl;
+
+
+
+
+   return EXIT_SUCCESS;
+}

@@ -1,0 +1,36 @@
+#include stdio.h
+#include stdlib.h
+
+int main(int argc, char argv[])
+{
+int n;
+scanf(%d,&n);
+
+
+  if(n==1)
+ printf(Januaryn);
+  if(n==2)
+ printf(Februaryn);
+  if(n==3)
+  printf(Marchn);
+  if(n==4)
+ printf(Apriln);
+  if(n==5)
+ printf(Mayn);
+  if(n==6)
+ printf(Junen);
+  if (n==7)
+ printf(Julyn);
+  if (n==8)
+ printf(Augustn);
+  if (n==9)
+ printf(Septembern);
+  if (n==10)
+ printf(Octobern);
+  if (n==11)
+ printf(Novembern);
+  if (n==12)
+ printf(Decembern);
+
+ return 0;
+}

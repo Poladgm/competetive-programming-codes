@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int main(int argc, char *argv[])
+{
+ double x1,x2,Y1,y2,p1,p2,d1,d2,d;
+ scanf("%lf%lf%lf%lf%lf%lf",&p1,&p2,&x1,&Y1,&x2,&y2);
+ d=sqrt((x2-x1)*(x2-x1)+(y2-Y1)*(y2-Y1));
+ d1=sqrt((p1-x1)*(p1-x1)+(p2-Y1)*(p2-Y1));
+ d2=sqrt((x2-p1)*(x2-p1)+(y2-p2)*(y2-p2));
+
+ if(d1+d2>d)
+ printf("NO\n");
+ else
+ printf("YES\n");
+
+ return 0;
+}

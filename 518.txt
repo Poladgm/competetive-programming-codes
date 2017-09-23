@@ -1,0 +1,21 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   int a[32000],b[32000],n,i,c[32000];
+   cin>>n;
+   for(i=1; i<=n; i++)
+   cin>>a[i]>>b[i];
+
+   for(i=1; i<=n; i++)
+   c[i]=a[i]+b[i];
+
+   for(i=1; i<=n; i++)
+   cout<<c[i]<<endl;
+
+
+   return EXIT_SUCCESS;
+}

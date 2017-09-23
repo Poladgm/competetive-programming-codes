@@ -1,0 +1,20 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   long N;
+   int i;
+   cin>>N;
+   for(i=1; i<=N; i++)
+   {
+       if(N%i==0 && i%2==1)
+       cout<<i<<endl;
+       else
+       continue;
+   }
+
+   return EXIT_SUCCESS;
+}

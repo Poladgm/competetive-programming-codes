@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+long long a[100000001],x,i,n,m;
+
+int main()
+{
+    cin>>n;
+    for(i=1; i<=n; i++)
+    {
+        cin>>x;
+        a[x]++;
+    }
+
+    cin>>m;
+    for(i=1; i<=m; i++)
+    {
+        cin>>x;
+        cout<<a[x]<<endl;
+    }
+
+    return 0;
+}

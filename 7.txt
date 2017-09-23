@@ -1,0 +1,244 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+long long i,j,k=-1,n,eded;
+string a;
+char x[101],y[101];
+
+int main(int argc, char *argv[])
+{
+    cin>>a;
+
+    for(i=0; i<a.size(); i++)
+    if(a[i]!='+')
+    x[i]=a[i];
+    else
+    break;
+
+    for(j=i+1; j<a.size(); j++)
+    {
+        k++;
+        y[k]=a[j];
+    }
+
+    i=0;
+    eded=0;
+
+    while(i<strlen(x))
+    {
+        if(x[i]=='I' && x[i+1]=='V')
+        {
+            eded+=4;
+            i+=2;
+        }
+        else if(x[i]=='I' && x[i+1]=='X')
+        {
+            eded+=9;
+            i+=2;
+        }
+        else if(x[i]=='X' && x[i+1]=='L')
+        {
+            eded+=40;
+            i+=2;
+        }
+        else if(x[i]=='X' && x[i+1]=='C')
+        {
+            eded+=90;
+            i+=2;
+        }
+        else if(x[i]=='C' && x[i+1]=='D')
+        {
+            eded+=400;
+            i+=2;
+        }
+        else if(x[i]=='C' && x[i+1]=='M')
+        {
+            eded+=900;
+            i+=2;
+        }
+        else if(x[i]=='I')
+        {
+            eded+=1;
+            i++;
+        }
+        else if(x[i]=='V')
+        {
+            eded+=5;
+            i++;
+        }
+        else if(x[i]=='X')
+        {
+            eded+=10;
+            i++;
+        }
+        else if(x[i]=='L')
+        {
+            eded+=50;
+            i++;
+        }
+        else if(x[i]=='C')
+        {
+            eded+=100;
+            i++;
+        }
+        else if(x[i]=='D')
+        {
+            eded+=500;
+            i++;
+        }
+        else if(x[i]=='M')
+        {
+            eded+=1000;
+            i++;
+        }
+    }
+
+    //cout<<eded<<endl;
+
+    i=0;
+
+    while(i<strlen(y))
+    {
+        if(y[i]=='I' && y[i+1]=='V')
+        {
+            eded+=4;
+            i+=2;
+        }
+        else if(y[i]=='I' && y[i+1]=='X')
+        {
+            eded+=9;
+            i+=2;
+        }
+        else if(y[i]=='X' && y[i+1]=='L')
+        {
+            eded+=40;
+            i+=2;
+        }
+        else if(y[i]=='X' && y[i+1]=='C')
+        {
+            eded+=90;
+            i+=2;
+        }
+        else if(y[i]=='C' && y[i+1]=='D')
+        {
+            eded+=400;
+            i+=2;
+        }
+        else if(y[i]=='C' && y[i+1]=='M')
+        {
+            eded+=900;
+            i+=2;
+        }
+        else if(y[i]=='I')
+        {
+            eded+=1;
+            i++;
+        }
+        else if(y[i]=='V')
+        {
+            eded+=5;
+            i++;
+        }
+        else if(y[i]=='X')
+        {
+            eded+=10;
+            i++;
+        }
+        else if(y[i]=='L')
+        {
+            eded+=50;
+            i++;
+        }
+        else if(y[i]=='C')
+        {
+            eded+=100;
+            i++;
+        }
+        else if(y[i]=='D')
+        {
+            eded+=500;
+            i++;
+        }
+        else if(y[i]=='M')
+        {
+            eded+=1000;
+            i++;
+        }
+    }
+
+    //cout<<eded<<endl;
+
+    while(eded>=1000)
+    {
+        eded-=1000;
+        cout<<"M";
+    }
+    if(eded>=900)
+    {
+        eded-=900;
+        cout<<"CM";
+    }
+    while(eded>=500)
+    {
+        eded-=500;
+        cout<<"D";
+    }
+    if(eded>=400)
+    {
+        eded-=400;
+        cout<<"CD";
+    }
+    while(eded>=100)
+    {
+        eded-=100;
+        cout<<"C";
+    }
+    if(eded>=90)
+    {
+        eded-=90;
+        cout<<"XC";
+    }
+    while(eded>=50)
+    {
+        eded-=50;
+        cout<<"L";
+    }
+    if(eded>=40)
+    {
+        eded-=40;
+        cout<<"XL";
+    }
+    while(eded>=10)
+    {
+        eded-=10;
+        cout<<"X";
+    }
+    if(eded>=9)
+    {
+        eded-=9;
+        cout<<"IX";
+    }
+    while(eded>=5)
+    {
+        eded-=5;
+        cout<<"V";
+    }
+    if(eded>=4)
+    {
+        eded-=4;
+        cout<<"IV";
+    }
+    while(eded>=1)
+    {
+        eded-=1;
+        cout<<"I";
+    }
+
+    cout<<endl;
+
+
+    system("pause");
+    return EXIT_SUCCESS;
+}

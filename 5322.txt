@@ -1,0 +1,60 @@
+// http://www.wikihow.com/Convert-Binary-to-Hexadecimal
+
+#include <iostream>
+#include <string.h>
+
+using namespace std;
+
+int main()
+{
+    char a[100001],b[10001];
+    long long i,j=0,say=0,eded=0,p=1;
+    cin>>a;
+
+    for(i=strlen(a)-1; i>=0; i--)
+    {
+        say++;
+
+        eded=eded+p*(a[i]-48);
+        p=p*2;
+
+        if(say%4==0 || i==0)
+        {
+            if(eded<=9)
+                b[j++]=eded+48;
+            else
+            {
+                if(eded==10)
+                    b[j++]='A';
+                else if(eded==11)
+                    b[j++]='B';
+                else if(eded==12)
+                    b[j++]='C';
+                else if(eded==13)
+                    b[j++]='D';
+                else if(eded==14)
+                    b[j++]='E';
+                else if(eded==15)
+                    b[j++]='F';
+            }
+
+            p=1;
+            eded=0;
+        }
+
+    }
+
+    b[j]='\0';
+
+    for(i=strlen(b)-1; i>=0; i--)
+    {
+        if(b[i]>=97 && b[i]<=122)
+            cout<<(char)(b[i]-32);
+        else
+            cout<<b[i];
+    }
+
+    cout<<endl;
+
+    return 0;
+}

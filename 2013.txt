@@ -1,0 +1,12 @@
+#include <iostream.h>
+using namespace std;
+
+int main()
+ {
+    long long int L,S;
+    cin>>L;
+    S=6*L*L;
+    cout<<S<<endl;
+
+    return 0;
+ }

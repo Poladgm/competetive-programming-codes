@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+float a,b,c,d,m,n,x1,x2,A,A1,A2,detA,detA1,detA2;
+scanf("%f %f %f\n%f %f %f",&a,&b,&m,&c,&d,&n);
+
+detA=a*d-b*c;
+detA1=m*d-b*n;
+detA2=a*n-m*c;
+
+x1=detA1/detA;
+x2=detA2/detA;
+
+printf("%.3f\n%.3f\n",x1,x2);
+
+
+return 0;
+}

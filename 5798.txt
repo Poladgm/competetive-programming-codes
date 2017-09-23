@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+string a;
+int n;
+int minn = 9999;
+
+int sequence(char a, char b, char c, char d){
+    return (a - 48)* 1000 + (b - 48) * 100 + (c - 48) * 10 + (d -48);
+}
+
+int main()
+{
+    cin>>a;
+
+    for(int i=0; i<5; i++){
+        for(int j=i+1; j<6; j++){
+            for(int k=j+1; k<7; k++){
+                for(int h=k+1; h<8; h++){
+                    minn = min( minn , sequence(a[i] , a[j] , a[k] , a[h]));
+                }
+            }
+        }
+    }
+
+    cout<<minn<<endl;
+
+    return 0;
+}

@@ -1,0 +1,32 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   char a[1001],b[1001];
+   int i,j=1,n,eded,x,y;
+   
+   cin>>a;
+   cin>>x>>y;
+   n=strlen(a);
+   
+   y=y-1;
+   x=x-1;
+   
+   for(i=y; i>=x; i--)
+   b[j++]=a[i];
+   
+   eded=j-1;
+    
+   for(i=x, j=1; i<=y, j<=eded; i++, j++)
+   a[i]=b[j];
+   
+   for(i=0; i<n; i++)
+   cout<<a[i];
+   cout<<endl;
+   
+   
+   return EXIT_SUCCESS;
+}

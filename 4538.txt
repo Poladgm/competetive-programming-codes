@@ -1,0 +1,22 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long long k,n,cem=0,eded=1;
+    cin>>k;
+
+    while(cem<=k)
+    {
+        cem=cem+eded;
+        eded++;
+    }
+
+    cout<<eded-2<<endl;
+
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+long long a, k, x;
+int main(int argc, char *argv[])
+{
+  while(cin>>k){
+       if( k == 0  )
+           break; 
+       a = k % 9;
+       x = (k - a) / 9;
+       if ( a == 0 )
+           printf("%lld ",10 * (x - 1) + 9);
+       printf("%lld\n",10 * x + a);
+}
+  return 0;
+}

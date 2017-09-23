@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+int n,k;
+long a[101];
+
+int main()
+{
+    cin>>n>>k;
+    a[0]=1;
+
+    for(int i=0; i<=n; i++){
+        if(i!=0){
+            a[i]=a[i-1]*2;
+        }
+
+        if(a[i]>k && i!=n){
+            a[i]-=k;
+        }
+    }
+
+    cout<<a[n]<<endl;
+
+
+    return 0;
+}

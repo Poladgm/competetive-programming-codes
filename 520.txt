@@ -1,0 +1,20 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   int n;
+   long long cem=0;
+   
+   while(cin>>n)
+                {
+                cem=cem+n;
+                }
+                
+   cout<<cem<<endl;
+ 
+
+   return EXIT_SUCCESS;
+}

@@ -1,0 +1,28 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    int ay,il;
+    cin>>ay>>il;
+
+    if(ay==1 || ay==3 || ay==5 || ay==7 || ay==8 || ay==10 || ay==12)
+    cout<<"31"<<endl;
+    else if(ay==4 || ay==6 || ay==9 || ay==11)
+    cout<<"30"<<endl;
+    else
+    {
+        if(il%4==0 && il%100!=0)
+        cout<<"29"<<endl;
+        else if(il%400==0)
+        cout<<"29"<<endl;
+        else
+        cout<<"28"<<endl;
+    }
+
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

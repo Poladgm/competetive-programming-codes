@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+bool isHave(int arr[], int ind, int n){
+  for(int i=0; i<ind; i++)
+      if(arr[i] == n)
+          return true;
+  return false;
+}
+int a, b, c, d, i, j, ind, arr[100];
+
+int main(){
+ 
+  cin>>a>>b>>c>>d;
+  if(a > b)
+      swap(a, b);
+  if(c > d)
+      swap(c, d);
+  for(i=a; i<=b; i++)
+      for(j=c; j<=d; j++)
+          if(!isHave(arr, ind, i*j))
+              arr[ind++] = i*j;
+  cout<<ind<<endl;
+
+return 0;
+}

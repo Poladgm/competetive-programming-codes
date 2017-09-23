@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(int argc, char *argv[])
+{
+double n,h,c,a;
+double Stam,Syan,Sot;
+scanf("%lf%lf",&n,&a);
+c=sqrt(2)*n*cos(a*M_PI/180);
+
+h=n*sin(a*M_PI/180);
+Sot=c*c;
+Syan=2*c*sqrt((h*h+(c*c/4)));
+Stam=Sot+Syan;
+
+printf("%.3lf\n",Stam);
+return 0;
+}

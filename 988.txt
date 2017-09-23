@@ -1,0 +1,33 @@
+#include <cstdlib>
+#include <iostream>
+#include <string.h>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   int list[1001],a[1001],cavab[1001],i,j,l,max_id=1,say=0,n,m;
+
+   cin>>n;
+   for(i=1; i<=n; i++)
+   cin>>a[i];
+
+   for(i=1; i<=n; i++)
+   list[i]=1;
+
+   for(i=1; i<=n; i++)
+       for(j=1; j<i; j++)
+           if(a[i]>a[j])
+            list[i]=max(list[j]+1,list[i]);
+
+   for(i=1; i<=n; i++)
+       if(list[i]>list[max_id])
+           max_id=i;
+
+   l=list[max_id]-1;
+   m=max_id;
+   cout<<list[max_id]<<endl;
+
+
+   return EXIT_SUCCESS;
+}

@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+ long int n;
+ double sum=0,hasil=1;
+ scanf("%ld",&n);
+
+ while(n!=0)
+   {
+       sum=sum+(n%10);
+       hasil=hasil*(n%10);
+       n=n/10;
+   }
+ 
+printf("%.3lf\n",hasil/sum);
+
+
+ return 0;
+}

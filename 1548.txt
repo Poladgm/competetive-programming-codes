@@ -1,0 +1,26 @@
+#include <cstdlib>
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main(int argc, char *argv[])
+{   
+   long long int n, d, D, i = 1;
+   while(cin>>d)
+   {
+   if( d == 0 )
+   break;
+   else
+{
+   D = sqrt(9 + 8*d);
+   n = (3 + D)/2;
+}
+   if( n*(n - 3)/2 == d )
+   cout<<"Case"<<" "<<i<<":"<<" "<<n<<endl;
+   else
+   cout<<"Case"<<" "<<i<<":"<<" "<<n+1<<endl;
+   i ++;
+}
+   
+   return EXIT_SUCCESS;
+}

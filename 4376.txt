@@ -1,0 +1,57 @@
+#include <iostream>
+#include <stdio.h>
+#include <stack>
+#include <queue>
+#include <cmath>
+#include <string>
+#include <stdlib.h>
+using namespace std;
+
+
+long a[502][502], b[502][502], c[502][502];
+int n;
+//bool ans = true;
+int main()
+{
+   while(scanf("%d",&n), n){
+   for(int i = 1; i <= n; i++){
+           for(int j = 1; j <= n; j++){
+               scanf("%ld",&a[i][j]);
+           }
+   }
+   for(int  i = 1; i <= n; i++){
+           for(int j = 1; j <= n; j++){
+               scanf("%ld",&b[i][j]);
+           }
+   }
+
+   for(int i = 1; i <= n; i++){
+           for(int j = 1; j <= n; j++){
+               scanf("%ld",&c[i][j]);
+           }
+   }
+
+long count = 0;
+bool ans = true;
+   for(int i = 1; i <= n; i++){
+           if(!ans)break;
+           for(int j = 1; j <= n; j++){
+               if(!ans)break;
+                   count = 0;
+                   for(int k = 1; k <= n; k++){
+                       count += a[i][k] * b[k][j];
+
+                   }
+                 //  printf("%ld \t",count);
+
+                   if(c[i][j] != count){
+                       ans = false;
+                       break;
+                   }
+           }//printf("\n");
+   }
+   if(ans)printf("YES\n");
+   else printf("NO\n");
+   }
+   return 0;
+}

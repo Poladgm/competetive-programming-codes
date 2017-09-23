@@ -1,0 +1,49 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long long i,j,x,y,n,m,k;
+    char a[20],b[20];
+    while(cin>>a>>b)
+    {
+        x=0;
+        y=0;
+        k=1;
+
+        n=strlen(a);
+        m=strlen(b);
+
+        for(i=n-1; i>=0; i--)
+        if(a[i]!=',' && a[i]!='-')
+        {
+            x=x+(a[i]-48)*k;
+            k=k*10;
+        }
+
+        if(a[0]=='-')
+        x=-x;
+
+        k=1;
+
+        for(i=m-1; i>=0; i--)
+        if(b[i]!=',' && b[i]!='-')
+        {
+            y=y+(b[i]-48)*k;
+            k=k*10;
+        }
+
+        if(b[0]=='-')
+        y=-y;
+
+        cout<<x+y<<endl;
+    }
+
+
+
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

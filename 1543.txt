@@ -1,0 +1,30 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   double v,t,s,a;
+   
+   while(cin>>v>>t)
+   {
+       if(t==0)
+       cout<<"0\n";
+       else
+       {
+           a=v/t;
+           s=a*2*t*2*t/2;
+           
+           if(s<0)
+           s=-s;
+           
+           cout.setf(ios:: fixed);
+           cout.precision(0);
+           cout<<s<<endl;
+       }
+   }
+   
+   
+   return EXIT_SUCCESS;
+}

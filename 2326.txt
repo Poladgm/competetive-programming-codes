@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
+long  i,j,n,m,l,t,r,b[100001],h;
+
+int main(int argc, char *argv[])
+{
+    scanf("%ld%ld%ld",&t,&n,&m);
+    for(int i = 1; i <= n; i++ )
+    {
+        scanf("%ld%ld",&l,&r);
+        for(j =l; j<=r; j++)
+        b[j]++;
+    }
+
+    for(j=1; j<m; j++)
+    {
+        scanf("%ld",&h);
+        printf("%ld ",b[h]);
+    }
+
+    cin>>h;
+    cout<<b[h]<<endl;
+
+   return 0;
+}

@@ -1,0 +1,24 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    int n;
+    cin>>n;
+    if(n==1)
+    printf("Spring\nMarch\nApril\nMay\n");
+    else if(n==2)
+    printf("Summer\nJune\nJuly\nAugust\n");
+    else if(n==3)
+    printf("Autumn\nSeptember\nOctober\nNovember\n");
+    else if(n==4)
+    printf("Winter\nDecember\nJanuary\nFebruary\n");
+
+
+
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

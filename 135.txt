@@ -1,0 +1,91 @@
+import java.util.Scanner;
+
+import java.math.BigInteger;
+public class Main {
+
+static BigInteger ebob(BigInteger a,BigInteger b)
+ {
+     
+      BigInteger c;
+      c=(a.multiply(b)).divide(a.gcd(b));
+      
+      return c;
+ 
+ }
+  
+  
+ public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+  int n;
+  BigInteger[] a = new BigInteger[100];
+
+  
+  BigInteger y = new BigInteger("1");
+  BigInteger z = new BigInteger("1");
+  BigInteger c = new BigInteger("1");
+  
+  n=scan.nextInt();
+  
+  for(int i=1;i<=n;i++)
+  {
+      a[i]=scan.nextBigInteger();
+  }
+  c=a[1];
+  for(int i=2;i<=n;i++)
+  {
+      c=ebob(c,a[i]);
+  }
+  
+  
+  
+ 
+    
+     System.out.println(c);
+    
+    
+}
+}
+
+
+
+
+
+
+
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+unsigned long long ekob(unsigned long long a,unsigned long long b)
+{
+  unsigned long long x,y,c;
+  x=a;
+  y=b;
+  while(b!=0)
+  {
+      a=a%b;
+      c=a;
+      a=b;
+      b=c;
+  }
+  return x*y/a;
+}
+
+unsigned long long i,a[22],n;
+
+int main(int argc, char *argv[])
+{
+   scanf("%llu",&n);
+   for(i=1; i<=n; i++)
+   scanf("%llu",&a[i]);
+
+   for(i=2; i<=n; i++)
+   {
+       a[i]=ekob(a[i-1],a[i]);
+   }
+   
+   printf("%llu\n",a[n]);
+
+  return EXIT_SUCCESS;
+}

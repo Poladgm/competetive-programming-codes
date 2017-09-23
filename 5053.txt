@@ -1,0 +1,15 @@
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        BigInteger n,k;
+        n = in.nextBigInteger();
+        k = in.nextBigInteger();
+        
+        System.out.println(k.mod(n));
+    }
+    
+}

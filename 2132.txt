@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+ double x,y,A,B,C;
+ scanf("%lf%lf%lf%lf%lf",&x,&y,&A,&B,&C);
+
+ if(A*x+B*y+C==0)
+ printf("YES\n");
+
+ else
+ printf("NO\n");
+
+
+
+
+ return 0;
+}

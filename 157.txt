@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+int i,k=0,x,n;
+scanf("%d",&n);
+
+for(i=1;i<=(n-2);i++)
+k=k+i;
+x=2*k;
+
+printf("%d\n",x);
+
+return 0;
+}

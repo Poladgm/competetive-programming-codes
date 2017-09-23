@@ -1,0 +1,18 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    char a[15];
+    gets(a);
+    
+    if(a[0]!='-')
+    cout<<a[0]-48+a[strlen(a)-1]-48<<endl;
+    else
+    cout<<a[1]-48+a[strlen(a)-1]-48<<endl;
+    
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

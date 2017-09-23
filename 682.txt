@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+long a[1000001],i,n,m,x,cem,l,r;
+
+
+int main()
+{
+    scanf("%ld",&n);
+    for(i=1; i<=n; i++)
+    {
+        scanf("%ld",&x);
+        cem=cem+x;
+        a[i]=cem;
+
+    }
+
+    scanf("%ld",&m);
+
+    for(i=1; i<=m; i++)
+    {
+        scanf("%ld%ld",&l,&r);
+
+        printf("%ld\n",a[r]-a[l-1]);
+    }
+
+    return 0;
+}

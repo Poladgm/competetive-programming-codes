@@ -1,0 +1,39 @@
+package pkg2796;
+
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class Main {
+
+    static String a;
+    static BigInteger n , maxx = BigInteger.ZERO;
+    static int len;
+    public static void main(String[] args) {
+        Scanner in = new Scanner (System.in);
+        a = in.nextLine();
+        len = a.length();
+        
+        for(int i=0; i<len; i++){
+            if(eded(i).compareTo(maxx) > 0){
+                maxx = eded(i);
+            }
+        }
+        
+        System.out.println(maxx);
+    }
+    public static BigInteger eded(int x){
+        BigInteger temp = BigInteger.ONE;
+        BigInteger cem = BigInteger.ZERO;
+
+        for(int i=len-1; i>=0; i--){
+            if(i == x){
+                continue;
+            }
+
+            cem = cem.add( BigInteger.valueOf(a.charAt(i)-48).multiply(temp) );
+            temp = temp.multiply(BigInteger.TEN);
+        }
+
+        return cem;
+    }
+}

@@ -1,0 +1,24 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+  long long a,b;
+  float c;
+  cin>>a>>b;
+
+  if(b==0)
+  cout<<"ERROR"<<endl;
+  else
+  {
+   c=a/b;
+  cout.setf(ios::fixed);
+  cout.precision(0);
+  cout<<c<<endl;
+  }
+
+  
+   return EXIT_SUCCESS;
+}

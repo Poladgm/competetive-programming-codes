@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+    long long a[1001];
+long long n,i,min1,min2,say=0;
+scanf("%lld",&n);
+for(i=1; i<=n; i++)
+scanf("%lld",&a[i]);
+
+min1=a[1];
+for(i=1; i<=n; i++)
+if(a[i]<min1)
+min1=a[i];
+
+for(i=1; i<=n; i++)
+if(a[i]==min1)
+say++;
+
+if(say>1)
+printf("%lld %lld\n",min1,min1);
+else
+{
+      min2=a[1];
+      for(i=1; i<=n; i++)
+      if(a[i]>min1 && a[i]<min2)
+      min2=a[i];
+      
+      printf("%lld %lld\n",min1,min2);
+  }
+     
+ return 0;
+}

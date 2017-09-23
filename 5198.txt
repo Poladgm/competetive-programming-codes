@@ -1,0 +1,25 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+unsigned long long m;
+unsigned long long ust(unsigned long long a,unsigned long long b)
+{
+ if(b==1)
+     return a%m;
+ if(b%2==0)
+     return ust(((a%m)*(a%m))%m,b/2)%m;
+ else
+     return ((a%m)*ust(((a%m)*(a%m))%m,b/2))%m;
+}
+
+int main()
+{
+ unsigned long long a,b;
+ cin>>a>>b>>m;
+ cout<<ust(a,b)%m<<endl;
+
+
+   return EXIT_SUCCESS;
+}

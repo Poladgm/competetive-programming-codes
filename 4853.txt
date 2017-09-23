@@ -1,0 +1,76 @@
+#include <iostream>
+#include <vector>
+#include <queue>
+#define ll long long
+
+using namespace std;
+
+vector <ll> a[500001];
+queue <ll> q;
+ll from[500001];
+ll used[500001];
+ll ans[500001];
+ll len;
+ll n,m,start,finish,x,y;
+
+void bfs (ll x){
+   used[x] = 1;
+   q.push(x);
+
+   while(!q.empty()){
+       ll top = q.front();
+       q.pop();
+
+       if(top == finish){
+           break;
+       }
+
+       for(ll i = 0 ; i<a[top].size(); i++){
+           if(used[a[top][i]] == 0){
+               from[a[top][i]] = top;
+               used[a[top][i]] = 1;
+               q.push(a[top][i]);
+           }
+       }
+   }
+}
+
+int main()
+{
+   cin>>n>>m>>start>>finish;
+   for(ll i=1; i<=m; i++){
+       cin>>x>>y;
+       a[x].push_back(y);
+       a[y].push_back(x);
+   }
+
+   for(ll i=1; i<=n; i++){
+       from[i] = i;
+   }
+
+   bfs(start);
+
+   while(1){
+         if(from[finish] == finish){
+           len++;
+           ans[len] = finish;
+           break;
+         }
+
+         len++;
+         ans[len] = finish;
+       finish = from[finish];
+   }
+
+   if(used[finish] == 0){
+       cout<<"-1"<<endl;
+       return 0;
+   }
+   cout<<len-1<<endl;
+   for(int i =len; i>=1; i--){
+       cout<<ans[i]<<" ";
+   }
+
+
+   return 0;
+}

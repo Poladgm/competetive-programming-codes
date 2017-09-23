@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+double a[100];
+int i,h,k,s;
+int main ()
+{
+k=0;
+scanf ("%d",&h);
+for (i=1;i<=h;i++)
+{
+scanf("%lf",&a[i]);
+}
+for (i=1;i<=h;i++)
+{
+
+if (a[i]<=2.5)
+{ s=i;
+k=1;
+break;
+}
+}
+if (k==1)
+printf ("%d %.2lf\n",s,a[s]);
+else
+printf ("Not Found\n");
+
+return 0;
+}

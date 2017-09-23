@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    long long i,n,m,ans=1;
+    cin>>n>>m;
+
+    if(n>m)
+    cout<<"0"<<endl;
+    else{
+        for(i=1; i<=n; i++){
+        ans*=i;
+        ans%=m;
+        }
+
+    cout<<ans<<endl;
+    }
+
+    return 0;
+}

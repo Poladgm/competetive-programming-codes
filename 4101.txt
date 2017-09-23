@@ -1,0 +1,38 @@
+#include <iostream>
+
+using namespace std;
+
+int i,j,n,h,k,say;
+int a[500][3];
+
+int main()
+{
+   int n;
+   cin>>n;
+
+   say = 0;
+   for(i=1; i<=9; i++){
+
+       for(j=n-i; j>=0; j--){
+
+           if(n-j-i > 9 || j > 9){
+               continue;
+           }
+
+           say++;
+
+           a[say][0] = i;
+           a[say][1] = n-j-i;
+           a[say][2] = j;
+       }
+   }
+
+   cout<<say<<endl;
+
+   for(i=1; i<=say; i++){
+       cout<<a[i][0]<<a[i][1]<<a[i][2]<<endl;
+   }
+
+
+   return 0;
+}

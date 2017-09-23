@@ -1,0 +1,21 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int a [15] = {1, 4, 16, 65536, 27, 256, 3125, 46656, 823543, 16777216, 387420489};
+int say,n;
+
+int main(int argc, char *argv[])
+{
+   cin>>n;
+   for(int i=0; i<=10; i++){
+       if(a[i] <= n){
+           say++;
+       }
+   }
+   
+   cout<<say<<endl;
+   
+   return EXIT_SUCCESS;
+}

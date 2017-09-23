@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+unsigned long long a[1001][1001],b[1001][1001],i,j,m,n,eded,say=0;
+
+int main(int argc, char *argv[])
+{
+    scanf("%llu%llu",&m,&n);
+    
+    eded=1;
+    
+    for(i=m; i>=1; i--)
+    for(j=1; j<=n; j++)
+    {
+        a[i][j]=eded;
+        eded++;
+    }
+    
+    eded=1;
+    
+    for(j=1; j<=n; j++)
+    for(i=m; i>=1; i--)
+    {
+        b[i][j]=eded;
+        eded++;
+    }
+    
+    for(i=1; i<=m; i++)
+    for(j=1; j<=n; j++)
+    if(a[i][j]==b[i][j])
+    say++;
+    
+    printf("%llu\n",say);
+    
+          
+  system("PAUSE");	
+  return 0;
+}

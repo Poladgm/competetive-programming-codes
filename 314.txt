@@ -1,0 +1,33 @@
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {      
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        for(int i =0; i<n; i++)
+        {
+            BigInteger a, b, ans = null;
+            Boolean ustegel = false;
+            String temp = scan.next();
+            int ind = temp.indexOf("-");
+            if(ind==-1){
+                ustegel = true;
+               ind = temp.indexOf("+");
+            }
+               int m = temp.length();
+               String birinci = temp.substring(0, ind);
+               String ikinci = temp.substring(ind+1, m);
+                a = new BigInteger(birinci);        
+                b = new BigInteger(ikinci);         
+                
+                if(!ustegel)
+                    ans = a.subtract(b);
+                else
+                    ans = a.add(b);
+    
+            System.out.println(ans);
+        }
+    }
+    
+}

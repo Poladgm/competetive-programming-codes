@@ -1,0 +1,30 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long long a,b,x,y,c;
+    cin>>a>>b;
+
+    x=a;
+    y=b;
+
+    while(y!=0)
+    {
+        x=x%y;
+        c=x;
+        x=y;
+        y=c;
+    }
+
+    a=a/x;
+
+    cout<<a*b<<endl;
+
+
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

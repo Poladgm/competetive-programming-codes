@@ -1,0 +1,66 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+ int n,i,m,j,a[1000],b[1000],f;
+int k=0;    
+ cin>>n;
+ int s;
+ for(i=1;i<=n;i++)
+ a[i]=i;
+b[1]=2;
+b[2]=3;
+f=3;
+ if(n==1)
+ cout<<1<<endl;
+ else
+ if(n==2)
+ cout<<2<<endl;
+ else
+ if(n==3)
+ cout<<4<<endl;
+else
+if(n>=4)
+{   
+ for(i=4;i<=n;i++)
+ {m=2;
+  do
+  {
+  if(a[i]%m==0)
+   {
+   b[f]=m;
+   a[i]=a[i]/m;
+   f++;
+   m=2;
+   }
+   else
+   m=m+1;
+   
+ }while(a[i]!=1);   
+} 
+ m: for(i=0;i<f-1;i++)
+{   if(b[i]>b[i+1])          
+{
+int c=b[i];
+b[i]=b[i+1];
+b[i+1]=c;
+goto m;                           
+}
+}
+int t=1;
+int q=1;
+for(i=1;i<f;i++)
+{
+if(b[i]==b[i+1])
+  t++;
+  else
+  {
+      q=q*(t+1);
+     t=1;        
+  }
+}     
+cout<<q<<endl;  
+}
+return 0;
+}

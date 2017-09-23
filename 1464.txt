@@ -1,0 +1,30 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long long x;
+    
+    while(cin>>x)
+    {   
+        if(x==0)
+        break;
+        else if(x<0)
+        {
+            x=-x;
+            cout<<-x*(x+1)/2+1<<endl;
+            // sertde 1-den N-e kimi cem deyir ona
+            // gore uzerine 1 gelirik
+        }
+            else
+            cout<<x*(x+1)/2<<endl;
+    }
+    
+    
+    
+    
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

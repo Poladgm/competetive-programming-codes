@@ -1,0 +1,16 @@
+#include <cstdlib>
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+  int gol,qaz;
+  cin>>gol;
+  qaz=pow(2,gol)-1;
+  cout<<qaz<<endl;
+  
+  
+  return EXIT_SUCCESS;
+}

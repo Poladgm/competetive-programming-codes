@@ -1,0 +1,76 @@
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class Main {
+    public static BigInteger n;
+    public static BigInteger m;
+    public static BigInteger cem = BigInteger.ZERO , iki , alti , a , b , modul;
+        
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        n = in.nextBigInteger();
+        m = in.nextBigInteger();   
+        iki = new BigInteger("2");
+        alti = new BigInteger("6");
+        modul = new BigInteger("1000000009");
+        a = BigInteger.ZERO;
+        b = BigInteger.ZERO;
+        
+        if(n.compareTo(m) > 0){
+            cem = n;
+            n = m;
+            m = cem;
+            cem = BigInteger.ZERO;
+        }
+        
+        if((n.compareTo(BigInteger.ZERO) == 0 || n.compareTo(BigInteger.ZERO) > 0) && (m.compareTo(BigInteger.ZERO) == 0 || m.compareTo(BigInteger.ZERO) > 0)){
+            if(n.compareTo(BigInteger.ZERO) > 0){
+                n = n.subtract(BigInteger.ONE);
+            }
+           
+            a = n.multiply(n.add(BigInteger.ONE));
+            a = a.multiply(iki.multiply(n).add(BigInteger.ONE));
+            a = a.divide(alti);
+            b = m.multiply(m.add(BigInteger.ONE));
+            b = b.multiply(iki.multiply(m).add(BigInteger.ONE));
+            b = b.divide(alti);
+           
+            cem = cem.add(b);
+            cem = cem.subtract(a);
+        }
+        else if((n.compareTo(BigInteger.ZERO) == 0 || n.compareTo(BigInteger.ZERO) < 0) && (m.compareTo(BigInteger.ZERO) == 0 || m.compareTo(BigInteger.ZERO) < 0)){
+            n = BigInteger.ZERO.subtract(n);
+            m = BigInteger.ZERO.subtract(m);
+            
+            if(m.compareTo(BigInteger.ZERO) > 0){
+                m = m.subtract(BigInteger.ONE);
+            }
+           
+            a = n.multiply(n.add(BigInteger.ONE));
+            a = a.multiply(iki.multiply(n).add(BigInteger.ONE));
+            a = a.divide(alti);
+            b = m.multiply(m.add(BigInteger.ONE));
+            b = b.multiply(iki.multiply(m).add(BigInteger.ONE));
+            b = b.divide(alti);
+            
+            cem = cem.add(a);
+            cem = cem.subtract(b);
+        }
+        else if((n.compareTo(BigInteger.ZERO) == 0 || n.compareTo(BigInteger.ZERO) < 0) && (m.compareTo(BigInteger.ZERO) == 0 || m.compareTo(BigInteger.ZERO) > 0)){
+            n = BigInteger.ZERO.subtract(n);
+           
+            a = n.multiply(n.add(BigInteger.ONE));
+            a = a.multiply(iki.multiply(n).add(BigInteger.ONE));
+            a = a.divide(alti);
+            b = m.multiply(m.add(BigInteger.ONE));
+            b = b.multiply(iki.multiply(m).add(BigInteger.ONE));
+            b = b.divide(alti);
+            
+            cem = cem.add(b);
+            cem = cem.add(a);
+        }
+        
+        cem = cem.mod(modul);
+        System.out.println(cem);
+    }
+}

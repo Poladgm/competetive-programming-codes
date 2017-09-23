@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <algorithm>
+#include <iostream>
+
+using namespace std;
+
+long long a[1000005];
+long long k,n;
+
+int main()
+{
+   ios_base::sync_with_stdio(false);
+   //scanf("%lld",&n);
+   cin>>n;
+   for(int i=1; i<=n; i++){
+       //scanf("%lld",&a[i]);
+       cin>>a[i];
+   }
+
+   sort(a+1,a+n+1);
+
+   for(int i=1; i<=n; i++){
+       if(k+1 >= a[i]){
+           k = k + a[i];
+       }
+   }
+
+   //printf("%lld\n",k+1);
+   cout<<k+1<<endl;
+
+
+
+
+
+
+   return 0;
+}

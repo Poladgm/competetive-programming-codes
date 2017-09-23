@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string.h>
+
+using namespace std;
+
+int main()
+{
+    long i,n,m,k,p=1,eded=0;
+    char a[12];
+    cin>>k>>a;
+    n=strlen(a);
+
+    for(i=n-1; i>=0; i--)
+    {
+        eded=eded+(a[i]-48)*p;
+        p=p*k;
+    }
+
+    cout<<eded<<endl;
+
+    return 0;
+}

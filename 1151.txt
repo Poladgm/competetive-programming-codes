@@ -1,0 +1,23 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+long long ebob(long long a, long long b)
+{
+    if(b==0)
+    return a;
+    else
+    return ebob(b,a%b);
+}
+
+int main(int argc, char *argv[])
+{
+    long long a,b;
+    cin>>a>>b;
+    cout<<ebob(a,b)<<endl;
+
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

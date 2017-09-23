@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <math.h>
+int main(int argc, char *argv[])
+{
+double T,x,y,A,B,C;
+scanf("%lf%lf%lf%lf%lf",&x,&y,&A,&B,&C);
+
+
+T=fabs(A*x+B*y+C)/sqrt(A*A+B*B);
+
+printf("%.6lf\n",T);
+return 0;
+}

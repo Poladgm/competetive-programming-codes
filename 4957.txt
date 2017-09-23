@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]) 
+{
+    long long n,p,i,f[10000];
+    while(scanf("%lld%lld", &n,&p))
+    {
+        if(n==0 && p==0)
+        break;
+        
+        if(p<n)
+        printf("0\n");
+        else
+        {
+            f[1]=1;
+            for(i=2;i<=n;i++)
+            {
+                f[i]=(i%p)*f[i-1];
+                f[i]=f[i]%p;
+            }
+            
+            printf("%lld\n", f[n]%p);
+        }
+    }
+    
+    return 0;
+}   

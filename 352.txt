@@ -1,0 +1,22 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   double x,y,min;
+   cin>>x;
+   min=x;
+   
+   while(cin>>y)
+   if(y<min)
+   min=y;
+   
+   cout.setf(ios::fixed);
+   cout.precision(2);
+   cout<<min<<endl;
+   
+ 
+   return EXIT_SUCCESS;
+}

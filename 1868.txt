@@ -1,0 +1,29 @@
+#include <iostream>
+#include <math.h>
+#include <map>
+
+using namespace std;
+
+map<unsigned long long, unsigned long long> m;
+unsigned long long f(unsigned long long n)
+{
+    if (m[n]>0)
+    return m[n];
+
+    if(n<=2)
+    return m[n]=1;
+    if(n%2==1)
+    return m[n]=f(6*n/7)+f(2*n/3);
+    else
+    return m[n]=f(n-1)+f(n-3);
+}
+int main(int argc, char *argv[])
+{
+    unsigned long long n,l;
+
+    scanf("%llu",&n);
+    l=pow(2,32);
+    printf("%lu\n",f(n)%l);
+
+   return EXIT_SUCCESS;
+}

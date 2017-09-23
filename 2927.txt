@@ -1,0 +1,26 @@
+#include <iostream>
+#include <set>
+
+using namespace std;
+
+set <long long>s;
+set <long long>::iterator it;
+long long i,j,n,m,x;
+
+int main()
+{
+    cin>>n;
+    for(i=1; i<=n; i++){
+        cin>>m;
+
+        for(j=1; j<=m; j++){
+            cin>>x;
+            s.insert(x);
+        }
+    }
+
+    cout<<s.size()<<endl;
+
+
+    return 0;
+}

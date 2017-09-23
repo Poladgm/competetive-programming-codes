@@ -1,0 +1,23 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+ int a[10001],i,say=0;
+ for(i=1; i<=32000; i++)
+ cin>>a[i];
+
+ for(i=1; i<=32000; i++)
+ {
+      if(a[i]!=0)
+      say++;
+      else
+      break;
+  }
+
+  cout<<say<<endl;
+
+  return EXIT_SUCCESS;
+}

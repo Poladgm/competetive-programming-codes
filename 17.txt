@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+int h,i;
+double p=1;
+int main(int argc, char *argv[])
+{
+scanf("%d",&h);
+for (i=0;i<h-1;i++){
+    p=2*p;
+}
+
+printf("%.0lf\n",3*p);
+
+
+return 0;
+}

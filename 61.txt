@@ -1,0 +1,43 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+double mes (long long a , long long b , long long c , long long d){
+   return sqrt((a-c)*(a-c) + (b-d)*(b-d));
+}
+
+long long x,y;
+double mesafe;
+long long a,b,c,d;
+unsigned long long deq;
+unsigned long long saat;
+unsigned long long san;
+
+int main()
+{
+   cin>>x>>y;
+   while(cin>>a>>b>>c>>d){
+       mesafe = mesafe +  mes(a,b,c,d);
+   }
+
+   deq = (unsigned long long)mesafe * 3 / 500;
+
+   saat = deq / 60;
+   deq = deq - saat * 60;
+   san = mesafe * 72 / 200;
+
+   if(san%60>=30){
+       deq++;
+   }
+
+   if(deq>=60){
+       saat++;
+       deq-=60;
+   }
+   
+   
+   cout << saat << ":" << deq << endl;
+
+
+   return 0;
+}

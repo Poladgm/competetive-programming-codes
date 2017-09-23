@@ -1,0 +1,55 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   long long i,j,z,l,n,a[100001],max,min,eded1,eded2,qutbeenuzaq,qutbemesafe;
+   scanf("%lld",&z);
+   for(i=1; i<=z; i++)
+   {
+       scanf("%lld%lld",&l,&n);
+       for(j=1; j<=n; j++)
+       scanf("%lld",&a[j]);
+       
+       // burda en qisa vaxti tapiram
+       
+       qutbeenuzaq=a[1];
+       
+       for(j=1; j<=n; j++)
+       {
+           if(a[j]<=l/2)
+           qutbemesafe=a[j];
+           else
+           qutbemesafe=l-a[j];
+           
+           if(qutbemesafe>qutbeenuzaq)
+           qutbeenuzaq=qutbemesafe;
+       }
+       
+       printf("%lld ",qutbeenuzaq);
+       
+       // burdan sonra en uzun vaxti tapiram
+       
+       max=a[1];
+       for(j=2; j<=n; j++)
+       if(a[j]>max)
+       max=a[j];
+       
+       min=a[1];
+       for(j=2; j<=n; j++)
+       if(a[j]<min)
+       min=a[j];
+       
+       eded1=l-min;
+       eded2=max;
+       
+       if(eded1>=eded2)
+       printf("%lld\n",eded1);
+       else
+       printf("%lld\n",eded2);
+   }
+  
+   return EXIT_SUCCESS;
+}

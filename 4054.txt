@@ -1,0 +1,33 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int a=2,b=4,c=7,p,n;
+
+int main(int argc, char *argv[])
+{
+   cin>>n;
+   for(int i=4; i<=n; i++){
+       p=a+b+c;
+       a=b;
+       b=c;
+       c=p;
+   }
+   
+   if(n==1){
+       cout<<a<<endl;
+   }
+   else if(n==2){
+       cout<<b<<endl;
+   }
+   else if(n==3){
+       cout<<c<<endl;
+   }
+   else{
+       cout<<p<<endl;
+   }
+       
+   
+   return EXIT_SUCCESS;
+}

@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(int argc, char *argv[]) {
+
+int k=0,x,y,h,r;
+scanf("%d",&r);
+for(x=1;x<=r;x++)
+{for(y=1;y<=r;y++)
+if(x*x+y*y<=r*r)
+k++;
+
+}
+printf("%d\n",4*k);
+return 0;
+}

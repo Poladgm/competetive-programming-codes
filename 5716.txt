@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+using namespace std;
+
+long long cem;
+long i,n;
+
+int main()
+{
+    scanf("%ld",&n);
+
+    for(i=1; i<=n; i++)
+        cem=cem+(3*i-1);
+
+    printf("%lld\n",cem);
+
+
+
+
+
+    return 0;
+}

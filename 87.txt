@@ -1,0 +1,45 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int i,j=10000,n,a[20010],say=0;
+string x;
+
+int main()
+{
+    cin>>x;
+
+    for(i=0; i<x.size(); i++)
+    {
+        if(x[i]=='R')
+        {
+            j++;
+            a[j]=1;
+        }
+        else if(x[i]=='L')
+        {
+            j--;
+            a[j]=1;
+        }
+    }
+
+    j=10000;
+
+    for(i=9999; i>=1; i--)
+        if(a[i]==1)
+            say++;
+        else
+            break;
+
+    for(i=10001; i<=20000; i++)
+        if(a[i]==1)
+            say++;
+        else
+            break;
+
+    cout<<say+1<<endl;
+
+
+    return 0;
+}

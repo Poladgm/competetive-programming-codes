@@ -1,0 +1,36 @@
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class Main {
+	
+	public static void main(String [] args){
+		
+		Scanner in = new Scanner (System.in);
+		
+		BigInteger n = new BigInteger("0");
+		BigInteger m = new BigInteger("0");
+		BigInteger eded = new BigInteger("10");
+		BigInteger yadda = new BigInteger("1");;
+		BigInteger [] a = new BigInteger [1000];
+		
+		int t;
+		
+		t=in.nextInt();
+		for(int i=1; i<=t; i++)
+			a[i]=in.nextBigInteger();
+		
+		m=in.nextBigInteger();
+		
+		for(int i=t; i>=1; i--){
+			n=n.add(a[i].multiply(yadda));
+			yadda=yadda.multiply(eded);
+		}
+		
+		if(n.mod(m).equals(BigInteger.ZERO))
+		System.out.println("YES");
+		else
+		System.out.println("NO");
+		
+	}
+
+}

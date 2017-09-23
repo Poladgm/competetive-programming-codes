@@ -1,0 +1,20 @@
+#include <iostream>
+
+using namespace std;
+
+int i,t,n;
+
+int main()
+{
+    cin>>t;
+    for(i=1; i<=t; i++)
+    {
+        cin>>n;
+        n=(n+1)/2;
+        cout<<n*n<<endl;
+    }
+
+
+
+    return 0;
+}

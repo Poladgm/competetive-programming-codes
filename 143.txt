@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(int argc, char *argv[])
+{
+double a1,b1,x1,Y1,x2,y2,x3,y3,s1,s2,s3,s;
+scanf("%lf%lf%lf%lf%lf%lf%lf%lf",&a1,&b1,&x1,&Y1,&x2,&y2,&x3,&y3);
+
+s=fabs(x1*y2-x2*Y1+x2*y3-x3*y2+x3*Y1-x1*y3)/2;
+s1=fabs(x1*b1-a1*Y1+a1*y2-b1*x2+x2*Y1-x1*y2)/2;
+s2=fabs(a1*y2-x2*b1+x2*y3-x3*y2+x3*b1-a1*y3)/2;
+s3=fabs(x1*b1-a1*Y1+a1*y3-x3*b1+x3*Y1-y3*x1)/2;
+
+if(s==s1+s2+s3)
+printf("1\n");
+else
+printf("0\n");
+
+
+return 0;
+}

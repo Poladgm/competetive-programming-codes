@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int n,m,i,j,x,y,a[10001][10001],used[10001];
+
+void dfs(int p)
+{
+    used[p]=1;
+
+    for(int i=1; i<=n; i++)
+        if(a[p][i]==1 && used[i]==0)
+            dfs(i);
+}
+
+int main()
+{
+    scanf("%d%d",&n,&m);
+    for(i=1; i<=m; i++)
+    {
+        scanf("%d%d",&x,&y);
+        a[x][y]=1;
+        a[y][x]=1;
+    }
+
+    dfs(1);
+
+    for(int i=1; i<=n; i++)
+    if(used[i]==0)
+    {
+        printf("NO\n");
+        return 0;
+    }
+
+    printf("YES\n");
+
+    return 0;
+}

@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cmath>
+#define pi acos(-1)
+
+using namespace std;
+
+int main()
+ {  
+    double x, y, d;
+    cin>>x>>y;
+    
+    d = atan2(y,x);
+    
+    cout.setf(ios::fixed);
+    cout.precision(6);
+
+    if(d < 0)
+    cout<<d + 2*pi<<endl;
+    
+    else
+    cout<<d<<endl;
+    
+    return 0;
+ }

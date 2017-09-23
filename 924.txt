@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(int argc, char *argv[])
+{
+ float pi,S,R,r;
+ scanf("%f %f",&S,&R);
+
+ pi=3.1415926;
+ r=sqrt((pi*R*R-S)/pi);
+
+ printf("%.2f\n",r);
+
+
+ return 0;
+}

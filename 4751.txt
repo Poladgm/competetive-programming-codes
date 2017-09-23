@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+long long i,j,n,a[1000][1000],cem1=0,cem2=0;
+
+int main(int argc, char *argv[])
+{
+   scanf("%lld",&n);
+   for(i=1; i<=n; i++)
+   for(j=1; j<=n; j++)
+   scanf("%lld",&a[i][j]);
+
+   for(i=1; i<=n; i++)
+   for(j=1; j<=n; j++)
+   {
+       if(i==j)
+       cem1=cem1+a[i][j];
+
+       if(i+j==n+1)
+       cem2=cem2+a[i][j];
+   }
+
+   printf("%lld %lld\n",cem1,cem2);
+
+
+ return 0;
+}

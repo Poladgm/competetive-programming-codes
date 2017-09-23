@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <cmath>
+
+using namespace std;
+double n,p,a;
+int main(int argc, char *argv[])
+{
+    scanf("%lf%lf",&n,&p);
+    a=pow(p,(1/n));
+    printf("%.0lf\n",a);
+
+   return 0;
+}

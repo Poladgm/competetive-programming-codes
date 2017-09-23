@@ -1,0 +1,47 @@
+#include <iostream>
+#include <stdio.h>
+#include <algorithm>
+
+using namespace std;
+
+int n,a[1002],b[1002],c[1002],d[1002],say,temp;
+
+struct zaman {
+   int start;
+   int finish;
+}qebul[1002];
+
+bool cmp (zaman x, zaman y){
+   if(x.finish == y.finish){
+       return x.start < y.start;
+   }
+
+   return x.finish < y.finish;
+}
+
+int main()
+{
+   cin>>n;
+   for(int i=0; i<n; i++){
+       scanf("%d:%d %d:%d",&a[i],&b[i],&c[i],&d[i]);
+       qebul[i].start = a[i]*60 + b[i];
+       qebul[i].finish = c[i]*60 + d[i];
+       //cout<<start[i]<<" "<<finish[i]<<endl;
+   }
+
+   sort(qebul , qebul+n , cmp);
+
+   say=1;
+   temp = qebul[0].finish;
+   for(int i=1; i<n; i++){
+       if(qebul[i].start >= temp){
+           say++;
+           temp = qebul[i].finish;
+       }
+   }
+
+   cout<<say<<endl;
+
+
+   return 0;
+}

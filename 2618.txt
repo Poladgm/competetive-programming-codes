@@ -1,0 +1,47 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+char a[1000000];
+long long i,n,m,yadda=0,flag=0;
+
+int main(int argc, char *argv[])
+{
+   gets(a);
+   n=strlen(a);
+   m=a[0];
+
+   if((a[n-1]-48)<9)
+   a[n-1]=a[n-1]+1;
+   else
+   {
+      a[n-1]='0';
+      yadda=1;
+   }
+
+   if(yadda==1)
+   {
+       for(i=n-2; i>=0; i--)
+       {
+           if(i==0 && a[0]=='9')
+           flag=1;
+           if(a[i]=='9')
+           a[i]='0';
+           else
+           {
+               a[i]=a[i]+1;
+               break;
+           }
+       }
+   }
+
+   if(n==1 && m==57)   // 57 is a code of 9
+   cout<<"10"<<endl;
+   else if(flag==1)
+   cout<<"1"<<a<<endl;
+   else
+   cout<<a<<endl;
+
+   return EXIT_SUCCESS;
+}

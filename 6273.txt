@@ -1,0 +1,17 @@
+#include <cstdlib>
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long long a,b,c;
+    cin>>a>>b>>c;
+
+    cout<<(int)sqrt(a*a+b*b+c*c)<<endl;
+
+
+    system("pause");
+    return EXIT_SUCCESS;
+}

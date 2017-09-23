@@ -1,0 +1,66 @@
+#include <iostream>
+#include <stdlib.h>
+#include <iomanip>
+#include <string.h>
+#include <math.h>
+using namespace std;
+//polindrom________
+bool polindrom(string s)
+{
+   bool p; long long j=s.length()-1;
+   for(long long i=0;i<=s.length()-1;i++)
+   {
+       if(s[i]==s[j])p=true;
+       else
+       {
+           p=false; break;
+       }
+       j--;
+   }
+   
+   
+   return p;
+}
+// convert
+string inttostr(long long number)
+{
+   if (number == 0)
+       return "0";
+   string temp="";
+   string returnvalue="";
+   while (number>0)
+   {
+       temp+=number%10+48;
+       number/=10;
+   }
+   for (int i=0;i<temp.length();i++)
+       returnvalue+=temp[temp.length()-i-1];
+   return returnvalue;
+}
+long long ters(long long  n)
+{
+   string a="",s;
+   s=inttostr(n);
+   for(long long i=s.length()-1;i>=0;i--)
+   {
+       a+=s[i];
+   }
+   
+   return atoll(a.c_str());
+}
+// esas program
+int main()
+{
+   long long n,t=0;
+   cin>>n;
+   while(!polindrom(inttostr(n)))
+   {
+       t++;
+       n+=ters(n);
+       
+   }
+   cout<<t<<endl;
+   
+   
+   return 0;
+}

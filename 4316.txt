@@ -1,0 +1,74 @@
+package pkg4316;
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class Main {
+    public static BigInteger i,a,b,iki,limit;
+    public static int eded,kok,flag;
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        i = new BigInteger("0");
+        iki = new BigInteger("2");
+        limit = new BigInteger("1000000001");
+        a = in.nextBigInteger();
+        
+        while(i.compareTo(a) != 0){
+            b = in.nextBigInteger();
+            
+            if(b.compareTo(limit) <= 0){
+                if(b.compareTo(iki) == 0){
+                    System.out.println("YES");
+                }
+                else if(b.compareTo(BigInteger.ONE) == 0 || b.mod(iki).compareTo(BigInteger.ZERO) == 0){
+                    System.out.println("NO");
+                }
+                else{
+                    eded = b.intValue();
+                    kok = (int) Math.sqrt(eded);
+                    flag = 0;
+                    
+                    for(int k=3; k<=kok; k+=2){
+                        if(eded%k == 0){
+                            flag = 1;
+                            break;
+                        }
+                    }
+                    
+                    if(flag == 1){
+                        System.out.println("NO");
+                    }
+                    else{
+                        System.out.println("YES");
+                    }
+                }
+            }
+            else{
+                if(MillerRabin(b,BigInteger.ONE,BigInteger.ONE)==true||MillerRabin(b,BigInteger.ONE,iki)==true){
+                    System.out.println("YES");
+                }
+                else{
+                    System.out.println("NO");
+                }
+            }
+
+            i = i.add(BigInteger.ONE);
+        }
+    }
+    private static boolean MillerRabin(BigInteger n, BigInteger s, BigInteger u) {
+        if(n.subtract(BigInteger.ONE).compareTo(BigInteger.ONE) == 0){
+            return true;
+        }
+        
+        BigInteger m = n.subtract(u);
+     
+        if((s.modPow(m, n)).compareTo(u) != 0)
+            return false;
+        
+        s = s.add(u);
+        
+        if((s.modPow(m, n)).compareTo(u) != 0)
+            return false;
+        
+        return true;   
+   }
+}

@@ -1,0 +1,22 @@
+#include <cstdlib>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long a[100001],i,n;
+    scanf("%ld",&n);
+    for(i=1; i<=n; i++)
+    scanf("%ld",&a[i]);
+
+    sort(a,a+1+n);
+
+    for(i=1; i<n; i++)
+    printf("%ld ",a[i]);
+    printf("%ld\n",a[n]);
+
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

@@ -1,0 +1,23 @@
+#include <cstdlib>
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    double x,y,x1,y1,x2,y2,d,d1,d2;
+    cin>>x>>y>>x1>>y1>>x2>>y2;
+
+    d=sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+    d1=sqrt((x-x1)*(x-x1)+(y-y1)*(y-y1));
+    d2=sqrt((x2-x)*(x2-x)+(y2-y)*(y2-y));
+
+    if(d1+d2>d && d1!=d2+d )
+    cout<<"NO"<<endl;
+    else
+    cout<<"YES"<<endl;
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

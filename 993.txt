@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+int i,j,n,m,a[101][101],x,y,say;
+
+int main()
+{
+    cin>>n>>m;
+    for(i=1; i<=m; i++)
+    {
+        cin>>x>>y;
+        a[x][y]=1;
+        a[y][x]=1;
+    }
+
+    for(i=1; i<=n; i++)
+    {
+        say=0;
+
+        for(j=1; j<=n; j++)
+            if(a[i][j]==1)
+                say++;
+
+        if(i!=n)
+            cout<<say<<" ";
+        else
+            cout<<say<<endl;
+
+    }
+
+    return 0;
+}

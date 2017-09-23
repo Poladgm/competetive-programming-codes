@@ -1,0 +1,21 @@
+#include <iostream.h>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   
+   double t1,t2,t3,A;
+   
+   cin>>t1;
+   cin>>t2;
+   cin>>t3;
+   
+   A=1/((1/t1)+(1/t2)+(1/t3));
+   
+   cout.setf(ios::fixed);
+   cout.precision(2);
+   cout<<A<<endl;
+
+   return 0;
+}

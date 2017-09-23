@@ -1,0 +1,24 @@
+#include <cstdlib>
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+     unsigned long long n,i,a,cem=0;
+     scanf("%llu%llu",&n,&a);
+
+     if(a==1)
+     printf("%llu\n",n*(n+1)/2);
+     else
+     {
+            for(i=1; i<=n; i++)
+            cem=cem+i*pow(a,i);
+    
+            printf("%llu\n",cem);
+     }
+  
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

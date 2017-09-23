@@ -1,0 +1,29 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    char a[15];
+    long i,j,n,flag=0;
+    gets(a);
+    n=strlen(a);
+
+    for(i=0, j=n-1; i<n/2, j>=n/2; i++, j--)
+    if(a[i]==a[j])
+    continue;
+    else
+    {
+        flag=1;
+        break;
+    }
+
+    if(flag==0)
+    cout<<"Yes"<<endl;
+    else
+    cout<<"No"<<endl;
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

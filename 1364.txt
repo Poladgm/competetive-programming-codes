@@ -1,0 +1,39 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   unsigned long long i,j,n,a[101][101],cem[101],flag=0;
+   scanf("%llu",&n);
+   for(i=1; i<=n; i++)
+   for(j=1; j<=n; j++)
+   scanf("%llu",&a[i][j]);
+   
+   for(i=1; i<=n; i++)
+   for(j=1; j<=n; j++)
+   cem[i]=cem[i]+a[i][j];
+   
+   for(j=1; j<=n; j++)
+   for(i=1; i<=n; i++)
+   cem[j+n]=cem[j+n]+a[i][j];
+   
+   for(i=1; i<=n; i++)
+   cem[1+2*n]=cem[1+2*n]+a[i][i];
+   
+   for(i=1, j=n; i<=n, j>=1; i++, j--)
+   cem[2+2*n]=cem[2+2*n]+a[i][j];
+   
+   for(i=2; i<=2*n+2; i++)
+   if(cem[1]!=cem[i])
+   flag++;
+       
+   if(flag!=0)
+   printf("-1\n");
+   else
+   printf("%llu\n",cem[1]);
+   
+
+   return EXIT_SUCCESS;
+}

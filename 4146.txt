@@ -1,0 +1,31 @@
+#include <iostream>
+#include <set>
+
+using namespace std;
+
+set < long long > s;
+string a;
+long long n;
+
+int main()
+{
+   while(cin>>a>>n){
+       if(a.compare("insert") == 0){
+           s.insert(n);
+       }
+       else if(a.compare("exists") == 0){
+           if( s.find(n) != s.end() ){
+               cout<<"true"<<endl;
+           }
+           else{
+               cout<<"false"<<endl;
+           }
+       }
+       else{
+           s.erase (n);
+       }
+   }
+
+
+   return 0;
+}

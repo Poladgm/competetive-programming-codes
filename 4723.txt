@@ -1,0 +1,20 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+  int a,say=0;
+  while(cin>>a)
+  {
+      if(a==0)
+      say++;
+      else
+      continue;
+  }
+
+  cout<<say<<endl;
+
+  return EXIT_SUCCESS;
+}

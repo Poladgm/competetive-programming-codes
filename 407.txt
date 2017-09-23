@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+int m,i,k;
+int main(int argc, char *argv[])
+{
+  scanf("%d",&m);    // m==> testlerin sayi
+  for(i=1;i<=m;i++)
+  {
+scanf("%d", &k);     // k ==> gunlerin sayi
+
+if( k%3==1 )
+printf( "VGC\n");
+else if(k%3==2)
+printf( "CVG\n");
+else if(k%3==0)
+printf( "GCV\n");
+  }
+
+
+return 0;
+}

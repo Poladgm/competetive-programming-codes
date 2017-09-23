@@ -1,0 +1,50 @@
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int a[101][101],b[101][101],i,j,k,h,n,m,minn,yol;
+
+int main()
+{
+    cin>>n>>m;
+
+    for(i=1; i<=n; i++)
+        for(j=1; j<=m; j++)
+            cin>>a[i][j];
+
+    for(i=1; i<=n; i++)
+    {
+        for(j=1; j<=m; j++)
+        {
+            if(a[i][j]==1)
+                b[i][j]=0;
+            else
+            {
+                minn=10000;
+
+                for(k=1; k<=n; k++)
+                    for(h=1; h<=m; h++)
+                        if(a[k][h]==1)
+                        {
+                            yol=(abs)(i-k)+(abs)(j-h);
+
+                            if(yol<minn)
+                                minn=yol;
+                        }
+
+                b[i][j]=minn;
+            }
+        }
+    }
+
+
+    for(i=1; i<=n; i++)
+    {
+        for(j=1; j<m; j++)
+            cout<<b[i][j]<<" ";
+            cout<<b[i][m]<<endl;
+    }
+
+    return 0;
+}

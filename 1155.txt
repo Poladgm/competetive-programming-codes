@@ -1,0 +1,26 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+int a, b, x, y, d;
+void gcdext(int a, int b, int*d, int *x, int *y)
+{
+   int s;
+   if( b == 0 )
+       {
+           *d = a; *x = 1; *y = 0;
+               return;
+           }
+    gcdext(b, a%b, d, x, y);
+       s = *y;
+       *y = *x - (a/b)*(*y);
+       *x = s;       
+   }
+int main(int argc, char *argv[])
+{
+   while(cin>>a>>b){
+       gcdext(a, b, &d, &x, &y);
+       cout<<x<<" "<<y<<" "<<d<<endl;
+       }
+   return EXIT_SUCCESS;
+}

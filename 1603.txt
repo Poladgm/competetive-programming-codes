@@ -1,0 +1,24 @@
+#include <cstdlib>
+#include <iostream>
+#include <string.h>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   char a[15];
+   int i,n,cem=0;
+   cin>>a;
+   n=strlen(a);
+
+   if(a[0]=='-')
+   a[0]='0';
+
+   for(i=0; i<n; i++)
+   cem=cem+a[i]-48;
+
+   cout<<cem<<endl;
+
+ 
+   return EXIT_SUCCESS;
+}

@@ -1,0 +1,24 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+  long int m,n,k;
+  while(cin>>m>>n){
+  if(m==0)
+  cout<<n+1<<endl;
+  else
+  if(m==1)
+  cout<<n+2<<endl;
+  else
+  if(m==2)
+  cout<<2*(n+3)-3<<endl;
+  else
+  if(m==3)
+  {    
+  k=pow(2,n+3)-3;
+  cout<<k<<endl;
+  }
+  }
+return 0;}

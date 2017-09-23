@@ -1,0 +1,43 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    int n,k,i,novbe=0,etap=0,a[501];
+    cin>>n>>k;
+
+    for(i=1; i<=n; i++)
+    a[i]=i;
+
+    do
+    {
+        for(i=1; i<=n; i++)
+        {
+            if(a[i]!=0)
+            novbe++;
+
+            if(novbe==k)
+            {
+                a[i]=0;
+                novbe=0;
+                etap++;
+            }
+        }
+    }
+    while(etap!=n-1);
+
+
+    for(i=1; i<=n; i++)
+    if(a[i]!=0)
+    {
+        cout<<a[i]<<endl;
+        break;
+    }
+
+
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

@@ -1,0 +1,24 @@
+#include <cstdlib>
+#include <iostream>
+using namespace std;
+int n1, n2, n3, a, b, c, d, e, f, g, h, k;
+char c1, c2;
+int main(int argc, char *argv[])
+{
+ cin>>n1>>c1>>n2>>c2>>n3;
+ a = n3 / 1000;
+ b = (n3 / 100) % 10;
+ c = (n3 / 10) % 10;
+ d = n3 % 10;
+ e = n2 % 10;
+ f = n2 / 10;
+ g = n1 % 10;
+ h = n1 / 10;
+ k = e*1000 + f*100 + g*10 + h; 
+ if( (d == 3 && c > 1) || ( d > 3 ) || ( b == 2 && a > 1 ) || ( b > 2 ) || (d == 3 && c <= 1 && b == 0 && a == 2) || (d == 2 && c == 9 && b == 0 && a == 2 && k % 4 == 1) || (d == 3 && c == 1 && b == 0 && a == 4) ||  (d == 3 && c == 1 && b == 0 && a == 6) || (d == 3 && c == 1 && b == 0 && a == 9) || (d == 3 && c == 1 && b == 1 && a == 1) )
+ cout<<"NO"<<endl;
+ else
+ cout<<"YES"<<endl;
+
+  return EXIT_SUCCESS;
+}

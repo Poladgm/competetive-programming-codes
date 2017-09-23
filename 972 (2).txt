@@ -1,0 +1,79 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+class ttime
+   {
+   public:
+       int h,m,s;
+   };
+
+class tsort
+   {
+   ttime a[100],c;
+   int n,i,j;
+   void input();
+   void output();
+   void sort();
+   public:
+       void start();
+   };
+
+void tsort :: input()
+{
+   cin>>n;
+   for(i=0; i<n; i++)
+   cin>>a[i].h>>a[i].m>>a[i].s;
+}
+
+void tsort :: sort()
+{
+   for(j=0; j<n-1; j++)
+   for(i=0; i<n-1; i++)
+   if(a[i+1].h<a[i].h)
+   {
+       c=a[i];
+       a[i]=a[i+1];
+       a[i+1]=c;
+   }
+   else if(a[i].h==a[i+1].h)
+   {
+       if(a[i+1].m<a[i].m)
+       {
+           c=a[i];
+           a[i]=a[i+1];
+           a[i+1]=c;
+       }
+       else if(a[i+1].m==a[i].m)
+       {
+           if(a[i+1].s<a[i].s)
+           {
+               c=a[i];
+               a[i]=a[i+1];
+               a[i+1]=c;
+           }
+       }
+   }
+}
+void tsort :: output()
+{
+   for(i=0; i<n; i++)
+   cout<<a[i].h<<" "<<a[i].m<<" "<<a[i].s<<endl;
+}
+
+void tsort :: start()
+{
+   input();
+   sort();
+   output();
+}
+
+int main(int argc, char *argv[])
+{
+   tsort t;
+   t.start();
+
+
+       return EXIT_SUCCESS;
+}

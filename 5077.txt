@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+using namespace std;
+
+int i,j,k=1,n,m,x,y,a[101][101],cem;
+
+int main()
+{
+    scanf("%d%d",&n,&m);
+    for(i=1; i<=m; i++)
+    {
+        scanf("%d%d",&x,&y);
+        a[x][y]++;
+    }
+
+    for(i=1; i<=n; i++)
+        for(j=1; j<=n; j++)
+            if(i!=j && a[i][j]==0 && a[j][i]==0)
+            {
+                printf("NO\n");
+                return 0;
+            }
+
+    printf("YES\n");
+
+   return 0;
+}

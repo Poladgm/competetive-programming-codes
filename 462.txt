@@ -1,0 +1,34 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+long long a[101],b[1000001],i,j,n,m,say;
+
+int main(int argc, char *argv[])
+{
+    cin>>n;
+    for(i=1; i<=n; i++)
+    cin>>a[i];
+    cin>>m;
+    for(i=1; i<=m; i++)
+    cin>>b[i];
+    
+    for(i=1; i<=n; i++)
+    {
+        say=0;
+        
+        for(j=1; j<=m; j++)
+        if(b[j]==i)
+        say++;
+        
+        if(say>a[i])
+        cout<<"yes"<<endl;
+        else
+        cout<<"no"<<endl;
+    }
+    
+    
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#define pi acos(-1)
+
+int main(int argc, char *argv[])
+{
+ double A1,A2,A,h,h1,R,r;
+ scanf("%lf %lf %lf",&R,&r,&h);
+
+ if(R!=r)
+ {
+   h1=r*h/(R-r);
+   A1=pi*r*sqrt(r*r+h1*h1);
+   A2=pi*R*sqrt(R*R+(h1+h)*(h1+h));
+   A=A2-A1+pi*R*R+pi*r*r;
+   printf("%.2lf\n",A);
+ }
+
+ else
+ {
+   A=2*pi*r*h1+2*pi*r*r;
+   printf("%.2lf\n",A);
+ }
+
+
+ return 0;
+}

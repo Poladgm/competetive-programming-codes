@@ -1,0 +1,20 @@
+#include <cstdlib>
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   double a,b,c,d,sahe;
+   long netice;
+   cin>>a>>b>>c>>d;
+   
+   sahe=a*b+c*d;
+   
+   netice=(long)(sqrt(sahe));
+   
+   cout<<netice<<endl;  
+
+   return EXIT_SUCCESS;
+}

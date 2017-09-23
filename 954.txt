@@ -1,0 +1,23 @@
+#include <cstdlib>
+#include <iostream> 
+#include <cmath>
+
+using namespace std;
+
+double a,b,h,h1;
+
+int main(int argc, char *argv[])
+
+{ 
+
+cin>>a>>b>>h;
+
+h1=sqrt((fabs(a-b)/2)*(fabs(a-b)/2)+h*h); 
+
+printf("%.2lf",(a+b)*2*h1); 
+
+cout<<endl; 
+
+return EXIT_SUCCESS;
+
+}

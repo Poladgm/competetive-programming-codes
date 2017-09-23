@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Main {
+
+   /**
+    * @param args the command line arguments
+    */
+   public static int rema(String str, int divider) {
+
+       int eded = 0;
+       int len = str.length();
+       for (int i = 0; i < len; i++) {
+
+           eded = (eded * 10) + (str.charAt(i) - 48);
+           eded %= divider;
+
+       }
+
+       return eded;
+   }
+
+   public static void main(String[] args) {
+
+       Scanner input = new Scanner(System.in);
+
+       int num = input.nextInt();
+       int divider = input.nextInt();
+       String str = String.valueOf(num);
+       while (true) {
+
+           if (rema(str, divider) == 0) {
+               System.out.println(num);
+               break;
+           }
+
+           num++;
+           str = str.concat(String.valueOf(num));
+       }
+
+   }
+
+}

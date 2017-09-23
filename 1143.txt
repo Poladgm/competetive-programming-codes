@@ -1,0 +1,31 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long long a,b,;
+    double c;
+    cin>>a>>b;
+
+    if(abs(a)==2147483648 && b==-1)
+    {
+        cout<<"ERROR"<<endl;
+        return 0;
+    }
+
+    if(b==0)
+    cout<<"ERROR"<<endl;
+    else
+    {
+        c=a/b;
+        cout.setf(ios::fixed);
+        cout.precision(0);
+        cout<<c<<endl;
+    }
+
+
+    system("pause");
+    return EXIT_SUCCESS;
+}

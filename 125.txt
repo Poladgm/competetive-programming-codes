@@ -1,0 +1,52 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+class saatdeqsaniye
+{
+   public:
+   int h,m,s;
+};
+
+class zaman
+{
+   saatdeqsaniye evvel,son;
+   void input();
+   void output();
+   public:
+       void start();
+};
+
+void zaman :: input()
+{
+   cin>>evvel.h>>evvel.m>>evvel.s;
+   cin>>son.h>>son.m>>son.s;
+}
+
+void zaman :: output()
+{
+   if (evvel.h<=son.h && evvel.m<=son.m && evvel.s<=son.s)
+   cout<<(son.h-evvel.h)<<" "<<(son.m-evvel.m)<<" "<<(son.s-evvel.s)<<endl;
+   else if(evvel.h<son.h && evvel.m>son.m && evvel.s<son.s)
+   cout<<(son.h-1-evvel.h)<<" "<<(son.m+60-evvel.m)<<" "<<(son.s-evvel.s)<<endl;
+   else if(evvel.h<son.h && evvel.m>son.m && evvel.s>son.s)
+   cout<<(son.h-1-evvel.h)<<" "<<(son.m-1+60-evvel.m)<<" "<<(son.s+60-evvel.s)<<endl;
+   else if(evvel.h<=son.h && evvel.m<son.m && evvel.s>son.s)
+   cout<<(son.h-evvel.h)<<" "<<(son.m-1-evvel.m)<<" "<<(son.s+60-evvel.s)<<endl;
+}
+
+void zaman :: start()
+{
+   input();
+   output();
+}
+
+int main(int argc, char *argv[])
+{
+   zaman t;
+   t.start();
+   
+
+   return EXIT_SUCCESS;
+}

@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+unsigned long long cem=0,n,i;
+
+int main(int argc, char *argv[])
+{
+   scanf("%llu",&n);
+
+   for(i=1; i<=n; i++)
+   cem=cem+i*i;
+
+   printf("%llu\n",cem);
+
+ return 0;
+}

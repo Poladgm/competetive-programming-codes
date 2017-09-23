@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int a[501][501];
+int n, k;
+int main()
+{
+
+
+   cin>>n>>k;
+
+
+
+       for(int i = 0 ; i <= n ; i ++)
+           for(int j = 0 ; j <= i ; j ++)
+       {
+           if(i == 0 || j == 0)
+               a[i][j] = 1;
+           else
+           a[i][j] = a[i - 1][j - 1] + a[i - 1][j], a[i][j] %= 9929;
+       }
+
+
+           cout<<a[n][k]<<endl;
+
+
+   return 0;
+}

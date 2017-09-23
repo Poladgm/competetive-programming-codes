@@ -1,0 +1,34 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+double sum(double a, double b)
+{
+   double c;
+   c=a+b;
+   return c;
+}
+double product(double a, double b)
+{
+   double d;
+   d=a*b;
+   return d;
+}
+
+int main(int argc, char *argv[])
+{
+int n,i;
+double a,b;
+cin>>n;
+for(i=1; i<=n; i++)
+{
+   cin>>a>>b;
+   cout.setf(ios::fixed);
+   cout.precision(4);
+   cout<<sum(a,b)<<" ";
+   cout<<product(a,b)<<endl;
+}
+
+   return EXIT_SUCCESS;
+}

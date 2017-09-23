@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+   int n,say=0;
+   while(scanf("%d",&n)!=EOF)
+   {
+       if(n==0)
+       break;
+       
+       say=1; 
+       
+       while(n%2==0)
+       {
+           say=say*2;
+           n=n/2;
+       }
+       
+       printf("%d\n",say);
+   }
+
+   return EXIT_SUCCESS;
+}

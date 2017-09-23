@@ -1,0 +1,32 @@
+#include <cstdlib>
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long long i,j,n;
+    double a[100001],b[100001],cem1=0,cem2=0,sahe;
+    scanf("%lld",&n);
+    for(i=1; i<=n; i++)
+    scanf("%lf%lf",&a[i],&b[i]);
+
+    for(i=1; i<=n-1; i++)
+    {
+        cem1=cem1+a[i]*b[i+1];
+        cem2=cem2+b[i]*a[i+1];
+    }
+
+    cem1=cem1+a[n]*b[1];
+    cem2=cem2+b[n]*a[1];
+
+    sahe=fabs(cem1-cem2)/2;
+
+    printf("%.1lf\n",sahe);
+
+
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

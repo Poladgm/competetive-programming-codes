@@ -1,0 +1,21 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   unsigned long long a[40],i,n;
+   cin>>n;
+
+   a[0]=1;
+   a[1]=1;
+
+   for(i=2; i<=n; i++)
+   a[i]=a[i-1]+a[i-2];
+
+   cout<<a[n-1]<<endl;
+
+   
+   return EXIT_SUCCESS;
+}

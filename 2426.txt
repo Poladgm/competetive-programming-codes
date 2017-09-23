@@ -1,0 +1,28 @@
+#include <iostream>
+#include <algorithm>
+typedef unsigned long long llu;
+
+using namespace std;
+
+llu a[100005];
+llu i;
+
+int main()
+{
+   while(!cin.eof()){
+       cin>>a[i++];
+   }
+
+   sort(a,a+i);
+
+   llu k=0;
+   for(llu j=0; j<i; j++){
+       if(a[j] <= k+1){
+           k += a[j];
+       }
+   }
+
+   cout<<k+1<<endl;
+
+   return 0;
+}

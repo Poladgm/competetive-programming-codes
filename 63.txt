@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+long long m,n,N;
+scanf("%lld%lld", &n,&m);
+
+N=(n-1)*(m-1)+1;
+
+printf("%lld\n",N);
+
+return 0;
+}

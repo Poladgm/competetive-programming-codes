@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(int argc, char *argv[])
+{
+   char a[255];
+   long long cem=0,i;
+   gets(a);
+   
+   for(i=0; i<strlen(a); i++)
+   cem=cem+((int)a[i]-48);
+   
+   if(cem%3==0)
+   printf("YES\n");
+   else
+   printf("NO\n");
+     
+     
+   
+ return 0;
+}

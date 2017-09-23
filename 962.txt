@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(int argc, char *argv[])
+{
+int a1,a2,b1,b2,c1,c2,d1,d2;
+double AB,BC,CD,DA,max;
+
+scanf("%d%d%d%d%d%d%d%d",&a1,&a2,&b1,&b2,&c1,&c2,&d1,&d2);
+
+AB=sqrt((b1-a1)*(b1-a1)+(b2-a2)*(b2-a2));
+BC=sqrt((c1-b1)*(c1-b1)+(c2-b2)*(c2-b2));
+CD=sqrt((d1-c1)*(d1-c1)+(d2-c2)*(d2-c2));
+DA=sqrt((a1-d1)*(a1-d1)+(a2-d2)*(a2-d2));
+
+max=AB;
+if(BC>max)
+max=BC;
+if(CD>max)
+max=CD;
+if(DA>max)
+max=DA;
+
+printf("%.2lf\n",max);
+
+
+return 0;
+}

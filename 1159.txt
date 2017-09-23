@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+int d,m=1,giris;
+scanf("%d",&giris);
+
+
+while((giris-m*31)%12!=0)    // giris=d*12+m*31
+m++;
+
+d=(giris-m*31)/12;
+
+if( d < 10 && m < 10 )
+ printf("%d%d/%d%d\n",0,d,0,m);
+if( d < 10 && m >= 10 )
+ printf("%d%d/%d\n",0,d,m);
+if( d >= 10 && m < 10 )
+ printf("%d/%d%d\n",d,0,m);
+if( d >= 10 && m >= 10 )
+ printf("%d/%d\n",d,m);
+
+
+ return 0;
+}

@@ -1,0 +1,17 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   int n;
+   cin>>n;
+   if(n%2==1)
+   cout<<"Love"<<endl;
+   else
+   cout<<"Not love"<<endl;
+   
+
+   return EXIT_SUCCESS;
+}

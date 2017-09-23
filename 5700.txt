@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <string.h>
+
+using namespace std;
+
+int i,j,n,a,b,setir;
+char s[2];
+
+int main()
+{
+    while(1)
+    {
+        setir++;
+
+        scanf("%d",&a);
+        scanf("%s",s);
+        scanf("%d",&b);
+
+        if(s[0]=='E')
+            break;
+
+        if(strlen(s)==1)
+        {
+            if(s[0]=='>')
+            {
+                if(a>b)
+                    printf("Case %d: true\n",setir);
+                else
+                    printf("Case %d: false\n",setir);
+
+            }
+            else if(s[0]=='<')
+            {
+                if(a<b)
+                    printf("Case %d: true\n",setir);
+                else
+                    printf("Case %d: false\n",setir);
+            }
+        }
+        else
+        {
+            if(s[0]=='>' && s[1]=='=')
+            {
+                if(a>=b)
+                    printf("Case %d: true\n",setir);
+                else
+                    printf("Case %d: false\n",setir);
+
+            }
+            else if(s[0]=='<' && s[1]=='=')
+            {
+                if(a<=b)
+                    printf("Case %d: true\n",setir);
+                else
+                    printf("Case %d: false\n",setir);
+            }
+            else if(s[0]=='=' && s[1]=='=')
+            {
+                if(a==b)
+                    printf("Case %d: true\n",setir);
+                else
+                    printf("Case %d: false\n",setir);
+            }
+            else if(s[0]=='!' && s[1]=='=')
+            {
+                if(a!=b)
+                    printf("Case %d: true\n",setir);
+                else
+                    printf("Case %d: false\n",setir);
+            }
+        }
+    }
+
+
+
+    return 0;
+}

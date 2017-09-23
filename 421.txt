@@ -1,0 +1,31 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    double l,k;
+    long long say=0;
+    cin>>l>>k;
+
+    if(l==k || l<k)
+    {
+        cout<<"0"<<endl;
+        return 0;
+    }
+
+    while(l>1)
+    {
+        l=l/k;
+        //cout.setf(ios::fixed);
+        //cout.precision(5);
+        //cout<<l<<endl;
+        say++;
+    }
+
+    cout<<say-1<<endl;
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

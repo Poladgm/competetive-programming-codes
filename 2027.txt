@@ -1,0 +1,18 @@
+#include <iostream.h>
+#include <math.h>
+using namespace std;
+
+int main(int argc, char *argv[])
+ {
+    double x,y,r,x0,y0,d;
+    cin>>x>>y>>r>>x0>>y0;
+    d=sqrt((x-x0)*(x-x0)+(y-y0)*(y-y0));
+    if(r>d)
+    cout<<"YES"<<endl;
+    if(r<d)
+    cout<<"NO"<<endl;
+    if(r==d)
+    cout<<"ON BORDER"<<endl;
+   
+    return 0;
+ }

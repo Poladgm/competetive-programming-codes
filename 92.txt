@@ -1,0 +1,38 @@
+#include <cstdlib>
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+long long a[10000],b[10000],i,n,x,y,j,cem,eded;
+
+int main(int argc, char *argv[])
+{
+   cin>>n;
+   for(i=1; i<=n; i++)
+   {
+            cin>>y>>x;
+            for(j=1; j<=x; j++)
+            b[j]=0;
+            
+            for(j=1; j<=x; j++)
+            cin>>b[j];
+            
+            sort(b,b+1+x);
+            
+            cem=0;
+            eded=0;
+            
+            for(j=x; j>=1; j--)
+            if(eded!=y)
+            {
+            cem=cem+b[j];
+            eded++;
+            }
+               
+            cout<<cem<<endl;
+   }
+              
+
+   return EXIT_SUCCESS;
+}

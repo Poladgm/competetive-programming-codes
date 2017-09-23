@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+int main(int argc, char *argv[]) {
+          long long n,k,i=0,m,a[1001];
+              scanf("%lld%lld",&n,&k);
+              if(n==0)
+              printf("1\n");
+              else {
+              
+          m=n;
+              while(m!=0)
+              {
+                  a[i]=m%2;
+                  m=m/2;
+                  
+                  i=i+1;
+              }
+              if(a[k]==0)
+              n=n+pow(2,k);
+              else n=n-pow(2,k);
+              printf("%lld\n",n);
+     
+  }
+return 0;
+}

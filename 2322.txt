@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int main()
+{
+  long long a[101][101],i,j,x,n,flag=0;
+
+  cin>>x>>n;
+  for(i=1; i<=n; i++)
+  for(j=1; j<=n; j++)
+  cin>>a[i][j];
+
+  for(i=1; i<=n; i++)
+   {
+       flag=0;
+       for(j=1; j<=n; j++)
+            if(a[j][i]==x)
+             {
+                cout<<"YES"<<endl;
+                flag=1;
+                break;
+              }
+         if(flag==0)
+         cout<<"NO"<<endl;
+     }
+
+  return 0;
+}

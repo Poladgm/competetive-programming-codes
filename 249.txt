@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <math.h>
+
+using namespace std;
+
+int main()
+{
+    int i,n;
+    long long a[101];
+    scanf("%d",&n);
+    for(i=1; i<n; i++)
+    {
+        scanf("%lld",&a[i]);
+
+        if(sqrt(a[i])*sqrt(a[i])==a[i])
+            printf("1 ");
+        else
+            printf("0 ");
+    }
+
+    scanf("%lld",&a[n]);
+
+    if(sqrt(a[n])*sqrt(a[n])==a[n])
+            printf("1\n");
+        else
+            printf("0\n");
+
+    return 0;
+}

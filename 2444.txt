@@ -1,0 +1,39 @@
+#include <cstdlib>
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+char xs[80];
+int k, n, tests, m, i;
+int main()
+{
+   cin>>tests;
+   while( tests-- ){
+   m = k = 0;  
+   cin>>n;     
+   cin>>xs;
+   for( i = 0; i < strlen(xs)-1; i++ )
+        if( xs[i] < xs[i+1] ){
+            m = 1;
+            break;
+            }
+   if( m == 0 )
+       cout<<n<<" BIGGEST"<<endl;
+   else{
+   do
+   { 
+       k++;
+       if( k == 2 ){
+       cout<<n<<" "; 
+       std::puts(xs);}
+       else if( k > 2 )
+       break;
+        
+   }
+
+   while (std::next_permutation(xs, xs + strlen(xs)));
+}
+}
+   return EXIT_SUCCESS;
+}

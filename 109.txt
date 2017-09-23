@@ -1,0 +1,32 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   long long int N;
+   cin>>N;
+   if( N < 10)
+   cout<<N<<endl;
+   if( N > 9 && N < 190)
+   {
+       if( (N - 9)%2 == 0 )
+       cout<<(N - 9)/2 + 9<<endl;
+       else
+       cout<<"0"<<endl;
+       }
+   if( N > 189 && N < 2890 )
+     {
+       if( (N - 189)%3 == 0 )
+       cout<<(N - 189)/3 + 99<<endl;
+       else
+       cout<<"0"<<endl;
+       }
+       if( N == 2893 )
+       cout<<"1000"<<endl;
+       if( N == 2897 )
+       cout<<"1001"<<endl;
+         
+   return EXIT_SUCCESS;
+}

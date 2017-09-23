@@ -1,0 +1,24 @@
+#include <cstdlib>
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   double a,b,x,y,s1,s2,s3,s4;
+   cin>>a>>b>>x>>y;
+
+   s1=fabs(b*a);
+   s2=fabs((y-b)*a);
+   s3=fabs((y-b)*(x-a));
+   s4=fabs(b*(x-a));
+
+
+   cout.setf(ios::fixed);
+   cout.precision(3);
+   cout<<s1<<" "<<s2<<" "<<s3<<" "<<s4<<endl;
+
+
+   return EXIT_SUCCESS;
+}

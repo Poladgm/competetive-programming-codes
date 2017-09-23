@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+long long n,m,x;
+
+int main(int argc, char *argv[])
+{
+    scanf("%lld",&n);
+
+    if(n>0 && n%2==0)
+    m=(n/2)*(n+1);
+    else if(n>0 && n%2!=0)
+    m=((n+1)/2)*n;
+    else if(n<0 && (-n)%2==0)
+    m=((-n)/2)*((-n)+1)*(-1)+1;
+    else if(n<0 && (-n)%2!=0)
+    m=(((-n)+1)/2)*(-n)*(-1)+1;
+    else
+    m=1;
+
+    printf("%lld\n", m);
+
+    return 0;
+}

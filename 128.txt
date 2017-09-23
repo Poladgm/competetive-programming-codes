@@ -1,0 +1,30 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int i,j,k,l,n,m,x;
+int main(int argc, char *argv[])
+{
+ long int count=0;
+ cin>>x;
+for(i=0;i<=9;i++)
+
+for(j=0;j<=9;j++)
+
+ for(k=0;k<=9;k++)
+
+  for(n=0;n<=9;n++)
+
+    for(m=0;m<=9;m++)
+
+     for(l=0;l<=9;l++)
+
+      if((i+j+k)==(n+m+l)&&(i+j+k)==x)
+       
+        count++; 
+        
+ cout<<count<<endl;     
+ 
+ return 0;
+}

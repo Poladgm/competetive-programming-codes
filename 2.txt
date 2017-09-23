@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+int i=0;
+long long int n;
+
+scanf("%lld",&n);
+if (n<0)
+n=-n;
+if (n==0)
+  i=1;
+  while (n!=0)
+{n=n/10;
+i++;}
+
+printf("%d\n",i);
+
+
+return 0;
+}

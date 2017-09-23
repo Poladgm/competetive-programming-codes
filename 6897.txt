@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string.h>
+#include <algorithm>
+#include <stdio.h>
+
+using namespace std;
+
+int a[102],i,j,say,n;
+
+int main()
+{
+    for(i=1; i<=100; i++){
+        say=1;
+        j=i;
+
+        while(j!=1){
+            if(j%2==0)
+                j/=2;
+            else
+                j=3*j+1;
+
+            say++;
+        }
+
+        a[i]=say;
+    }
+
+    while(scanf("%d",&n)!=EOF){
+        if(n==0)
+            break;
+        else
+            printf("%d\n",a[n]);
+    }
+
+    return 0;
+}

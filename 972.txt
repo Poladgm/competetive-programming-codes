@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+int A[100],B[100],C[100];
+int i,j,N,temp;
+
+scanf("%d",&N);
+for(i=0; i<N; i++)
+{
+scanf("%d",&A[i]);
+scanf("%d",&B[i]);
+scanf("%d",&C[i]);
+}
+
+for(i=0; i<N-1; i++)
+  {
+for(j=0; j<N-1; j++)
+ {
+if (A[j] > A[j+1])
+     {
+     temp=A[j];
+     A[j]=A[j+1];
+     A[j+1]=temp;
+
+     temp=B[j];
+     B[j]=B[j+1];
+     B[j+1]=temp;
+
+     temp=C[j];
+     C[j]=C[j+1];
+     C[j+1]=temp;
+     }
+if (A[j] == A[j+1])
+{
+ if (B[j] > B[j+1])
+     {
+     temp=B[j];
+     B[j]=B[j+1];
+     B[j+1]=temp;
+
+     temp=C[j];
+     C[j]=C[j+1];
+     C[j+1]=temp;
+     }
+}
+if (A[j] == A[j+1] && B[j] == B[j+1])
+{
+  if(C[j] > C[j+1])
+     {
+     temp=C[j];
+     C[j]=C[j+1];
+     C[j+1]=temp;
+      }
+  }
+}
+}
+for (i=0; i<N; i++)
+printf("%d %d %d\n",A[i],B[i],C[i]);
+
+
+
+
+return 0;
+}

@@ -1,0 +1,55 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int A[102][102];
+int main(int argc, char *argv[])
+{
+    int N;
+    cin >> N;
+
+    int i = 1, j = 2 ;
+    int cnt = 1 ;
+
+    int k ;
+
+    for( k = 2 ; k <= 2*N ; k++ )
+    {
+
+        if( k % 2 == 0 )
+        {
+
+             for( i = N ; i >= 1 ; i-- )
+                for( j = 1 ; j<= N ; j++ )
+                    if( i + j == k )
+                        A[i][j] = cnt++;
+
+
+            }
+
+        else
+        {
+
+
+            for( i = 1 ; i <= N ; i++ )
+                for( j = 1 ; j<= N ; j++ )
+                    if( i + j == k )
+                        A[i][j] = cnt++;
+
+            }
+
+
+
+        }
+
+
+    for( i = 1 ; i <= N ; i++ ){
+        for( j = 1 ; j < N ; j++ ){
+            cout << A[i][j]<<" ";
+        }
+            cout << A[i][N]<<endl;
+        }
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

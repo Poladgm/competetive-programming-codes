@@ -1,0 +1,30 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+long i,n,k=1;
+long long a[100001];
+
+int main(int argc, char *argv[])
+{
+   scanf("%d",&n);
+   for(i=1; i<=100; i++)
+   {
+       a[k]=i;
+       a[k+1]=i+1;
+       a[k+2]=i+2;
+       k=k+3;
+   }
+
+   for(i=1; i<=300; i++)
+   if(a[i]==n)
+   {
+       printf("%d\n",i);
+       break;
+   }
+
+
+
+   return EXIT_SUCCESS;
+}

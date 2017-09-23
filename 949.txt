@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+ int n,b,c,d;
+ scanf("%d",&n);
+ b=n%1000/100;
+ c=n%1000%100/10;
+ if (b==0)
+ printf("%d\n",c);
+ else
+ printf("%d%d\n",b,c);
+
+ return 0;
+}

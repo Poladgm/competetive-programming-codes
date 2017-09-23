@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+#include <algorithm>
+
+using namespace std;
+
+int i,n;
+char a[4];
+
+int main()
+{
+    scanf("%s",a);
+    n=strlen(a);
+
+    if(a[0]=='-')
+    {
+        sort(a,a+n);
+
+        printf("-");
+        for(i=n-1; i>=1; i--)
+            printf("%c",a[i]);
+            printf("\n");
+    }
+    else
+    {
+        sort(a,a+n);
+
+        for(i=0; i<n; i++)
+            if(a[i]!='0')
+                break;
+
+        swap(a[0],a[i]);
+
+        printf("%s\n",a);
+    }
+
+    return 0;
+}

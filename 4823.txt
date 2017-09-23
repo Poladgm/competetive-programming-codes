@@ -1,0 +1,56 @@
+#include <cstdlib>
+#include <iostream>
+#include <string.h>
+#include <string>
+#include <ctype.h>
+#include <stdio.h>
+
+using namespace std;
+
+char a[101],b[300];
+int i,j,n;
+
+int main(int argc, char *argv[])
+{
+    gets(a);
+    n=strlen(a);
+
+    for(i=0; i<n; i++){
+        if(a[i]=='-'){
+            if(a[i-1]!=' '){
+                b[j]=' ';
+                j++;
+            }
+
+            b[j]='-';
+            j++;
+
+            if(i!=n-1 && a[i+1]!=' '){
+                b[j]=' ';
+                j++;
+            }
+        }
+        else if(!isalpha(a[i]) && a[i]!=' ')
+        {
+            b[j]=a[i];
+            j++;
+
+            if(a[i+1]!=' ' && i!=n-1){
+                b[j]=' ';
+                j++;
+            }
+        }
+        else{
+            b[j]=a[i];
+            j++;
+        }
+    }
+
+    b[j]='\0';
+
+    cout<<b;
+    cout<<endl;
+
+
+    return EXIT_SUCCESS;
+}

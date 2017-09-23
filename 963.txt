@@ -1,0 +1,15 @@
+#include <cstdlib>
+#include <iostream>
+#include <string.h>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   char a[1000],b[1000];
+   cin>>a>>b;
+   cout<<b<<" "<<a<<endl;
+
+
+   return EXIT_SUCCESS;
+}

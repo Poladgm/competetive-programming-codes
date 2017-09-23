@@ -1,0 +1,109 @@
+#include <iostream>
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <algorithm>
+                          
+using namespace std;
+               
+           
+                      
+int main() {
+              char name[1001],ch,str[1001],favch;
+              int np[101],p=0,yek[101],y=0;
+              int s,i;
+              
+              
+                  
+                  
+                          gets(name);
+                          
+                          gets(str);
+                          
+                  for(i=0;i<strlen(str);i+=2)
+                  np[p++]=(int)str[i];
+         
+         
+   //      for(i=0;i<p;i++)
+   //      cout<<np[i]<<" ";
+   //        putchar('\n');
+         
+         
+         s=0;         
+                  while(ch!='\n')
+              {
+                  
+                  ch=getchar();
+                  
+                      
+                      if(ch==' ' || ch=='\n')
+                  {
+                      yek[y++]=s;
+                      s=0;
+                  }
+                      else s=10*s+(int)ch-48;
+                  
+              }
+                  
+  
+                          cin>>favch;
+                          
+                      //    cout<<favch;
+  
+          //    for(i=0;i<y;i++)
+          //    cout<<yek[i]<<" ";
+          //        putchar('\n');
+      
+      
+              int a[1001],n=0,f=0,bay=0,j;
+              
+                  n=strlen(name);
+              
+              for(i=0;i<strlen(name);i++)
+              a[i+1]=(int)name[i];
+              
+              
+              for(i=1;i<=n;i++)
+          {
+              
+              f=0;
+              bay=0;
+              for(j=0;j<y;j++)
+              if(yek[j]==i-1)
+          {
+              f=1;
+              break;
+                      }
+          
+          
+          
+                  if(f==0)
+              {
+              bay=0;
+              
+                      for(j=0;j<p;j++)
+                  if(a[i]==np[j])
+          {
+              bay=1;
+              break;
+                          }
+
+   
+          
+              }
+              
+              
+                  if(bay==1)
+                  a[i]=(int)favch;
+              
+                  
+          }
+              
+              
+                  for(i=1;i<=n;i++)
+                  cout<<(char)(int)a[i];
+                  
+                                  putchar('\n');
+return 0;    
+               
+}

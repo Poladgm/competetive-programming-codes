@@ -1,0 +1,42 @@
+#include <iostream>
+#include <algorithm>
+#include <string.h>
+#include <stdio.h>
+
+long long factorial(int n)
+{
+    if(n==0)
+        return 1;
+    else
+        return n*factorial(n-1);
+}
+
+using namespace std;
+
+int main()
+{
+    char a[15];
+    long long i,n,say=1;
+    cin>>a;
+    n=strlen(a);
+
+    sort(a,a+n);
+
+    if(n>10)
+    {
+        for(i=0; i<n; i++)
+            if(a[i]==a[i+1])
+                say++;
+
+        cout<<factorial(n)/factorial(say)<<endl;
+    }
+    else
+    {
+        while(next_permutation(a,a+n))
+        say++;
+
+        cout<<say<<endl;
+
+    }
+    return 0;
+}

@@ -1,0 +1,24 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   double a,b,c;
+   long long netice;
+   cin>>a>>b>>c;
+   
+   netice=(a+b+1e-9)/c;
+   
+   cout<<netice<<endl;
+   
+   // burada 1e-9 epsilondur
+   // c++-da epsilon lazim olur, ona gore ki bezen
+   // double ededlerini bolende itki olur,
+   // hemin itkini aradan qaldirmaq ucun ededin uzerine epsilon gelmelisen.
+
+   
+  
+   return EXIT_SUCCESS;
+}

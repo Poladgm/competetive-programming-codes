@@ -1,0 +1,34 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   char n[11], a, b;
+   int i, k;
+
+  cin>>n>>a>>b;
+  for( i = 0; i < strlen(n); i++ )
+  {
+       if( n[i] == a )
+           n[i] = b;
+
+           }
+  if( n[0] != '0')
+      cout<<n<<endl;
+  else{
+  i = 0;
+  while( n[i] == '0' )
+         i++;
+
+  for( k = i; k < strlen(n)-1; k++ )
+       cout<<n[k];
+  cout<<n[strlen(n)-1]<<endl;
+}
+
+
+
+ 
+   return EXIT_SUCCESS;
+}

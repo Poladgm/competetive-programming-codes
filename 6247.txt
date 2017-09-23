@@ -1,0 +1,55 @@
+#include <cstdlib>
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+long long ebob(long long a,long long b)
+{
+  long long c;
+  while(b!=0)
+  {
+  a=a%b;
+  c=a;
+  a=b;
+  b=c;
+  }
+  return a;
+}
+
+int main(int argc, char *argv[])
+{
+   long long x1,Y1,x2,y2,x3,y3,a,b,netice=0,i,n;
+   double area;
+   cin>>n;
+   for(i=1; i<=n; i++)
+   {
+   cin>>x1>>Y1>>x2>>y2>>x3>>y3;
+   netice=0;
+   area=fabs((x2*y3-y2*x3)-(x1*y3-Y1*x3)+(x1*y2-Y1*x2));
+   
+   area/=2;
+   
+   a=abs(x2-x1);
+   b=abs(y2-Y1);
+   netice=netice+ebob(a,b)+1;
+  
+   a=abs(x3-x2);
+   b=abs(y3-y2);
+   netice=netice+ebob(a,b)+1;
+  
+   a=abs(x3-x1);
+   b=abs(y3-Y1);
+   netice=netice+ebob(a,b)+1;
+   
+   netice-=3;
+   
+   if(area==0)
+   cout<<"0\n";
+   else
+   cout<<area+1-netice/2<<endl;
+}
+   
+ 
+   return EXIT_SUCCESS;
+}

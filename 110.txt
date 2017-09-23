@@ -1,0 +1,32 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int n,a,b,temp;
+
+int main()
+{
+    cin>>n;
+
+    if(n % 2 == 0){
+        temp = n-1;
+    }
+    else{
+        temp = n;
+    }
+
+    for(int i=temp/2; i>=1; i--){
+        a = i;
+        b = n - i;
+
+        if(log2((double)b) == (int)log2((double)b)){
+            cout<<a<<endl;
+            return 0;
+        }
+    }
+
+    cout<<"0"<<endl;
+
+    return 0;
+}

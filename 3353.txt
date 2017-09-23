@@ -1,0 +1,93 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+long long i,j,n,m,say,flag,a[1000][1000];
+
+int main(int argc, char *argv[])
+{
+    while(scanf("%lld",&n)!=EOF)
+    {
+        if(n==1)
+        {
+            printf("TERM 1 IS 1/1\n");
+            continue;
+        }
+
+        i=1;
+        j=2;
+        say=2;
+        flag=0;
+
+        while(1)
+        {
+            while(j>=1)
+            {
+                if(flag==1)
+                break;
+
+                if(say==n)
+                {
+                    printf("TERM %lld IS %lld/%lld\n",n,i,j);
+                    flag=1;
+                    break;
+                }
+
+                say++;
+                j--;
+                i++;
+            }
+
+            j++;
+            i--;
+
+            i++;
+
+            if(flag==1)
+            break;
+
+            if(say==n)
+            {
+                printf("TERM %lld IS %lld/%lld\n",n,i,j);
+                flag=1;
+                break;
+            }
+
+            while(i>=1)
+            {
+                if(flag==1)
+                break;
+
+                if(say==n)
+                {
+                    printf("TERM %lld IS %lld/%lld\n",n,i,j);
+                    flag=1;
+                    break;
+                }
+
+                say++;
+                i--;
+                j++;
+            }
+
+            i++;
+            j--;
+
+            j++;
+
+            if(flag==1)
+            break;
+
+            if(say==n)
+            {
+                printf("TERM %lld IS %lld/%lld\n",n,i,j);
+                flag=1;
+                break;
+            }
+        }
+    }
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

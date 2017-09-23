@@ -1,0 +1,33 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long long i,n,a,b,c,d,e,max;
+    cin>>n;
+    for(i=1; i<=n; i++)
+    {
+        max=0;
+        cin>>a>>b>>c>>d>>e;
+
+        if(a>max)
+        max=a;
+        if(b>max)
+        max=b;
+        if(c>max)
+        max=c;
+        if(d>max)
+        max=d;
+        if(e>max)
+        max=e;
+
+        cout<<"Case #"<<i<<": "<<max<<endl;
+    }
+
+
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

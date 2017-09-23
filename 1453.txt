@@ -1,0 +1,48 @@
+#include <iostream>
+#define INF 30000
+
+using namespace std;
+
+int n,m,from,to,weight;
+int d[101];
+
+struct Edge {
+   int u;
+   int v;
+   int w;
+
+} weights[10001];
+
+int main()
+{
+   cin>>n>>m;
+   for(int i=1; i<=m; i++){
+       cin>>weights[i].u>>weights[i].v>>weights[i].w;
+   }
+
+   for(int i=1; i<=n; i++){
+       d[i] = INF;
+   }
+
+   d[1] = 0;
+
+   for(int i=1; i<=n; i++){
+       for(int j=1; j<=m; j++){
+           from = weights[j].u;
+           to = weights[j].v;
+           weight = weights[j].w;
+
+           if( d[from]!=INF && d[to] > d[from] + weight){
+               d[to] = d[from] + weight;
+           }
+       }
+   }
+
+   for(int i=1; i<n; i++){
+       cout<<d[i]<<" ";
+   }
+   cout<<d[n]<<endl;
+
+
+   return 0;
+}

@@ -1,0 +1,41 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+long a[10000001],b[10000001],i=1,j=1,n,say,maxi;
+
+int main(int argc, char *argv[])
+{
+   cin>>n;
+   for(i=1; i<=n; i++)
+   cin>>a[i];
+   
+   for(i=1; i<=n; i++)
+   {
+       say=1;
+       
+       for(j=i; j<=n; j++)
+       if(a[j+1]-a[j]==1)
+       say++;
+       else
+       break;
+       
+       b[i]=say;
+   }
+   
+   /*
+   for(i=1; i<=n; i++)
+   cout<<b[i]<<" ";
+    */   
+     
+    maxi=0;
+    for(i=1; i<=n; i++)
+    if(b[i]>maxi)
+    maxi=b[i];
+    
+    cout<<maxi<<endl;   
+   
+
+   return EXIT_SUCCESS;
+}

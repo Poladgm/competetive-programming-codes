@@ -1,0 +1,14 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long long n;
+    cin>>n;
+    cout<<n*n<<endl;    
+    
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

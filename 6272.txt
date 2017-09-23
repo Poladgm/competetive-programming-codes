@@ -1,0 +1,32 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    int a,b,c,d;
+    cin>>a>>b>>c>>d;
+
+    cout<<(c+d)-a+b<<endl;
+
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}
+
+
+
+//orta mektebde olimpiada kecirilir. olimpiadada uwaqlara 2 sual soruwulur.
+
+
+//ve burada sene 
+//4 eded verilir, a,b,c,d.
+//burada    
+
+//a------- her iki suala duzgun cavab veren wagirdlerin sayidir,
+//b------- suallardan yalniz birine duzgun cvb veren wagirdlerin sayidir,
+//c------- 1-ci suala duzgun cvb veren wagirdlerin sayidir,
+//d------- 2-ci suala duzgun cvb veren wagirdlerin sayidir
+
+//senden olimpiadada iwtirak eden butun wagirdlerin sayini tapmaq teleb olunur

@@ -1,0 +1,61 @@
+#include <iostream>
+#include <queue>
+#include <vector>
+
+using namespace std;
+
+priority_queue< int, vector< int >, greater< int > > UNR;
+priority_queue< int, vector< int >, less< int > > REM;
+vector <int> vector;
+int n,m;
+int a[30005];
+int b[30005];
+int say;
+int cnt_add;
+int cnt_get;
+
+int main()
+{
+   cin>>n>>m;
+   for(int i = 1 ;i <= n; i++){
+       cin>>a[i];
+   }
+
+   for(int i = 1; i <= m; i++){
+       cin>>b[i];
+   }
+
+   say=0;
+   cnt_add=1;
+   cnt_get=1;
+   while(cnt_add <= n || cnt_get <= m){
+       if(b[cnt_get] == say){     // get
+           cout<<UNR.top()<<endl;
+           REM.push( UNR.top());
+           UNR.pop();
+           cnt_get++;
+       }
+       else{                    // add
+           say++;
+
+           if(cnt_add == 1){
+               UNR.push(a[cnt_add]);
+               cnt_add++;
+           }
+           else{
+               if(!REM.empty() && a[cnt_add] < REM.top()){
+                   UNR.push(REM.top());
+                   REM.pop();
+                   REM.push(a[cnt_add]);
+               }
+               else{
+                   UNR.push(a[cnt_add]);
+               }
+
+               cnt_add++;
+           }
+       }
+   }
+
+   return 0;
+}

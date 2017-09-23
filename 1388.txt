@@ -1,0 +1,77 @@
+#include <iostream>
+#include <math.h>
+#include <stdio.h>
+#include <algorithm>
+#define INF 900000000
+using namespace std;
+int a[2002][2002],d[2002],cost[2002],used[2002],n,m,i,j,k,q,f,s,index,big;
+  int x,y,l;
+
+void dij(int x)
+{
+
+ used[x]=1;
+ for(int i=1; i<=n; i++)
+     if(used[i]==0 && a[x][i]>0)
+         d[i]=min(d[i],d[x]+a[x][i]);
+
+}
+
+
+int main()
+{
+
+
+ scanf("%d",&n);
+
+  for(i=1;i<=n;i++)
+  scanf("%d",&cost[i]);
+      
+          scanf("%d",&m);
+      
+  for(i=1;i<=n;i++)
+  d[i]=INF;
+ for(i=1;i<=m;i++)
+ {
+         cin>>x>>y;
+             
+             a[x][y]=cost[y];
+             a[y][x]=cost[x];
+ }
+          f=1;
+          s=n;
+  
+ d[f]=0;
+
+
+
+ dij(f);
+
+
+
+ while(used[s]==0)
+ {
+
+     index=0;
+     big=INF;
+     bool go=false;
+     for(i=1; i<=n; i++)
+         if(used[i]==0 && d[i]<big)
+         {
+             go=true;
+             index=i;
+             big=d[i];
+         }
+     if(go==false)
+         break;
+     dij(index);
+ }
+
+ if(d[s]==INF)
+     puts("-1");
+ else
+     cout<<d[s]-cost[n]+cost[1]<<endl;
+
+
+ return 0;
+}

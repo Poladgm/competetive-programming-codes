@@ -1,0 +1,39 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   long long n,say=0;
+   cin>>n;
+   
+   while(n>=16)
+   {
+       n=n/16;
+       say=say+4;
+   }
+   
+   while(n>=8)
+   {
+       n=n/8;
+       say=say+3;
+   }
+   
+   while(n>=4)
+   {
+       n=n/4;
+       say=say+2;
+   }
+   
+   while(n>=2)
+   {
+       n=n/2;
+       say=say+1;
+   }
+   
+   cout<<say+1<<endl;
+   
+ 
+   return EXIT_SUCCESS;
+}

@@ -1,0 +1,50 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   long long i,n,cem=0,cem1=0,cem2=0;
+   cin>>n;
+   
+   while(n!=0)
+   {
+       cem=cem+n%10;
+       n=n/10;
+   }
+   
+   if(cem<10)
+   {
+       cout<<cem<<endl;
+       return 0;
+   }
+   
+   while(cem!=0)
+   {
+       cem1=cem1+cem%10;
+       cem=cem/10;
+   }
+   
+   if(cem1<10)
+   {
+       cout<<cem1<<endl;
+       return 0;
+   }
+   
+   while(cem1!=0)
+   {
+       cem2=cem2+cem1%10;
+       cem1=cem1/10;
+   }
+   
+   if(cem2<10)
+   {
+       cout<<cem2<<endl;
+       return 0;
+   }
+   
+   
+
+   return EXIT_SUCCESS;
+}

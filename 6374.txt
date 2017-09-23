@@ -1,0 +1,35 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long long i,t,h,m;
+    cin>>t;
+    for(i=1; i<=t; i++)
+    {
+        cin>>h>>m;
+
+
+        if(m>=45)
+        {
+            m-=45;
+        }
+        else
+        {
+            if(h==0)
+            h=24;
+
+            h--;
+            m+=60;
+            m-=45;
+        }
+
+        cout<<"Case #"<<i<<": "<<h<<" "<<m<<endl;
+    }
+
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

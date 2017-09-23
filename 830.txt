@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(int argc, char *argv[])
+{
+    long long m,n,i,j,flag,say=0;
+    scanf("%lld%lld",&m,&n);
+    
+    for(i=m; i<=n; i++)
+    {
+        flag=0;
+        
+        for(j=2; j<=sqrt(i); j++)
+        if(i%j==0)
+        {
+            flag=1;
+            break;
+        }
+        
+        if(flag==0)
+        {
+            printf("%lld\n",i);
+            say++;
+        }
+    }
+    
+    if(say==0)
+    printf("Absent\n");
+  
+  system("PAUSE");	
+  return 0;
+}

@@ -1,0 +1,65 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    unsigned long long int m,n,x,y;
+    cin>>n>>m>>x>>y;
+   
+    if(x==1 && y==1)
+    {
+        cout<<x<<" "<<y+1<<endl;
+        cout<<x+1<<" "<<y<<endl;
+    }
+    else if(x==1 && y==m)
+    {
+        cout<<x<<" "<<y-1<<endl;
+        cout<<x+1<<" "<<y<<endl;
+    }
+    else if(x==n && y==1)
+    {
+        cout<<x-1<<" "<<y<<endl;
+        cout<<x<<" "<<y+1<<endl;
+    }
+    else if(x==n && y==m)
+    {
+        cout<<x-1<<" "<<y<<endl;
+        cout<<x<<" "<<y-1<<endl;
+    }
+    else if(x==1)
+    {
+        cout<<x<<" "<<y-1<<endl;
+        cout<<x<<" "<<y+1<<endl;
+        cout<<x+1<<" "<<y<<endl;
+    }
+    else if(y==1)
+    {
+        cout<<x-1<<" "<<y<<endl;
+        cout<<x+1<<" "<<y<<endl;
+        cout<<x<<" "<<y+1<<endl;
+    }
+    else if(x==n)
+    {
+        cout<<x-1<<" "<<y<<endl;
+        cout<<x<<" "<<y+1<<endl;
+        cout<<x<<" "<<y-1<<endl;
+    }
+    else if(y==m)
+    {
+        cout<<x-1<<" "<<y<<endl;
+        cout<<x+1<<" "<<y<<endl;
+        cout<<x<<" "<<y-1<<endl;
+    }
+    else
+    {
+        cout<<x<<" "<<y-1<<endl;
+        cout<<x<<" "<<y+1<<endl;
+        cout<<x+1<<" "<<y<<endl;
+        cout<<x-1<<" "<<y<<endl;
+    }
+   
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

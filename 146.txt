@@ -1,0 +1,20 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+int n,i;
+double k=1,p;
+int main(int argc, char *argv[])
+ {
+    cin>>n;
+    for(i=1; i<=n; i++)
+    {
+         p=p+(k/2)*100;
+         k=k/4;
+    }
+
+    cout.precision(5);
+    cout<<fixed<<p<<endl;
+
+    return EXIT_SUCCESS;
+ }

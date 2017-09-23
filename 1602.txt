@@ -1,0 +1,26 @@
+#include <cstdlib>
+#include <iostream>
+#include <string.h>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   unsigned long long a,b,x,y,temp;
+   cin>>a>>b;
+   x=a;
+   y=b;
+   while(y!=0)
+   {
+       x=x%y;
+       temp=x;
+       x=y;
+       y=temp;
+   }
+
+   cout<<a*b/x<<endl;
+
+
+  
+   return EXIT_SUCCESS;
+}

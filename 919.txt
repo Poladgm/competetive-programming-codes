@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+double A[100],sum=0;
+int n,i,k=0;
+
+scanf("%d",&n);
+for(i=1; i<=n; i++)
+scanf("%lf",&A[i]);
+
+for(i=3; i<=n; i+=3)
+ if(A[i]>0)
+ {
+   k++;
+   sum=sum+A[i];
+ }
+
+printf("%d %.2lf\n",k,sum);
+
+
+
+ return 0;
+}

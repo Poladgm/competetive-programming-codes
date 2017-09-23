@@ -1,0 +1,76 @@
+#include <iostream>
+#define INF 1000000000
+
+using namespace std;
+
+int w,n,from,to;
+int a[101][101];
+int used[101];
+int d[101];
+int ceki[101];
+int f[101];
+int say;
+int idx;
+int minn;
+int temp;
+int leave[101];
+
+void dij(int x){
+   used[x] = 1;
+
+   for(int i=1; i<=n; i++){
+       if(a[x][i] == 1 && used[i] == 0 && d[i] < d[x] + ceki[i]){
+           d[i] = d[x] + ceki[i];
+           f[i] = d[x] + ceki[i];
+       }
+   }
+}
+
+int main()
+{
+   cin>>n;
+   for(int i=1; i<=n; i++){
+       f[i] = INF;
+       cin>>temp;
+       ceki[i] = d[i] = temp;
+       from = i;
+       cin>>w;
+       if(w == 0){
+           leave[i] = 1;
+       }
+       for(int j=1; j<=w; j++){
+           cin>>to;
+           a[from][to] = 1;
+       }
+   }
+
+   f[1] = ceki[1];
+   dij(1);
+
+   while(1){
+       if(say>n){
+           break;
+       }
+
+       minn = INF;
+       for(int i=1; i<=n; i++){
+           if(used[i] == 0 && minn > f[i]){
+               minn = f[i];
+               idx = i;
+           }
+       }
+
+       dij(idx);
+       say++;
+   }
+
+   minn = INF;
+   for(int i=1; i<=n; i++){
+       if(leave[i] == 1 && minn > d[i]){
+           minn = d[i];
+       }
+   }
+
+   cout<<minn<<endl;
+   return 0;
+}

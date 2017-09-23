@@ -1,0 +1,25 @@
+#include <cstdlib>
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+vector<int> v;
+int n,pos,len=0;
+
+int main(int argc, char *argv[])
+{
+    while(scanf("%d",&n)==1)
+    {
+        len++;
+        pos=lower_bound(v.begin(),v.end(),n)-v.begin();
+        v.insert(v.begin()+pos,n);
+        if(len & 1)
+        printf("%d\n",v[len/2]);
+        else
+        printf("%d\n",(v[len/2] + v[len/2-1])/2);
+    }
+
+    system("pause");
+    return EXIT_SUCCESS;
+}

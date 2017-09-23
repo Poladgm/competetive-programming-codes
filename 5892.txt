@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int x[]={6,12,20,28,36,44,52,60,68,76,84,92};
+    long long a,b,i,say=0;
+    cin>>a>>b;
+
+    if(b<104)
+    {
+        for(i=0; i<=11; i++)
+        if(a<=x[i] && b>=x[i])
+            say++;
+
+        cout<<say<<endl;
+    }
+    else if(b-a<8 && b>=104)
+    {
+        for(i=a; i<=b; i++)
+            if(i%8==0)
+                say++;
+
+        cout<<say<<endl;
+    }
+
+    else
+        cout<<(b-a)/8+1<<endl;
+
+   return 0;
+}

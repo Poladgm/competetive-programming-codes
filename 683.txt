@@ -1,0 +1,30 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+long long a[1001][1001],s[1001][1001],i,j,n,m,cem[1001];
+
+int main(int argc, char *argv[])
+{
+ scanf("%lld%lld",&n,&m);
+ for(i=1; i<=n; i++)
+ for(j=1; j<=m; j++)
+ scanf("%lld",&a[i][j]);
+
+ for(j=1; j<=m; j++)
+ for(i=1; i<=n; i++)
+ {
+     cem[j]=cem[j]+a[i][j];
+     s[i][j]=s[i][j-1]+cem[j];
+ }
+
+ for(i=1; i<=n; i++)
+ {
+ for(j=1; j<m; j++)
+ printf("%lld ",s[i][j]);
+ printf("%lld\n",s[i][m]);
+ }
+  
+   return EXIT_SUCCESS;
+}

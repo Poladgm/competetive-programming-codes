@@ -1,0 +1,30 @@
+#include <iostream>
+#define modul 1000000007
+
+using namespace std;
+
+int a[101][101],n,m;
+
+int main()
+{
+    cin>>m>>n;
+    // massivin sutunu ve setiri her ikisi sifirdan baslayir
+    for(int i=1; i<=m; i++){
+        a[0][i] = 1;
+    }
+
+    for(int i=1; i<=n; i++){
+        for(int j=i; j<=m; j++){
+            if(i%2 == 1 && j%2 == 1){
+                a[i][j] = 0;
+            }
+            else{
+                a[i][j] += a[i-1][j] + a[i][j-1];
+                a[i][j] %= modul;
+            }
+        }
+    }
+
+    cout<<a[n][m]<<endl;
+    return 0;
+}

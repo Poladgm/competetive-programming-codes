@@ -1,0 +1,45 @@
+#include <cstdlib>
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+double mesafe(int a, int b, int c, int d)
+{
+  return sqrt((c-a)*(c-a)+(d-b)*(d-b));
+}
+
+int main(int argc, char *argv[])
+{
+  int x1,x2,x3,x4,y1,y2,y3,y4;
+  double a,b,c,d,e,f,say=0,x,y,z,w,m,n;  // a,b,c,d terefler, e,f diaqonallar
+  cin>>x1>>y1>>x2>>y2>>x3>>y3>>x4>>y4;
+
+  a=mesafe(x1,y1,x2,y2);
+  b=mesafe(x2,y2,x3,y3);
+  c=mesafe(x3,y3,x4,y4);
+  d=mesafe(x1,y1,x4,y4);
+  e=mesafe(x1,y1,x3,y3);
+  f=mesafe(x2,y2,x4,y4);
+
+  x=a*a+d*d;
+  y=a*a+b*b;
+  z=b*b+c*c;
+  w=c*c+d*d;
+  m=e*e;
+  n=f*f;
+
+  if((long long int)x==(long long int)n)
+  say++;
+  if((long long int)y==(long long int)m)
+  say++;
+  if((long long int)z==(long long int)n)
+  say++;
+  if((long long int)w==(long long int)m)
+  say++;
+
+  cout<<say<<endl;
+
+ 
+  return EXIT_SUCCESS;
+}

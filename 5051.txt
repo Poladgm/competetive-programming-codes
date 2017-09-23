@@ -1,0 +1,17 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+  unsigned long long a,b,x;
+  cin>>a>>b;
+  
+  x=(36*a + b/16)%32;
+  
+  cout<<x<<endl;
+  
+  
+  return EXIT_SUCCESS;
+}

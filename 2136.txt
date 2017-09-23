@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+double l;
+int a, b, x1, Y1, x2, y2;
+int main(int argc, char *argv[])
+{
+scanf("%d%d%d%d%d%d", &a, &b, &x1, &Y1, &x2, &y2);
+
+l=((x2-x1)*b+(Y1-y2)*a+y2*x1-Y1*x2)/sqrt((x2-x1)*(x2-x1)+(Y1-y2)*(Y1-y2));
+if(l<0)
+l=-l;
+printf("%.6lf\n", l);
+
+
+return 0;
+}

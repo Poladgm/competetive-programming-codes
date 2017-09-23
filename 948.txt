@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+double d,p,s,v,h,H;
+int main(int argc, char *argv[])
+{
+double d,p,s,v,h,H;
+scanf("%lf%lf",&d,&p);
+
+h=sqrt(p*p-(d/2)*(d/2));
+H=sqrt(h*h-(d/2)*(d/2));
+s=d*d+2*h*d;
+v=d*d*H/3;
+printf("%.3lf %.3lf\n",s,v);
+
+return 0;
+}

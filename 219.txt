@@ -1,0 +1,21 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   long long netice,h,w,l,k;
+cin>>h>>w>>l>>k;
+netice=h*w*l/k;
+
+if((h*w*l)%k==0)
+cout<<netice<<endl;
+else
+cout<<netice+1<<endl;
+
+
+
+
+   return EXIT_SUCCESS;
+}

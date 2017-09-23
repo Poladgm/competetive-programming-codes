@@ -1,0 +1,39 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+long long a[2000001],i=1,n,x,max1,max2;
+
+int main(int argc, char *argv[])
+{
+    while(cin>>x)
+    {
+        a[i++]=x;
+        
+        if(x==0)
+        break;
+    }
+    
+    n=i-2;
+    
+    max1=a[1];
+    for(i=2; i<=n; i++)
+    if(a[i]>max1)
+    max1=a[i];
+    
+    for(i=1; i<=n; i++)
+    if(a[i]==max1)
+    a[i]=-100;
+    
+    max2=a[1];
+    for(i=2; i<=n; i++)
+    if(a[i]>max2)
+    max2=a[i];
+    
+    cout<<max2<<endl;
+    
+    
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

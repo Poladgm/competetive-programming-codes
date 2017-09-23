@@ -1,0 +1,62 @@
+#include <cstdlib>
+#include <iostream>
+#include <queue>
+#include <string.h>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    queue <int> s;
+    string a;
+    int i,x;
+
+    while(1)
+    {
+        cin>>a;
+
+        if(a[0]=='e' && a[1]=='x' && a[2]=='i' && a[3]=='t')
+        {
+            printf("bye\n");
+            break;
+        }
+        else if(a[0]=='p' && a[1]=='u')
+        {
+            cin>>x;
+            s.push(x);
+            printf("ok\n");
+        }
+        else if(a[0]=='f')
+        {
+            if(s.empty())
+            printf("error\n");
+            else
+            printf("%d\n",s.front());
+        }
+        else if(a[0]=='p' && a[1]=='o')
+        {
+            if(s.empty())
+            printf("error\n");
+            else
+            {
+                printf("%d\n",s.front());
+                s.pop();
+            }
+        }
+        else if(a[0]=='s')
+        printf("%d\n",s.size());
+        else if(a[0]=='c')
+        {
+            while(!s.empty())
+            s.pop();
+
+            printf("ok\n");
+        }
+    }
+
+
+
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

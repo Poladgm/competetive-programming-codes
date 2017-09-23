@@ -1,0 +1,30 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long a,say=0;
+    cin>>a;
+    
+    while(a!=1)
+    {
+        if(a%2==0)
+        {
+            a=a/2;
+            say++;
+        }
+        else
+        {
+            a=a+1;
+            say++;
+        }
+    }
+    
+    cout<<say<<endl;
+    
+    
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

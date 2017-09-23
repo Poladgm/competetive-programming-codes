@@ -1,0 +1,23 @@
+#include <iostream>
+#define ll long long
+
+using namespace std;
+
+ll s,k,sum;
+
+int main()
+{
+   cin>>s;
+
+   while(1){
+       k++;
+       sum += k;
+
+       if(sum >= s){
+           cout<<k<<endl;
+           break;
+       }
+   }
+
+   return 0;
+}

@@ -1,0 +1,18 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long long a,b,c,x,y;
+    scanf("%lld%lld%lld",&a,&b,&c);
+
+    x=a*b*c;
+    y=x*6-2*(a*b+b*c+a*c);
+
+    printf("%lld %lld\n",x,y);
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

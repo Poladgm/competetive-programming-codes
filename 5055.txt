@@ -1,0 +1,44 @@
+#include <iostream>
+
+using namespace std;
+
+string a;
+int gun,il,ay,ans;
+int aydaki_gun[] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
+
+int  ilde_gun(int x){
+    if(x % 400 == 0){
+        return 366;
+    }
+    else if(x % 4 == 0 && x % 100 != 0){
+        return 366;
+    }
+
+    return 365;
+}
+
+int main()
+{
+    cin>>a;
+    gun = (a[0] - 48) * 10 + (a[1] - 48);
+    ay = (a[2] - 48) * 10 + (a[3] - 48);
+    il = (a[4] - 48) * 1000 + (a[5] - 48) * 100 + (a[6] - 48) * 10 + (a[7] - 48);
+
+    for(int i=1; i<il; i++){
+        ans += ilde_gun(i);
+    }
+
+    for(int i=1; i<ay; i++){
+        ans += aydaki_gun[i];
+    }
+
+    ans += gun;
+
+    if(ilde_gun(il) == 366 && ay >= 3){
+        ans++;
+    }
+
+    cout<<ans<<endl;
+
+    return 0;
+}

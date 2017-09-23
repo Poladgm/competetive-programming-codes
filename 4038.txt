@@ -1,0 +1,24 @@
+#include <cstdlib>
+#include <iostream>
+#include <algorithm>
+#include <stdio.h>
+
+using namespace std;
+
+int a[2000010],i,n;
+bool cmp (int x,int y)
+{
+   return x<y;
+}
+
+int main(int argc, char *argv[])
+{   scanf("%d",&n);
+   for(i=0;i<n;i++)
+   scanf("%d",&a[i]);
+   sort(a,a+n,cmp);
+   printf("%d", a[0]);
+   for(i=1;i<n;i++)
+   printf(" %d",a[i]);
+   printf("\n");
+   return EXIT_SUCCESS;
+}

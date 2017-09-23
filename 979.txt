@@ -1,0 +1,28 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long long a[101],i,n,q,w;
+    cin>>n;
+    for(i=1; i<=n; i++)
+    cin>>a[i];
+    cin>>w>>q;
+
+    w=a[w];
+    q=a[q];
+
+    for(i=1; i<=n; i++)
+    if(a[i]==w)
+    a[i]=q;
+
+    for(i=1; i<n; i++)
+    cout<<a[i]<<" ";
+    cout<<a[i]<<endl;
+
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

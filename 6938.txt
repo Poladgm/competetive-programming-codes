@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int x,y,n,i,say1,say2,say3,say4,sayaxis;
+
+int main()
+{
+    scanf("%d",&n);
+    for(i=1; i<=n; i++)
+    {
+        scanf("%d%d",&x,&y);
+
+        if(x==0 || y==0)
+            sayaxis++;
+        else if(x>0 && y>0)
+            say1++;
+        else if(x>0 && y<0)
+            say4++;
+        else if(x<0 && y>0)
+            say2++;
+        else if(x<0 && y<0)
+            say3++;
+    }
+
+    printf("Q1: %d\n",say1);
+    printf("Q2: %d\n",say2);
+    printf("Q3: %d\n",say3);
+    printf("Q4: %d\n",say4);
+    printf("AXIS: %d\n",sayaxis);
+
+
+
+    return 0;
+}

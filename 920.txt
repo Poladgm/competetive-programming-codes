@@ -1,0 +1,25 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+  double x,y,z;
+  cin>>x>>y>>z;
+  
+  double boyukxy,boyukyz,cem;
+  boyukxy=max(x,y);
+  boyukyz=max(y,z);
+  cem=x+y+z;
+  
+  double a,b;
+  a=min(boyukxy,boyukyz);
+  b=min(a,cem);
+  
+  cout.setf(ios::fixed);
+  cout.precision(2);
+  cout<<min(a,b)<<endl;   // cout<<b<<endl;
+  
+   return EXIT_SUCCESS;
+}

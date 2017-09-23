@@ -1,0 +1,21 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   int a,i,say=0;
+   cin>>a;
+   for(i=1; i<=a; i++)
+   {
+       if(a%i==0)
+       say=say+1;
+       else
+       continue;
+   }
+
+   cout<<say<<endl;
+
+       return EXIT_SUCCESS;
+}

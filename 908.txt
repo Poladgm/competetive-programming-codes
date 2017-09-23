@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main ()
+{
+int A[1000],i,n,say=0,sum=0;
+
+scanf("%d",&n);
+for (i=0;i<n;i++)
+scanf("%d",&A[i]);
+
+for (i=0;i<n;i++)
+if(A[i]%6==0 && A[i]>0)
+ {
+  say++;
+  sum+=A[i];
+ }
+printf("%d %d\n",say,sum);
+
+
+
+return 0;
+}

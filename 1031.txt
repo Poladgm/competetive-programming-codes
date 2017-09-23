@@ -1,0 +1,53 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+unsigned long long ebob(unsigned long long a, unsigned long long b)
+{
+    if(b==0)
+    return a;
+    else
+    return ebob(b,a%b);
+}
+
+int main(int argc, char *argv[])
+{
+    long long n,i,j,a[10001],b[10001],m=1;
+    double c[10001];
+    scanf("%lld",&n);
+
+    for(i=1; i<n; i++)
+    for(j=n; j>=i+1; j--)
+    if(ebob(i,j)==1)
+    {
+        //printf("%d/%d\n",i,j);
+
+        a[m]=i;
+        b[m]=j;
+        c[m]=(double)i/(double)j;
+        m++;
+    }
+
+    m--;
+
+    for(i=1; i<m; i++)
+    for(j=1; j<m; j++)
+    if(c[j]>c[j+1])
+    {
+        swap(c[j],c[j+1]);
+        swap(a[j],a[j+1]);
+        swap(b[j],b[j+1]);
+    }
+
+    printf("0/1\n");
+
+    for(i=1; i<=m; i++)
+    printf("%lld/%lld\n",a[i],b[i]);
+
+    printf("1/1\n");
+
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

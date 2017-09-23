@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+long long a=1, s, cem=1;
+
+int main(int argc, char** argv) {
+  
+  cin>>s;
+  int yas = 2;
+  if(s==1)
+      cout<<"1"<<endl;
+  else{
+      while(cem < s){
+          a=a*2+yas;
+          yas++;
+          cem+=a;
+      }
+      cout<<yas-1<<endl;
+  }
+  
+  return 0;
+}

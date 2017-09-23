@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+int a;   // a ==> qiymet
+scanf("%d",&a);
+
+if(a==1 || a==2 || a==3)
+ printf("Initial\n");
+if(a==4 || a==5 || a==6)
+ printf("Average\n");
+if(a==7 || a==8 || a==9)
+ printf("Sufficient\n");
+if(a==10 || a==11 || a==12)
+ printf("High\n");
+
+ return 0;
+}

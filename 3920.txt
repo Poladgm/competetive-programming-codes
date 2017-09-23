@@ -1,0 +1,25 @@
+#include <iostream>
+
+using namespace std;
+
+int ans,n;
+
+int ebob(int a, int b){
+    while(b!=0){
+        a%=b;
+        swap(a,b);
+    }
+    return a;
+}
+
+int main()
+{
+    cin>>n;
+    ans = n;
+    while(cin>>n){
+        ans = ebob(ans,n);
+    }
+
+    cout<<ans<<endl;
+    return 0;
+}

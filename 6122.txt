@@ -1,0 +1,71 @@
+#include <cstdlib>
+#include <iostream>
+#include <string>
+#include <stack>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    stack <int> s;
+    string a;
+    char b[10];
+    int i=1,j,k,eded;
+
+    while(1)
+    {
+        getline(cin,a);
+
+        if(a[0]=='e' && a[1]=='x' && a[2]=='i' && a[3]=='t')
+        {
+            printf("bye\n");
+            break;
+        }
+        else
+        {
+            if(a[0]=='p' && a[1]=='u')
+            {
+                k=0;
+
+                for(i=5; i<=20; i++)
+                if(isalpha(a[i]) && !isalpha(a[i+1]))
+                break;
+                else
+                b[k++]=a[i];
+
+                eded=atoi(b);
+                //cout<<eded<<endl;
+
+                s.push(eded);
+                printf("ok\n");
+            }
+            else if(a[0]=='p' && a[1]=='o')
+            {
+                printf("%d\n",s.top());
+                s.pop();
+            }
+            else if(a[0]=='b')
+            {
+                printf("%d\n",s.top());
+            }
+            else if(a[0]=='s')
+            {
+                printf("%d\n",s.size());
+            }
+            else if(a[0]=='c')
+            {
+                while(!s.empty())
+                s.pop();
+
+                printf("ok\n");
+            }
+        }
+
+
+    }
+
+
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

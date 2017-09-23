@@ -1,0 +1,26 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    int n,a,b,c;
+    cin>>n;
+
+    if(n<0)
+    {
+        cout<<"-";
+        n=-n;
+    }
+
+    a=n/100;
+    b=n%100/10;
+    c=n%10%10;
+
+    cout<<a<<a<<b<<b<<c<<c<<endl;
+
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

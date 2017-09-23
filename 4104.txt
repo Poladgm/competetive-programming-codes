@@ -1,0 +1,37 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   long long a[10001],i,j,n,say=0,flag;
+   scanf("%lld",&n);
+   for(i=1; i<=n; i++)
+   scanf("%lld",&a[i]);
+
+   for(i=1; i<n; i++)
+   {
+       flag=0;
+       for(j=1; j<n; j++)
+       if(a[j]>a[j+1])
+       {
+           swap(a[j],a[j+1]);
+           flag=1;
+       }
+
+       if(flag==0)
+       break;
+   }
+
+   for(i=1; i<=n; i++)
+   if(a[i]!=a[i+1])
+   say++;
+
+
+   printf("%lld\n",say);
+
+
+
+   return EXIT_SUCCESS;
+}

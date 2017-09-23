@@ -1,0 +1,68 @@
+#include <iostream>
+#define INF 10000
+
+using namespace std;
+
+int n,m;
+int a[755][755];
+int minnn , maxxx;
+int minn[755] , maxx[755];
+int say;
+
+int main()
+{
+   cin>>n>>m;
+   
+   for(int i=1; i<=n; i++){
+       for(int j=1; j<=m; j++){
+           cin>>a[i][j];
+       }
+   }
+   for(int i=1; i<=n; i++){
+       minnn = INF;
+       for(int j=1; j<=m; j++){
+           if(a[i][j] < minnn){
+               minnn = a[i][j];
+           }
+       }
+
+       minn[i] = minnn;
+   }
+
+   for(int j=1; j<=m; j++){
+       maxxx = -INF;
+       for(int i=1; i<=n; i++){
+           if(a[i][j] > maxxx){
+               maxxx = a[i][j];
+           }
+       }
+
+       maxx[j] = maxxx;
+   }
+   
+   /*
+   cout<<"min"<<endl;
+   for(int i=1; i<=n; i++){
+       cout<<minn[i]<<" ";
+   }
+   cout<<endl;
+
+   cout<<"max"<<endl;
+   for(int i=1; i<=m; i++){
+       cout<<maxx[i]<<" ";
+   }
+   cout<<endl;
+   */
+
+   for(int i=1; i<=n; i++){
+       for(int j=1; j<=m; j++){
+           if(a[i][j] == minn[i] && a[i][j] == maxx[j]){
+               say++;
+           }
+       }
+   }
+
+   cout<<say<<endl;
+
+   return 0;
+}

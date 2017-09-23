@@ -1,0 +1,62 @@
+#include <cstdlib>
+#include <iostream>
+#include <vector>
+#define maxx 100001
+using namespace std;
+int n,m,x,y,i,used[maxx],p[maxx],parent[maxx],t=0,ans[maxx],l,q,r;
+vector<int>g[maxx];
+void dfs(int v)
+{
+  used[v]=1;
+  p[v]=1;
+  for(int i=0;i<g[v].size();i++)
+  {
+     int  to=g[v][i];
+      if(!used[to])
+      {
+          p[to]=1;
+          parent[to]=v;
+          dfs(to);}
+          else
+          if(p[to]==1)
+          {
+              t=1;
+              q=v;
+              r=to;
+              break;}}
+              p[v]=0;}
+int main(int argc, char *argv[])
+{   
+ cin>>n>>m;
+ for(i=1;i<=m;i++)
+ {
+      cin>>x>>y;
+      g[x].push_back(y);
+  }
+  dfs(1);
+  for(i=2;i<=n;i++)
+  {
+      if(t==1)
+      break;
+      if(!used[i])
+      dfs(i);}
+      
+      if(t){
+          int j=0;
+        ans[j++]=q;
+        l=q;
+        while(parent[l]!=r)
+        {
+              l=parent[l];
+              ans[j++]=l;}
+              ans[j++]=r;
+              cout<<"YES"<<endl;
+              for(i=j-1;i>0;i--)
+              cout<<ans[i]<<" ";
+              cout<<ans[0]<<endl;}
+              else
+              cout<<"NO"<<endl;
+                
+              
+ return EXIT_SUCCESS;
+}

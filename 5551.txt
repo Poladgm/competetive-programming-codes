@@ -1,0 +1,38 @@
+#include <cstdlib>
+#include <iostream>
+#define long long 
+using namespace std;
+      unsigned long long n, t, k, c, i;
+      unsigned long long a[1000005];
+int main(int argc, char *argv[])
+{
+  
+  cin>>c;
+  
+      for(i = 1 ; i <= c ; i ++)
+  {
+          cin>>n;
+          
+          t = 2;
+          k = 0;
+          
+      while(1)
+      {
+          if(t > n)
+          break;
+          a[k ++] = t;
+          t = t * 2 - 1;
+      }
+      
+      cout<<k;
+      for(int i = 0 ; i < k ; i ++)
+      cout<<" "<<a[i];
+      
+          cout<<endl;
+          
+          
+  }      
+          
+ 
+  return EXIT_SUCCESS;
+}

@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    long long n;
+    cin>>n;
+
+    n=n*2;
+
+    n=(2+n)/2-1;
+
+    n=n*(n+1);
+
+    cout<<n*3+1<<endl;
+
+    return 0;
+}
+
+
+// 1+    3*1   input 0
+// 2+    3*2   input 1
+// 4+    3*6  input 2
+// 6+    3*12  input 3
+// 8+    3*20  input 4
+// 10+   3*30  input 5
+// 12+   3*42  input 6
+// 14+   3*56  input 7
+
+// 1+ olani nezere almadigimcun
+// qalanlari cut ededlerin cemidir
+// cemi tapib 3-e vuranda cavab alinir
+// evvelde nezere almadigimiz 1-i
+// sonda uzerine gelirik

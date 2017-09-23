@@ -1,0 +1,42 @@
+#include <cstdlib>
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int h,i,j,k,n=1,m,t=1;
+
+int main(int argc, char *argv[])
+{
+   while(cin>>h)
+   {
+        if(h == 0)
+        break;
+        if( t!=1)
+        cout<<endl;
+   for( i = 1; i <= h; i++ )
+   {
+        {
+            for( j = i; j < h; j ++)
+            cout<<" ";
+            for( k = 1; k <= 2 * i - 1; k++ )
+            cout<<"*";
+        }
+        cout<<endl;
+        }
+      for( i = h - 1; i >= 1; i-- )
+   {
+        {
+            for( j = i; j < h; j ++)
+            cout<<" ";
+            for( k = 1; k <= 2 * i - 1; k++ )
+            cout<<"*";
+        }
+        cout<<endl;
+        t ++;
+        } 
+        
+   }      
+       return EXIT_SUCCESS;
+}  
+

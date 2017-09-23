@@ -1,0 +1,26 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int n, k, sum, c, m;
+int main(int argc, char *argv[])
+{
+  cin>>n;
+  while( n > 0)
+  {
+  sum = 0;
+  m = n;
+  while( m > 0 )
+  {
+    c = m % 10;
+    sum = sum + c;
+    m = m / 10;
+  }
+  n = n - sum;
+  k ++;
+}
+  cout<<k<<endl;       
+  
+  return EXIT_SUCCESS;
+}

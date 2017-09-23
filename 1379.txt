@@ -1,0 +1,47 @@
+#include <cstdlib>
+#include <iostream>
+#include <math.h>
+using namespace std;
+char a[1000];
+unsigned long long b[31], i, s, k, l;
+int main()
+{
+  while(cin>>a){
+      if( a[0] == '~' )
+          break;
+      if(strlen(a) == 1)
+          k = 1;
+      if( strlen(a) == 2 )
+          k = 0;     
+      while(cin>>a){
+          if( a[0] == '#' ){
+              for( i = 1; i <= l; i++ ){
+                   s = s + b[i]*pow(2,l-i);
+                   }
+              cout<<s<<endl;
+              s = l = 0;
+              break;
+              }
+      if(strlen(a) == 1)
+          k = 1;
+      if( strlen(a) == 2 )
+          k = 0; 
+      if( strlen(a) > 2 ){
+          if( k == 0 ){
+              for( i = 1; i <= strlen(a) - 2; i++ ){
+                l++;
+                b[l] = 0;          
+                }
+                }
+          else{
+               for( i = 1; i <= strlen(a) - 2; i++ ){
+                l++;
+                b[l] = 1;
+               }
+              }
+              
+              }  
+              }            
+  }   
+  return EXIT_SUCCESS;
+}

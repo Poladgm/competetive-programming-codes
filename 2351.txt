@@ -1,0 +1,67 @@
+#include <cstdlib>
+#include <iostream>
+#define dis 1000000
+
+using namespace std;
+int a[2001][2001];
+int n, b, f;
+int d[2001],used[2001];
+int flag = 0;
+int cnt = 0;
+
+void relax(int v){
+      for(int i=1;i<=n;i++){
+          if(a[v][i] > 0 && !used[i]){
+              if(d[i] > (d[v] + a[v][i]) ){
+                  d[i] = d[v] + a[v][i];
+              }
+          }
+      }
+}
+
+void dijkstra(int v){
+  while(cnt--){
+
+      int maxdis = dis;
+      int idx = -1;
+      for(int i=1;i<=n;i++){
+          if(!used[i]){
+              if(d[i] < maxdis){
+                  maxdis = d[i];
+                  idx = i;
+              }
+          }
+      }
+      used[idx] = 1;
+      relax(idx);
+  }
+
+}
+
+int main(int argc, char *argv[])
+{
+std::ios_base::sync_with_stdio(false);
+
+  cin>>n>>b>>f;
+  for(int i=1;i<=n;i++){
+      for(int j=1;j<=n;j++){
+          cin>>a[i][j];
+          if(a[i][j]>0) cnt++;
+      }
+  }
+  for(int i=1;i<=n;i++){
+      d[i] = dis;
+      used[i] = 0;
+  }
+
+  used[b] = 1;
+  d[b] = 0;
+  relax(b);
+  dijkstra(b);
+
+  if(d[f]!=dis) cout<<d[f]<<endl;
+  else cout<<"-1\n";
+
+
+  return 0;
+}

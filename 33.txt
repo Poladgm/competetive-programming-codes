@@ -1,0 +1,97 @@
+#include <cstdlib>
+#include <iostream>
+#include <string.h>
+
+using namespace std;
+
+char x[1000001];
+long long a,b,n,i,j,k,arrayy[1000001],say=0,flag;
+
+int main(int argc, char *argv[])
+{
+    cin>>a>>b;
+
+    if(a>b)
+        swap(a,b);
+
+    if(a==b && a==1)
+    {
+        cout<<"0"<<endl;
+        return 0;
+    }
+
+
+    for(i=2; i<=b; i++)
+    arrayy[i]=i;
+
+    n=i-1;
+
+    for(i=2; i*i<=n; i++)
+    {
+        if(arrayy[i]!=0)
+        {
+            for(j=i*i; j<=n; j=j+i)
+            if(arrayy[j]!=0)
+            arrayy[j]=0;
+        }
+    }
+
+    i=b;
+
+    while(arrayy[i]==0)
+    i--;
+
+    n=i;
+
+    /*
+    for(i=a; i<=b; i++)
+    cout<<arrayy[i]<<" ";
+    cout<<endl<<n<<endl;
+    */
+
+    for(i=a; i<n; i++)
+    if(arrayy[i]!=0)
+    {
+        flag=0;
+
+        itoa(arrayy[i],x,10);
+
+        for(k=0; k<strlen(x); k++)
+        if(x[k]=='1' && x[k+1]=='3')
+        {
+            flag=1;
+            break;
+        }
+
+        if(flag==0)
+        {
+            say++;
+            //cout<<arrayy[i]<<" ";
+        }
+    }
+
+    if(arrayy[n]>=a && arrayy[n]!=0)
+    {
+        flag=0;
+
+        itoa(arrayy[n],x,10);
+
+        for(k=0; k<strlen(x); k++)
+        if(x[k]=='1' && x[k+1]=='3')
+        {
+            flag=1;
+            break;
+        }
+
+        if(flag==0)
+        {
+            say++;
+            //cout<<arrayy[n]<<endl;
+        }
+    }
+
+    cout<<say<<endl;
+
+
+   return EXIT_SUCCESS;
+}

@@ -1,0 +1,117 @@
+#include <iostream>
+
+using namespace std;
+
+int n,ay=1,gun,temp=0;
+
+int main()
+{
+    cin>>n;
+
+    if(n<=31){
+        cout<<n<<" 1"<<endl;
+    }
+    else if(n<=59){
+        n=n-31;
+        cout<<n<<" 2"<<endl;
+    }
+    else if(n<=90){
+        n=n-31;
+        n=n-28;
+        cout<<n<<" 3"<<endl;
+    }
+    else if(n<=120){
+        n=n-31;
+        n=n-28;
+        n=n-31;
+        cout<<n<<" 4"<<endl;
+    }
+    else if(n<=151){
+        n=n-31;
+        n=n-28;
+        n=n-31;
+        n=n-30;
+        cout<<n<<" 5"<<endl;
+    }
+    else if(n<=181){
+        n=n-31;
+        n=n-28;
+        n=n-31;
+        n=n-30;
+        n=n-31;
+        cout<<n<<" 6"<<endl;
+    }
+    else if(n<=212){
+        n=n-31;
+        n=n-28;
+        n=n-31;
+        n=n-30;
+        n=n-31;
+        n=n-30;
+        cout<<n<<" 7"<<endl;
+    }
+    else if(n<=243){
+        n=n-31;
+        n=n-28;
+        n=n-31;
+        n=n-30;
+        n=n-31;
+        n=n-30;
+        n=n-31;
+        cout<<n<<" 8"<<endl;
+    }
+    else if(n<=273){
+        n=n-31;
+        n=n-28;
+        n=n-31;
+        n=n-30;
+        n=n-31;
+        n=n-30;
+        n=n-31;
+        n=n-31;
+        cout<<n<<" 9"<<endl;
+    }
+    else if(n<=304){
+        n=n-31;
+        n=n-28;
+        n=n-31;
+        n=n-30;
+        n=n-31;
+        n=n-30;
+        n=n-31;
+        n=n-31;
+        n=n-30;
+        cout<<n<<" 10"<<endl;
+    }
+    else if(n<=334){
+        n=n-31;
+        n=n-28;
+        n=n-31;
+        n=n-30;
+        n=n-31;
+        n=n-30;
+        n=n-31;
+        n=n-31;
+        n=n-30;
+        n=n-31;
+        cout<<n<<" 11"<<endl;
+    }
+    else if(n<=365){
+        n=n-31;
+        n=n-28;
+        n=n-31;
+        n=n-30;
+        n=n-31;
+        n=n-30;
+        n=n-31;
+        n=n-31;
+        n=n-30;
+        n=n-31;
+        n=n-30;
+        cout<<n<<" 12"<<endl;
+    }
+
+
+
+    return 0;
+}

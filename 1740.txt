@@ -1,0 +1,83 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+string s;
+int dp[101][101];
+int n;
+int j;
+int diff = 1;
+
+int main()
+{
+  cin>>s;
+  n = s.size();
+  s.push_back('1');
+
+  for(int i=n; i>=1; i--){
+      swap(s[i],s[i-1]);
+  }
+
+  for(int i=1; i<=n; i++){
+      dp[i][i] = 1;
+  }
+
+  for(int k=1; k<=n; k++){
+      for(int i=1; i<n; i++){
+          j = i + diff;
+          if(s[i] == s[j]){
+              dp[i][j] = dp[i+1][j-1] + 2;
+          }
+          else{
+              dp[i][j] = max( dp[i+1][j] , dp[i][j-1]);
+          }
+      }
+
+      diff++;
+  }
+
+  /*
+  for(int i=1; i<=n; i++){
+      for(int j=1; j<=n; j++){
+              cout<<dp[i][j]<<" ";
+      }
+      cout<<endl;
+  }
+  */
+
+  int i=1;
+  int j=n;
+
+  cout<<dp[i][j]<<endl;
+
+  while(i<=j){
+      if(s[i] == s[j]){
+          //  palidrom hem s[i]de hem s[j]de var onlari ulduzlamiram
+          i++;
+          j--;
+      }
+      else{
+          if(dp[i+1][j] >= dp[i][j-1]){
+              s[i] = '*';      // palidromu pozanlari ulduzlayiram
+              i++;
+          }
+          else{
+              s[j] = '*';      // palidromu pozanlari ulduzlayiram
+              j--;
+          }
+      }
+
+  }
+
+  for(int i=1; i<=n; i++){
+      if(s[i] != '*'){
+          cout<<s[i];
+      }
+  }
+  cout<<endl;
+
+
+
+  return 0;
+}

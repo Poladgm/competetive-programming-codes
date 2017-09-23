@@ -1,0 +1,35 @@
+#include <cstdlib>
+#include <iostream>
+#include <ctype.h>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   char a[10001];
+   int i,n,r;
+   gets(a);
+
+   n=strlen(a);
+   i=0;
+   while(a[i]==' ' && i<n)
+   {
+       i++;
+   }
+   r=n-1;
+   while(a[r]==' ' && r>=0)
+   {
+       r--;
+   }
+
+   for(i=0; i<r; i++)
+   {
+    if(isalpha(a[i]) || (a[i]==' ' && isalpha(a[i-1])))
+   cout<<a[i];
+   }
+   cout<<a[r]<<endl;
+
+
+ 
+   return EXIT_SUCCESS;
+}

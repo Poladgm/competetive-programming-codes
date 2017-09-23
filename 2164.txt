@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(int argc, char *argv[])
+{
+ char a[1001];
+ int k,i;
+ gets(a);
+ scanf("%d",&k);
+ 
+ for(i=0; i<strlen(a); i++)
+ if((a[i]-k)>=65)
+ a[i]=a[i]-k;
+ else
+ a[i]=26+(a[i]-k);
+ 
+ 
+ printf("%s\n",a);
+ 
+ 
+     
+ return 0;
+}

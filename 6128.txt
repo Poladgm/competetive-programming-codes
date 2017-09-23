@@ -1,0 +1,70 @@
+#include <cstdlib>
+#include <iostream>
+#include <deque>
+#include <string.h>
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    deque <int> s;
+    int n;
+    string a;
+
+    while(1)
+    {
+        cin>>a;
+
+        if(a.compare("exit")==0)
+        {
+            cout<<"bye\n";
+            break;
+        }
+        else if(a.compare("push_back")==0)
+        {
+            cin>>n;
+            s.push_back(n);
+
+            cout<<"ok\n";
+        }
+        else if(a.compare("push_front")==0)
+        {
+            cin>>n;
+            s.push_front(n);
+
+            cout<<"ok\n";
+        }
+        else if(a.compare("pop_back")==0)
+        {
+            cout<<s.back()<<endl;
+            s.pop_back();
+        }
+        else if(a.compare("pop_front")==0)
+        {
+            cout<<s.front()<<endl;
+            s.pop_front();
+        }
+        else if(a.compare("front")==0)
+        {
+            cout<<s.front()<<endl;
+        }
+        else if(a.compare("back")==0)
+        {
+            cout<<s.back()<<endl;
+        }
+        else if(a.compare("size")==0)
+        {
+            cout<<s.size()<<endl;
+        }
+        else if(a.compare("clear")==0)
+        {
+            while(!s.empty())
+            s.pop_front();
+
+            cout<<"ok\n";
+        }
+    }
+
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

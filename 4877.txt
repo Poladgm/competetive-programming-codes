@@ -1,0 +1,42 @@
+#include <iostream>
+
+using namespace std;
+
+long long a[40][101];
+int sum[40][101],n,maxx;
+
+int cem(long long a){
+    int result = 0;
+    while(a>0){
+        result += a%10;
+        a /= 10;
+    }
+
+    return result;
+}
+
+int main()
+{
+    a[0][50] = 1;
+    sum[0][50] = 1;
+
+    for(int i=1; i<=31; i++){
+        for(int j=1; j<=100; j++){
+            a[i][j] = a[i-1][j-1] + a[i-1][j+1];
+            sum[i][j] += cem(a[i][j]) + max(sum[i-1][j-1], sum[i-1][j+1]);
+        }
+    }
+
+    cin>>n;
+    for(int j=0; j<=100; j++){
+        if(sum[n][j] > maxx){
+            maxx = sum[n][j];
+        }
+    }
+
+    cout<<maxx<<endl;
+
+
+
+    return 0;
+}

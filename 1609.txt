@@ -1,0 +1,24 @@
+#include <cstdlib>
+#include <iostream>
+
+
+using namespace std;
+
+char a[15],isare;
+int i,say=0;
+
+int main(int argc, char *argv[])
+{
+   cin>>a;
+   cin>>isare;
+   
+   for(i=0; i<strlen(a); i++)
+   if(a[i]==isare)
+   say++;
+   
+   cout<<say<<endl;
+   
+   
+   \
+   return EXIT_SUCCESS;
+}

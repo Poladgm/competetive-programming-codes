@@ -1,0 +1,41 @@
+#include <iostream>
+
+using namespace std;
+
+int m,n,k,i,eded1,eded2,result=1,flag;
+
+int main()
+{
+    cin>>m>>n>>k;
+
+    for(i=0; i<=100; i++){
+        if(k*i+1==n){
+            result=0;
+            break;
+        }
+        else if(k*i+1>n){
+            eded1=k*(i-1)+1;
+            eded2=k*i+1;
+
+            if(k*i+1>m){
+                flag=1;
+            }
+
+            break;
+        }
+    }
+
+    eded1=(n-eded1)*200;
+    eded2=(eded2-n)*100;
+
+    if(result!=0 && !flag){
+        result=min(eded1,eded2);
+    }
+    else if(result!=0 && flag){
+        result=eded1;
+    }
+
+    cout<<result<<endl;
+
+    return 0;
+}

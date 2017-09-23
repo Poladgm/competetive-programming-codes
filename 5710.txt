@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int i,a[300],p,x1,x2,eded,eded1,eded2;
+unsigned long long n;
+
+int main(int argc, char *argv[])
+{
+   x1=1;
+   x2=1;
+   a[0]=1;
+   a[1]=1;
+   for(i=2; i<300; i++)
+   {    
+       p=x1+x2;
+       x1=x2;
+       x2=p;
+      
+       p=p%100;
+       x1=x1%100;
+       x2=x2%100;        
+      
+       eded=p;
+       eded1=eded%10;
+       eded=eded/10;
+       eded2=eded%10;
+      
+       a[i]=eded1+eded2;
+   }
+   /*
+   for(i=0; i<300; i++)
+   printf("%d ",a[i]);
+  */
+  
+   while(scanf("%llu",&n)!=EOF)
+   {
+       n=n%300;
+       
+       printf("%d\n",a[n]);
+   }
+
+  return 0;
+}

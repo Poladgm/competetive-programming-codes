@@ -1,0 +1,15 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int a,b,n;
+   cin>>a>>b>>n;
+   int temp = a*100+b;
+   temp *= n;
+   int x = temp / 100;
+   int y = temp % 100;
+   cout<<x<<" "<<y<<endl;
+   return 0;
+}

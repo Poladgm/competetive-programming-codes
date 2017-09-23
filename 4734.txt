@@ -1,0 +1,37 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   char a[32000];
+long long i,n,cem=0;
+cin>>a;
+n=strlen(a)-1;
+
+if(a[0]=='-')
+a[0]=48;
+
+for(i=0; i<=n; i++)
+cem=cem+a[i]-48;
+
+         if(cem%3==0)
+         cout<<"Yes"<<endl;
+         else
+         cout<<"No"<<endl;
+
+         if(cem%3==0 && (a[n]-48)%2==0)
+         cout<<"Yes"<<endl;
+         else
+         cout<<"No"<<endl;
+
+         if(cem%9==0)
+         cout<<"Yes"<<endl;
+         else
+         cout<<"No"<<endl;
+
+
+
+   return EXIT_SUCCESS;
+}

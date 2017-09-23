@@ -1,0 +1,78 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+ string a,b,s,k;
+ cin>>a>>b;
+ char p[100];
+ long int n,m,a1,b1;
+ n=a.length();
+ m=b.length();
+ 
+ int j=n-1;
+ for(int i=m-1;i>=0;i--)
+ {
+         
+   s=a[j];
+   k=b[i];
+   a1=atoi(s.c_str());
+   b1=atoi(k.c_str());
+   
+  if(a1>=b1)
+  {
+  int y=a1-b1;
+  itoa(y,p,10);
+  a[j]=p[0];
+  j--;          
+  }
+  else
+  {
+      int h=j;
+    s=a[h-1];
+    h=h-1;
+    while(s=="0")
+    {
+       a[h]='9';
+       h--;
+       s=a[h];              
+    }
+     
+   int a2=atoi(s.c_str());
+    a2=a2-1;
+    itoa(a2,p,10);
+  a[h]=p[0];
+    a1=a1+10;
+     int y=a1-b1;
+  itoa(y,p,10);
+  a[j]=p[0];
+  j--;          
+  }                       
+ }
+int w=0; 
+ for(int i=0;i<n;i++)
+ {if(a[i]=='0')
+   w=0;
+   else
+   {w=1;
+   break;}}
+   if(w==0)
+   cout<<0<<endl;
+   else
+ if(w==1){
+  int r=0;    
+ for(int i=0;i<n;i++)
+ {
+  if(a[i]=='0'&&r==1)
+  cout<<a[i];
+  else
+  if(a[i]!='0'){
+  r=1;             
+  cout<<a[i];}               
+ 
+ }
+ cout<<endl;
+ }
+return 0;}

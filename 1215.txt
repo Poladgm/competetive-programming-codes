@@ -1,0 +1,50 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    int a[1001],i,j,n,m,adam1,adam2;
+    char x,y;
+    cin>>n;
+    for(i=1; i<=n; i++)
+    {
+        adam1=0;
+        adam2=0;
+        
+        cin>>m;
+        for(j=1; j<=m; j++)
+        {
+            cin>>x;
+            cin>>y;
+            
+                if(x=='R' && y=='S')
+            adam1++;
+                else if(x=='R' && y=='P')
+            adam2++;
+                else if(x=='S' && y=='R')
+            adam2++;
+                else if(x=='S' && y=='P')
+            adam1++;
+                else if(x=='P' && y=='R')
+            adam1++;
+                else if(x=='P' && y=='S')
+            adam2++;
+        }
+                
+            if(adam1>adam2)
+        cout<<"Player 1"<<endl;
+            else if(adam2>adam1)
+        cout<<"Player 2"<<endl;
+            else if(adam1==adam2)
+        cout<<"TIE"<<endl;   
+    }
+        
+    
+    
+    
+    
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

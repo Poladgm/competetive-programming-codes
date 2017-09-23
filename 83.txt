@@ -1,0 +1,50 @@
+#include <cstdlib>
+#include <iostream>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   int i,d,m,y;
+   char a[1001],b[1001],c[1001];
+   scanf("%d/%d/%d",&d,&m,&y);
+   
+   itoa(d,a,d+1);
+   for(i=0; i<strlen(a); i++)
+   {
+       if(a[i]>=97 && a[i]<=122)
+       a[i]=a[i]-32;
+       
+       printf("%c",a[i]);
+   }
+   printf("/");
+   
+   
+   itoa(m,b,d+1);
+   for(i=0; i<strlen(b); i++)
+   {
+       if(b[i]>=97 && b[i]<=122)
+       b[i]=b[i]-32;
+       
+       printf("%c",b[i]);
+   }
+   printf("/");
+   
+   itoa(y,c,d+1);
+   for(i=0; i<strlen(c); i++)
+   {
+       if(c[i]>=97 && c[i]<=122)
+       c[i]=c[i]-32; 
+         
+       printf("%c",c[i]);
+   }
+   printf("\n");
+
+   
+   
+   
+   return EXIT_SUCCESS;
+}

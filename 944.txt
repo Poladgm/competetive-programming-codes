@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(int argc, char *argv[])
+{
+double x1,Y1,z1,x2,y2,z2,x3,y3,z3,x4,y4,z4,a,b,c,d,e,f,p1,p2,p3,p4,s1,s2,s3,s4,s;
+scanf("%lf%lf%lf",&x1,&Y1,&z1);
+scanf("%lf%lf%lf",&x2,&y2,&z2);
+scanf("%lf%lf%lf",&x3,&y3,&z3);
+scanf("%lf%lf%lf",&x4,&y4,&z4);
+
+a=sqrt((x1-x2)*(x1-x2)+(Y1-y2)*(Y1-y2)+(z1-z2)*(z1-z2));
+b=sqrt((x2-x3)*(x2-x3)+(y2-y3)*(y2-y3)+(z2-z3)*(z2-z3));
+c=sqrt((x1-x3)*(x1-x3)+(Y1-y3)*(Y1-y3)+(z1-z3)*(z1-z3));
+d=sqrt((x1-x4)*(x1-x4)+(Y1-y4)*(Y1-y4)+(z1-z4)*(z1-z4));
+e=sqrt((x2-x4)*(x2-x4)+(y2-y4)*(y2-y4)+(z2-z4)*(z2-z4));
+f=sqrt((x3-x4)*(x3-x4)+(y3-y4)*(y3-y4)+(z3-z4)*(z3-z4));
+
+p1=(a+b+c)/2;
+p2=(a+d+e)/2;
+p3=(e+b+f)/2;
+p4=(c+d+f)/2;
+
+s1=sqrt(p1*(p1-a)*(p1-b)*(p1-c));
+s2=sqrt(p2*(p2-a)*(p2-d)*(p2-e));
+s3=sqrt(p3*(p3-e)*(p3-b)*(p3-f));
+s4=sqrt(p4*(p4-d)*(p4-f)*(p4-c));
+
+s=s1+s2+s3+s4;
+
+printf("%.1lf\n",s);
+
+
+return 0;
+}

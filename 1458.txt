@@ -1,0 +1,52 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+ {
+    long long int N, i, A[200], a1, a2;
+    cin>>N;
+    for( i = 1; i <= N; i ++ )
+    cin>>A[i];
+    if( N % 2 == 1 )
+    {
+         a1 = A[(N-1)/2];
+         a2 = A[(N-1)/2+2];
+         for( i = (N-1)/2; i > 1; i -- )
+             {
+             A[i] = A[i-1];
+             A[i-1] = a1;
+             }
+         
+         for( i = (N-1)/2+2 ; i < N; i ++ )
+             {
+             A[i] = A[i+1];
+             A[i+1] = a2;
+             }
+         for( i = 1; i < N; i ++ )
+         cout<<A[i]<<" ";
+         cout<<A[N]<<endl;
+         } 
+     if( N % 2 == 0 )
+         {
+         a1 = A[N/2];
+         a2 = A[N/2+1];
+         for( i = N/2; i > 1; i -- )
+             {
+             A[i] = A[i-1];
+             A[i-1] = a1;
+             }
+         
+         for( i = N/2+1 ; i < N; i ++ )
+             {
+             A[i] = A[i+1];
+             A[i+1] = a2;
+             }
+         for( i = 1; i < N; i ++ )
+         cout<<A[i]<<" ";
+         cout<<A[N]<<endl;
+         }      
+    
+    return EXIT_SUCCESS;
+ }

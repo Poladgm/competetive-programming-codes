@@ -1,0 +1,35 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    unsigned long long a[100002],i=1,say=0,max,x,n;
+    while(cin>>x)
+    {
+        if(x==0)
+        break;
+        
+        a[i++]=x;
+    }
+    
+    n=i-1;
+    
+    max=a[1];
+    for(i=2; i<=n; i++)
+    if(a[i]>max)
+    max=a[i];
+    
+    for(i=1; i<=n; i++)
+    if(a[i]==max)
+    say++;
+    
+    cout<<say<<endl;
+    
+    
+    
+    
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

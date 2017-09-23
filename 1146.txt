@@ -1,0 +1,34 @@
+#include <cstdlib>
+#include <iostream>
+
+long GCD(long a, long b)
+{
+   long c;
+   while(b!=0)
+   {
+       a=a%b;
+       c=a;
+       a=b;
+       b=c;
+   }
+  return a;
+}
+
+int main(int argc, char *argv[])
+{
+  long long i,j,n,G;
+  while(scanf("%lld",&n)!=EOF)
+  {
+      if(n==0)
+      break;
+      G=0;
+  for(i=1; i<n; i++)
+  for(j=i+1; j<=n; j++)
+  {
+       G=G+GCD(i,j);
+  }
+  printf("%lld\n",G);
+  }
+
+      return EXIT_SUCCESS;
+}

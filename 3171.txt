@@ -1,0 +1,38 @@
+#include <cstdlib>
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+ class circle
+  {
+      double x1,y1,r1,x2,y2;
+      double mesafe(double X1,double Y1,double X2,double Y2);
+      public:
+      void start();
+  };
+  circle t;
+
+  double circle :: mesafe(double X1,double Y1,double X2,double Y2)
+  {
+      return sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+  }
+
+    void circle::start()
+
+  {
+      cin>>x1>>y1>>r1>>x2>>y2;
+      if(mesafe(x1,y1,x2,y2)<=r1)
+      cout<<"YES"<<endl;
+      else
+      cout<<"NO"<<endl;
+  }
+
+int main(int argc, char *argv[])
+{
+
+
+  t.start();
+ 
+  return 0;
+}

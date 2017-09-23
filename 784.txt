@@ -1,0 +1,60 @@
+#include <iostream>
+#define INF 100000000
+using namespace std;
+
+long long n,idx_d,idx_r,minn,cur_ans,flag;
+char ch;
+
+int main()
+{
+   while(1){
+       minn=INF;
+       flag=0;
+       idx_d = -1;
+       idx_r = -1;
+       cin>>n;
+
+       if(n==1){
+           flag=1;
+       }
+
+       if(n==0){
+           break;
+       }
+
+       for(int i=1;i<=n; i++){
+           cin>>ch;
+
+           if(ch=='Z'){
+               flag=1;
+           }
+
+           if(ch=='R'){
+               idx_r = i;
+           }
+
+           if(ch=='D'){
+               idx_d = i;
+           }
+
+           if(idx_d != -1 && idx_r != -1){
+               cur_ans=  idx_d - idx_r;
+
+               if(cur_ans < 0){
+                   cur_ans = - cur_ans;
+               }
+
+               minn = min(minn,cur_ans);
+           }
+       }
+
+       if(flag==0){
+           cout<<minn<<endl;
+       }
+       else{
+           cout<<'0'<<endl;
+       }
+   }
+
+   return 0;
+}

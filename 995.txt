@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int i,j,k,n,x[101][101],minn=10000,cem,a,b,c;
+    cin>>n;
+    for(i=1; i<=n; i++)
+        for(j=1; j<=n; j++)
+            cin>>x[i][j];
+
+    for(k=1; k<=n; k++)
+        for(i=1; i<=n; i++)
+            for(j=1; j<=n; j++)
+                if(i==j || i==k || j==k)
+                    continue;
+                else
+                {
+                    cem=x[i][k]+x[k][j]+x[i][j];
+
+                    if(cem<minn)
+                    {
+                        minn=cem;
+
+                        a=i;
+                        b=j;
+                        c=k;
+                    }
+                }
+
+    cout<<a<<" "<<b<<" "<<c<<endl;
+
+    return 0;
+}

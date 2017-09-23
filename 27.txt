@@ -1,0 +1,52 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long i,max,n,j=1,k,a[10001],cem,temp,p;
+    scanf("%lld",&n);
+
+    max=n;
+
+    while(n!=0)
+    {
+        a[j++]=n%2;
+        n=n/2;
+    }
+
+    j--;
+
+    /*
+    for(i=1; i<=j; i++)
+    cout<<a[i]<<" ";
+    */
+
+    for(i=1; i<j; i++)
+    {
+        cem=0;
+        p=1;
+
+        temp=a[j];
+
+        for(k=j; k>=2; k--)
+        a[k]=a[k-1];
+
+        a[1]=temp;
+
+        for(k=1; k<=j; k++)
+        {
+            cem=cem+a[k]*p;
+            p=p*2;
+        }
+
+        if(cem>max)
+        max=cem;
+    }
+
+    cout<<max<<endl;
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

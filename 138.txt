@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+int n,k=0;
+scanf("%d",&n);
+
+if(n%10!=0)
+printf("-1\n");
+
+else if (n%10==0)
+{
+   while(n/500!=0) { n=n-500; k++; }
+   while(n/200!=0) { n=n-200; k++; }
+   while(n/100!=0) { n=n-100; k++; }
+   while(n/50!=0) { n=n-50; k++; }
+   while(n/20!=0) { n=n-20; k++; }
+   while(n/10!=0) { n=n-10; k++; }
+
+printf("%d\n",k);
+}
+
+
+ return 0;
+}

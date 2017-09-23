@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+string a;
+int flag,n,hasil,temp;
+long long ans;
+
+int main()
+{
+    getline(cin,a);
+    n = a.size();
+    temp = 0;
+    hasil = 1;
+    for(int i=n; i>=0; i--){
+        if(a[i] >= 48 && a[i] <= 57){
+            temp += (a[i] - 48) * hasil;
+            hasil *= 10;
+        }
+        else if(a[i] == '+' || a[i] == '-'){
+            flag = 1;
+            if(a[i] == '+'){
+                ans += temp;
+            }
+            else{
+                ans -= temp;
+            }
+
+            temp = 0;
+            hasil = 1;
+        }
+    }
+    
+    ans += temp;
+    cout<<ans<<endl;
+    return 0;
+}

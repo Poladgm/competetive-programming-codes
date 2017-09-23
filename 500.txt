@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+int m,l,w,h,i,s;
+  scanf("%d",&m);
+
+  for (i=1;i<=m; i++)
+  {
+scanf("%d%d%d",&l,&w,&h);
+s=(l+w)*2*h;
+  if (s%16==0)
+
+printf("%d\n",s/16);
+else
+printf("%d\n",s/16+1);
+}
+
+
+return 0;
+}

@@ -1,0 +1,158 @@
+#include <cstdlib>
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+long double a,b,c,d,e,f,h,k,r;
+
+int main(int argc, char *argv[])
+{
+   while(cin>>a>>b>>c>>d>>e>>f)
+   {
+       h = (((a*a+b*b)*(f-d) + (c*c+d*d)*(b-f) + (e*e+f*f)*(d-b)) / (a*(f-d)+c*(b-f)+e*(d-b)))/2;
+       k = (((a*a+b*b)*(e-c) + (c*c+d*d)*(a-e) + (e*e+f*f)*(c-a)) / (b*(e-c)+d*(a-e)+f*(c-a)))/2;
+       r = sqrt((a - h)*(a - h) + (b - k)*( b - k));
+       cout.precision(3);
+       
+       if( h < 0 && k < 0 )
+       {
+           if( h*h+k*k-r*r < 0 ){   
+               cout<<fixed<<"(x + "<<-h<<")^2 + (y + "<<-k<<")^2 = "<<r<<"^2"<<endl;
+               cout<<fixed<<"x^2 + y^2 + "<<-2*h<<"x + "<<-2*k<<"y - "<<-(h*h+k*k-r*r)<<" = 0"<<endl;
+           }
+           else if ( h*h+k*k-r*r > 0 ){
+               cout<<fixed<<"(x + "<<-h<<")^2 + (y + "<<-k<<")^2 = "<<r<<"^2"<<endl;
+               cout<<fixed<<"x^2 + y^2 + "<<-2*h<<"x + "<<-2*k<<"y + "<<h*h+k*k-r*r<<" = 0"<<endl;
+           }
+           else{
+               cout<<fixed<<"(x + "<<-h<<")^2 + (y + "<<-k<<")^2 = "<<r<<"^2"<<endl;
+               cout<<fixed<<"x^2 + y^2 + "<<-2*h<<"x + "<<-2*k<<"y = 0"<<endl;
+           }
+       }       
+       else if( h > 0 && k < 0 ){  
+               
+           if( h*h+k*k-r*r < 0 ){ 
+               cout<<fixed<<"(x - "<<h<<")^2 + (y + "<<-k<<")^2 = "<<r<<"^2"<<endl;
+               cout<<fixed<<"x^2 + y^2 - "<<2*h<<"x + "<<-2*k<<"y - "<<-(h*h+k*k-r*r)<<" = 0"<<endl;
+           }
+           else if ( h*h+k*k-r*r > 0 ){
+               cout<<fixed<<"(x - "<<h<<")^2 + (y + "<<-k<<")^2 = "<<r<<"^2"<<endl;
+               cout<<fixed<<"x^2 + y^2 - "<<2*h<<"x + "<<-2*k<<"y + "<<h*h+k*k-r*r<<" = 0"<<endl;
+           }     
+           else{
+               cout<<fixed<<"(x - "<<h<<")^2 + (y + "<<-k<<")^2 = "<<r<<"^2"<<endl;
+               cout<<fixed<<"x^2 + y^2 - "<<2*h<<"x + "<<-2*k<<"y = 0"<<endl;    
+           }
+       }
+       else if( h < 0 && k > 0 ){
+           
+           if( h*h+k*k-r*r < 0 ){    
+               cout<<fixed<<"(x + "<<-h<<")^2 + (y - "<<k<<")^2 = "<<r<<"^2"<<endl;
+               cout<<fixed<<"x^2 + y^2 + "<<-2*h<<"x - "<<2*k<<"y - "<<-(h*h+k*k-r*r)<<" = 0"<<endl;
+           }    
+           else if ( h*h+k*k-r*r > 0 ){     
+               cout<<fixed<<"(x + "<<-h<<")^2 + (y - "<<k<<")^2 = "<<r<<"^2"<<endl;
+               cout<<fixed<<"x^2 + y^2 + "<<-2*h<<"x - "<<2*k<<"y + "<<h*h+k*k-r*r<<" = 0"<<endl;
+           }  
+           else{
+               cout<<fixed<<"(x + "<<-h<<")^2 + (y - "<<k<<")^2 = "<<r<<"^2"<<endl; 
+               cout<<fixed<<"x^2 + y^2 + "<<-2*h<<"x - "<<2*k<<"y = 0"<<endl;  
+           }
+       }
+       else if( h > 0 && k > 0 ){
+           if( h*h+k*k-r*r < 0 ){    
+               cout<<fixed<<"(x - "<<h<<")^2 + (y - "<<k<<")^2 = "<<r<<"^2"<<endl;
+               cout<<fixed<<"x^2 + y^2 - "<<2*h<<"x - "<<2*k<<"y - "<<-(h*h+k*k-r*r)<<" = 0"<<endl;
+           }
+           else if( h*h+k*k-r*r > 0 ){
+               cout<<fixed<<"(x - "<<h<<")^2 + (y - "<<k<<")^2 = "<<r<<"^2"<<endl;
+               cout<<fixed<<"x^2 + y^2 - "<<2*h<<"x - "<<2*k<<"y + "<<h*h+k*k-r*r<<" = 0"<<endl;
+           }  
+           else{
+               cout<<fixed<<"(x - "<<h<<")^2 + (y - "<<k<<")^2 = "<<r<<"^2"<<endl;
+               cout<<fixed<<"x^2 + y^2 - "<<2*h<<"x - "<<2*k<<"y = 0"<<endl;  
+           }
+       }        
+       else if ( h == 0 && k < 0 ){ 
+       if( h*h+k*k-r*r < 0 )
+       {   
+       cout<<fixed<<"x^2 + (y + "<<-k<<")^2 = "<<r<<"^2"<<endl;
+       cout<<fixed<<"x^2 + y^2 + "<<-2*k<<"y - "<<-(h*h+k*k-r*r)<<" = 0"<<endl;
+       }
+       else if( h*h+k*k-r*r > 0 )
+       {
+       cout<<fixed<<"x^2 + (y + "<<-k<<")^2 = "<<r<<"^2"<<endl;
+       cout<<fixed<<"x^2 + y^2 + "<<-2*k<<"y + "<<h*h+k*k-r*r<<" = 0"<<endl;
+       }
+       else
+       {
+       cout<<fixed<<"x^2 + (y + "<<-k<<")^2 = "<<r<<"^2"<<endl;
+       cout<<fixed<<"x^2 + y^2 + "<<-2*k<<"y = 0"<<endl;
+       } 
+   }
+       else if ( h == 0 && k > 0 )
+   {    
+       if( h*h+k*k-r*r < 0 )
+       {   
+       cout<<fixed<<"x^2 + (y - "<<k<<")^2 = "<<r<<"^2"<<endl;
+       cout<<fixed<<"x^2 + y^2 - "<<2*k<<"y - "<<-(h*h+k*k-r*r)<<" = 0"<<endl;
+       }
+       else if( h*h+k*k-r*r > 0 )
+       {
+       cout<<fixed<<"x^2 + (y - "<<k<<")^2 = "<<r<<"^2"<<endl;
+       cout<<fixed<<"x^2 + y^2 - "<<2*k<<"y + "<<h*h+k*k-r*r<<" = 0"<<endl;
+       }
+       else
+       {
+       cout<<fixed<<"x^2 + (y - "<<k<<")^2 = "<<r<<"^2"<<endl;
+       cout<<fixed<<"x^2 + y^2 - "<<2*k<<"y = 0"<<endl;
+       } 
+   }
+       else if ( h < 0 && k == 0 )
+   {
+       if( h*h+k*k-r*r < 0 )
+       {       
+       cout<<fixed<<"(x + "<<-h<<")^2 + y^2 = "<<r<<"^2"<<endl;
+       cout<<fixed<<"x^2 + y^2 + "<<-2*h<<"x - "<<-(h*h+k*k-r*r)<<" = 0"<<endl;
+       }
+       else if( h*h+k*k-r*r > 0 )
+       {
+       cout<<fixed<<"(x + "<<-h<<")^2 + y^2 = "<<r<<"^2"<<endl;
+       cout<<fixed<<"x^2 + y^2 + "<<-2*h<<"x + "<<h*h+k*k-r*r<<" = 0"<<endl;
+       }    
+       else
+       {
+       cout<<fixed<<"(x + "<<-h<<")^2 + y^2 = "<<r<<"^2"<<endl;
+       cout<<fixed<<"x^2 + y^2 + "<<-2*h<<"x = 0"<<endl;
+       }
+   }    
+       else if ( h > 0 && k == 0 )
+   {
+       if( h*h+k*k-r*r < 0 )
+       {       
+       cout<<fixed<<"(x - "<<h<<")^2 + y^2 = "<<r<<"^2"<<endl;
+       cout<<fixed<<"x^2 + y^2 - "<<2*h<<"x - "<<-(h*h+k*k-r*r)<<" = 0"<<endl;
+       }
+       else if( h*h+k*k-r*r > 0 )
+       {
+       cout<<fixed<<"(x - "<<h<<")^2 + y^2 = "<<r<<"^2"<<endl;
+       cout<<fixed<<"x^2 + y^2 - "<<2*h<<"x + "<<h*h+k*k-r*r<<" = 0"<<endl;
+       }    
+       else
+       {
+       cout<<fixed<<"(x - "<<h<<")^2 + y^2 = "<<r<<"^2"<<endl;
+       cout<<fixed<<"x^2 + y^2 - "<<2*h<<"x = 0"<<endl;
+       }
+   }    
+       else if ( h == 0 && k == 0 )
+   {
+       cout<<fixed<<"x^2 + y^2 = "<<r<<"^2"<<endl;
+       cout<<fixed<<"x^2 + y^2 - "<<r*r<<" = 0"<<endl;
+       
+   }     
+       cout<<endl;
+   }          
+   
+   return 0;
+}

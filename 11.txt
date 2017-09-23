@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+  int m,n,k,i,j,t,a[1001];
+      scanf("%d %d %d",&m,&n,&k);
+      t=m/n;
+      j=m%n;
+      for(i=1;i<=k;i++)
+      {
+              a[i]=j*10/n;
+          j=j*10%n;    
+      }
+          printf("%d.",t);
+          for(i=1;i<=k;i++)
+          printf("%d",a[i]);
+          putchar('\n');
+      
+                return 0;
+}

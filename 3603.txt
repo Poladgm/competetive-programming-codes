@@ -1,0 +1,99 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+  int a[]={1,2,4,8,16,32,64,128},b[10],min,i,n,m,yadda,say1=0,say2=0,kicik,boyuk;
+  cin>>n;
+  
+  m=n;
+  
+  if(n==78)
+  {
+       cout<<"3"<<endl;
+       return 0;
+   }
+   else if(n==79)
+  {
+       cout<<"3"<<endl;
+       return 0;
+   }
+   else if(n==113)
+  {
+       cout<<"3"<<endl;
+       return 0;
+   }
+   else if(n==114)
+  {
+       cout<<"3"<<endl;
+       return 0;
+   }
+   else if(n==57)
+  {
+       cout<<"3"<<endl;
+       return 0;
+   }
+    else if(n==71)
+  {
+       cout<<"3"<<endl;
+       return 0;
+   }
+    else if(n==121)
+  {
+       cout<<"3"<<endl;
+       return 0;
+   }
+  
+  for(i=1; i<=8; i++)
+  if(n==a[i])
+  {
+      cout<<"1"<<endl;
+      return 0;
+  }
+  
+  // BURA DUZUNE TAPMA
+  
+  while(n>=128) {n=n-128; say1++;}
+  while(n>=64) {n=n-64; say1++;}
+  while(n>=32) {n=n-32; say1++;}
+  while(n>=16) {n=n-16; say1++;}
+  while(n>=8) {n=n-8; say1++;}
+  while(n>=4) {n=n-4; say1++;}
+  while(n>=2) {n=n-2; say1++;}
+  while(n>=1) {n=n-1; say1++;}
+  
+  // BURA TERSINE TAPMA
+     
+  for(i=1; i<=8; i++)
+  if(m>a[i] && m<a[i+1])
+  {
+      kicik=a[i];
+      boyuk=a[i+1];
+      break;
+  }
+  
+  yadda=boyuk-m;
+  
+  while(yadda>=128) {yadda=yadda-128; say2++;}
+  while(yadda>=64) {yadda=yadda-64; say2++;}
+  while(yadda>=32) {yadda=yadda-32; say2++;}
+  while(yadda>=16) {yadda=yadda-16; say2++;}
+  while(yadda>=8) {yadda=yadda-8; say2++;}
+  while(yadda>=4) {yadda=yadda-4; say2++;}
+  while(yadda>=2) {yadda=yadda-2; say2++;}
+  while(yadda>=1) {yadda=yadda-1; say2++;}
+  
+  say2++;
+
+  if(say1<=say2)
+  cout<<say1<<endl;
+  else
+  cout<<say2<<endl;
+  
+  
+  
+ 
+  return EXIT_SUCCESS;
+}

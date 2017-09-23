@@ -1,0 +1,48 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int used[101];
+int a[101][101];
+int n;
+
+void dfs(int x){
+   used[x] = 1;
+
+   for(int i=1;i<=n;i++){
+       if(a[x][i] && !used[i]){
+           dfs(i);
+       }
+   }
+
+   return;
+}
+
+int y;
+int main()
+{
+   cin>>n;
+
+   for(int i=1;i<=n;i++){
+       for(int j=1;j<=n;j++){
+           cin>>y;
+           if(y){
+               a[i][j] = 1;
+           }
+       }
+   }
+   int cnt = 0;
+   for(int i=1;i<=n;i++){
+       if(!used[i]){
+           cnt ++;
+           dfs(i);
+       }
+   }
+
+   cout<<cnt<<endl;
+
+
+   return 0;
+}

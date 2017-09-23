@@ -1,0 +1,18 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int n,i,say=0;
+
+   cin>>n;
+   for(i=1;i<=n;i++)
+   if(n/i==n%i)
+   say++;
+
+   cout<<say<<endl;
+
+   return 0;
+}

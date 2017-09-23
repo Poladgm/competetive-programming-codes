@@ -1,0 +1,36 @@
+#include <cstdlib>
+#include <iostream>
+#include <algorithm>
+#include <string.h>
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long long i,j,n,m;
+    char a[1001];
+    cin>>m;
+    for(i=1; i<=m; i++)
+    {
+        cin>>i;
+        cin>>a;
+        n=strlen(a);
+
+        cout<<i<<" ";
+
+        if(next_permutation(a,a+n)==0)
+        cout<<"BIGGEST"<<endl;
+        else
+        {
+            for(j=0; j<n; j++)
+            cout<<a[j];
+            cout<<endl;
+        }
+    }
+
+
+
+
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

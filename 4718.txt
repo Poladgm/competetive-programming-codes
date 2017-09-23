@@ -1,0 +1,13 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+  char a[1001];
+  cin>>a;
+  cout<<"Hello, "<<a<<endl;
+  
+  return EXIT_SUCCESS;
+}

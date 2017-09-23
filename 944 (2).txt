@@ -1,0 +1,79 @@
+#include <cstdlib>
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+class koordinat
+     {
+     public:
+            double x,y,z;
+     };
+
+class piramida
+     {
+     koordinat A,B,C,D;
+     double mesafe(double a, double b, double c, double d, double e, double f);
+     double sahe(double a, double b, double c);
+     void input();
+     void output();
+     public:
+            void start();
+            };
+
+double piramida :: mesafe(double a, double b, double c, double d, double e, double f)
+      {
+      return sqrt((d-a)*(d-a)+(e-b)*(e-b)+(f-c)*(f-c));
+      }
+
+double piramida :: sahe(double a, double b, double c)
+      {
+      double p;
+      p=(a+b+c)/2;
+      return sqrt(p*(p-a)*(p-b)*(p-c));
+      }
+
+void piramida :: input()
+    {
+    cin>>A.x>>A.y>>A.z>>B.x>>B.y>>B.z>>C.x>>C.y>>C.z>>D.x>>D.y>>D.z;
+    }
+    
+void piramida :: output()
+    {
+    double S1,S2,S3,S4,S;
+    double AB,AC,AD,BC,BD,CD;
+    AB=mesafe(A.x,A.y,A.z,B.x,B.y,B.z);
+    AC=mesafe(A.x,A.y,A.z,C.x,C.y,C.z);
+    AD=mesafe(A.x,A.y,A.z,D.x,D.y,D.z);
+    BC=mesafe(B.x,B.y,B.z,C.x,C.y,C.z);
+    BD=mesafe(B.x,B.y,B.z,D.x,D.y,D.z);
+    CD=mesafe(C.x,C.y,C.z,D.x,D.y,D.z);
+    
+    S1=sahe(BC,BD,CD);
+    S2=sahe(AC,BC,AB);
+    S3=sahe(AC,AD,CD);
+    S4=sahe(AD,AB,BD);
+    S=S1+S2+S3+S4;
+    
+    if(S<0)
+    S=-S;
+    
+    cout.setf(ios::fixed);
+    cout.precision(1);
+    cout<<S<<endl;
+    }
+    
+void piramida :: start()
+    {
+    input();
+    output();
+    }
+    
+int main(int argc, char *argv[])
+{
+   piramida t;
+   t.start();
+   
+ 
+   return EXIT_SUCCESS;
+}

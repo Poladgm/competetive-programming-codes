@@ -1,0 +1,55 @@
+#include <cstdlib>
+#include <iostream>
+#include <algorithm>
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   char a[10001],b[10001];
+   long long say=0,i,x,p,n;
+   
+   while(cin>>a)
+   {
+       say=0;
+       cin>>x;
+       n=strlen(a);
+       
+       p=1;
+       
+       for(i=1; i<=n; i++)
+       p=p*i;
+       
+       for(i=0; i<n; i++)
+       b[i]=a[i];
+       
+       if(x>p)
+       {
+           for(i=0; i<n; i++)
+           cout<<b[i];
+           printf(" %lld = ",x);
+           puts("No permutation");
+       }
+       
+       while(next_permutation(a,a+n))
+       {
+           say++;
+           
+           if(say==x-1)
+           {
+               for(i=0; i<n; i++)
+               cout<<b[i];
+               printf(" %lld = ",x);
+               for(i=0; i<n; i++)
+               cout<<a[i];
+               cout<<endl;
+               break;
+           }
+       }
+   }
+   
+   return EXIT_SUCCESS;
+}

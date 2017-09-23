@@ -1,0 +1,38 @@
+#include <iostream>
+#include <math.h>
+#include <stdio.h>
+
+using namespace std;
+
+long dp[1000005];
+long n;
+long minn;
+
+int main()
+{
+   scanf("%d",&n);
+
+   for(int i = 1; i <= 100; i++){
+       dp[i*i*i] = 1;
+   }
+
+   for(int i = 1; i <= n; i++){
+       minn = 100000000;
+       for(int j = 1; j <= 100; j++){
+           if( j * j* j > i){
+               break;
+           }
+
+           minn = min( minn , dp[i - j*j*j]);
+       }
+
+       dp[i] = minn + 1;
+       //cout<<i<<": "<<dp[i]<<endl;
+   }
+
+   printf("%d\n",dp[n]);
+
+
+
+   return 0;
+}

@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+
+unsigned long long i,j,a[1000001],x,y;
+
+long long ebob (long long a, long long b)
+{
+   if(b==0)
+       return a;
+   else
+       return ebob(b,a%b);
+}
+
+
+int main()
+{
+   cin>>x>>y;
+
+   a[1]=a[2]=1;
+
+   for(i=3; i<=ebob(x,y); i++)
+   {
+       a[i]=a[i-1]%1000000000LL+a[i-2]%1000000000LL;
+       a[i]=a[i]%1000000000LL;
+
+   }
+
+   cout<<a[ebob(x,y)]<<endl;
+
+   return 0;
+}

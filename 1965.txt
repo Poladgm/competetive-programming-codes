@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+using namespace std;
+
+int main()
+{
+    int i,n,a[101],x,say=0;
+    scanf("%d",&n);
+    for(i=1; i<=n; i++)
+        scanf("%d",&a[i]);
+
+    scanf("%d",&x);
+
+    for(i=1; i<=n; i++)
+        if(a[i]>=x)
+            say++;
+        else
+            break;
+
+    printf("%d\n",say+1);
+
+
+
+    return 0;
+}

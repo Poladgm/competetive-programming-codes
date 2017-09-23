@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+   int gun,ay,il,i,boyukfevral=0,boyukay;
+  scanf("%d%d%d",&gun,&ay,&il);
+
+  if((il%400==0) || (il%4==0 && il%100!=0))
+  boyukfevral=1;
+
+  if(ay==1 || ay==3 || ay==5 || ay==7 || ay==8 || ay==10 || ay==12)
+  boyukay=1;
+  else if (ay==4 || ay==6 || ay==9 || ay==11)
+  boyukay=0;
+
+  if(boyukay==1 && gun<=29)
+  printf("%d %d %d\n",(gun+2),ay,il);
+  else if (boyukay==0 && gun<=28)
+  printf("%d %d %d\n",(gun+2),ay,il);
+  else if(ay==2 && boyukfevral==1 && gun<=27)
+  printf("%d %d %d\n",(gun+2),ay,il);
+  else if(ay==2 && boyukfevral==0 && gun<=26)
+  printf("%d %d %d\n",(gun+2),ay,il);
+  else if(boyukay==1 && gun==30 && ay<=11)
+  printf("1 %d %d\n",(ay+1),il);
+  else if(boyukay==1 && gun==31 && ay<=11)
+  printf("2 %d %d\n",(ay+1),il);
+  else if(boyukay==0 && gun==29 && ay<=11)
+  printf("1 %d %d\n",(ay+1),il);
+  else if(boyukay==0 && gun==30 && ay<=11)
+  printf("2 %d %d\n",(ay+1),il);
+  else if(boyukay==1 && gun==30 && ay==12)
+  printf("1 1 %d\n",(il+1));
+  else if(boyukay==1 && gun==31 && ay==12)
+  printf("2 1 %d\n",(il+1));
+  else if(ay==2 && boyukfevral==1 && gun==28)
+  printf("1 %d %d\n",(ay+1),il);
+  else if(ay==2 && boyukfevral==1 && gun==29)
+  printf("2 %d %d\n",(ay+1),il);
+  else if(ay==2 && boyukfevral==0 && gun==27)
+  printf("1 %d %d\n",(ay+1),il);
+  else if(ay==2 && boyukfevral==0 && gun==28)
+  printf("2 %d %d\n",(ay+1),il);
+
+ return 0;
+}

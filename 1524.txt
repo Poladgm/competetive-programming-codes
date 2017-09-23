@@ -1,0 +1,42 @@
+#include <iostream>
+#define ll long long
+
+using namespace std;
+
+unsigned ll w,n,t,p,bir,iki,uc,ans;
+
+int main()
+{
+   cin>>w;
+   for(ll j=1; j<=w; j++){
+       cin>>n>>t>>p;
+       ans = 1;
+
+       uc = n-1;
+       iki = t - n*p;
+       bir = iki + uc;
+
+       if(iki >= uc){
+           for(ll i=iki+1; i<=bir; i++){
+               ans *= i;
+           }
+
+           for(ll i=2; i<=uc; i++){
+               ans /= i;
+           }
+       }
+       else{
+           for(ll i=uc+1; i<=bir; i++){
+               ans *= i;
+           }
+
+           for(ll i=2; i<=iki; i++){
+               ans /= i;
+           }
+       }
+
+       cout<<ans<<endl;
+   }
+
+   return 0;
+}

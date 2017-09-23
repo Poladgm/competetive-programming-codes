@@ -1,0 +1,35 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   unsigned long long i,j,n,say=1,say1,cem=0;  // say herfleri sayir
+   char x;                               // say1 bosluqlari sayir
+   cin>>x;
+   cin>>n;
+   
+   for(i=n; i<=(n+n-1); i++)
+   cem+=i;
+   
+   cout<<cem<<endl;
+   
+   for(i=n; i<=(n+n-1); i++)
+   {
+       for(j=1; j<=i; j++)
+       {
+           say1=i-say;
+           
+           if(j<=say1)
+           cout<<" ";
+           else
+           cout<<x;
+       }
+       
+       say+=2;
+       cout<<endl;
+   }
+   
+   return EXIT_SUCCESS;
+}

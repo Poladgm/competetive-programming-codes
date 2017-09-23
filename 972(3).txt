@@ -1,0 +1,45 @@
+#include <iostream>
+#include <cstdio>
+#include <algorithm>
+#include <cstdlib>
+#include <cstring>
+#include <string>
+#include <vector>
+#include <queue>
+#include <deque>
+#include <stack>
+#include <fstream>
+#include <set>
+#include <map>
+#include <cmath>
+#pragma comment(linker,"/STACK:16777216")
+#define MAXN 100100
+
+using namespace std;
+
+struct w{
+int h,m,s,second;
+}a[10000];
+
+bool f(w l,w r){
+if(l.second>r.second)
+    return 0;
+return 1;
+}
+
+int n;
+
+int main()
+{
+    cin>>n;
+    for(int i=1;i<=n;i++){
+        cin>>a[i].h>>a[i].m>>a[i].s;
+        a[i].second=a[i].h*3600+a[i].m*60+a[i].s;
+    }
+    sort(a+1,a+1+n,f);
+    for(int i=1;i<=n;i++)
+        cout<<a[i].h<<" "<<a[i].m<<" "<<a[i].s<<endl;
+
+
+    return 0;
+}

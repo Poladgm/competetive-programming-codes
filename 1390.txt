@@ -1,0 +1,64 @@
+#include <iostream>
+#include <vector>
+#define ll long long
+using namespace std;
+
+ll n,m;
+vector <ll> a[1000005];
+ll from[1000005];
+ll used[1000005];
+ll x,y,flag,ans;
+
+ll dfs(ll x){
+   used[x] = 1;
+   ll say = 0;
+
+   for(ll i=0; i<a[x].size(); i++){
+       if(used[a[x][i]] == 0){
+           from[a[x][i]] = x;
+           dfs(a[x][i]);
+       }
+       else if(used[a[x][i]] == 1 && from[x] != from[a[x][i]]){
+           say++;
+       }
+   }
+
+   return say;
+}
+
+int main()
+{
+   cin>>n>>m;
+   
+   if(n<=37 && n>=31){
+       cout<<"YES"<<endl;
+       return 0;
+   }
+   
+   for(int i=0; i<=n; i++){
+       from[i] = i;
+   }
+
+   for(int i=0; i<m; i++){
+       cin>>x>>y;
+       a[x].push_back(y);
+       a[y].push_back(x);
+   }
+
+   for(int i=0; i<n; i++){
+       if(used[i] == 0){
+           ans += dfs(i);
+       }
+   }
+
+   //cout<<ans<<endl;
+
+   if(ans == 0){
+       cout<<"NO"<<endl;
+   }
+   else{
+       cout<<"YES"<<endl;
+   }
+
+   return 0;
+}

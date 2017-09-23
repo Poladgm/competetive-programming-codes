@@ -1,0 +1,30 @@
+#include <cstdlib>
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+string a;
+int say=1,i=1,artim=1,ilkreqem;
+
+int main(int argc, char *argv[])
+{
+    cin>>a;
+
+   while(i<a.length())
+   {
+        ilkreqem=a[i]-48;
+        i=i+artim;
+
+        if(ilkreqem>4)
+        artim++;
+
+        say++;
+   }
+
+   cout<<say<<endl;
+
+
+   system("pause");
+   return EXIT_SUCCESS;
+}

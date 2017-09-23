@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int n,say,maxx;
+string s;
+
+int main()
+{
+   cin>>s;
+   n = s.size();
+
+   for(int i = 0; i <= n; i++){
+       if(s[i] == 'k'){
+           say++;
+       }
+       else{
+           if(say > maxx){
+               maxx = say;
+           }
+
+           say = 0;
+       }
+   }
+
+   cout<<maxx<<endl;
+
+   return 0;
+}

@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(int argc, char *argv[])
+{
+ double l,h,A,V,H;
+ scanf("%lf %lf",&V,&H);
+
+ l=sqrt(3*V/H);
+ h=sqrt(H*H+l*l/4);
+ A=2*h*l;
+ V=l*l*H/3;
+
+ printf("%.1lf\n",A);
+
+
+
+
+ return 0;
+}

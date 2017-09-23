@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+long long n,i;
+double k=1;
+
+int main()
+{
+    cin>>n;
+    while(1)
+    {
+        if(k-n<1 && k-n>=0)
+            break;
+
+        if(k>n)
+        k=k/10;
+
+        k=k*2;
+        i++;
+    }
+
+    cout<<i<<endl;
+    return 0;
+
+}

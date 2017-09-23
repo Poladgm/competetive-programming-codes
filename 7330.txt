@@ -1,0 +1,30 @@
+#include <iostream>
+#include <math.h>
+#include <stdio.h>
+#include <vector>
+#include <algorithm>
+#include <string.h>
+#include <queue>
+#define M 100001
+#define BIG 10000001
+
+
+using namespace std;
+
+//  her 3 deneden bir dovr eleyir...
+
+
+ long n;
+int main()
+{
+ cin>>n;
+ 
+ if(n % 3 == 2)
+ cout<<n / 3 * 2 + 1<<endl;
+ else
+ cout<<n / 3 * 2<<endl;
+ 
+ 
+
+return 0;
+}

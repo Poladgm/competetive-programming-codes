@@ -1,0 +1,61 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+typedef pair <int , int> ii;
+vector <int> used;
+vector < vector <ii> > graph;
+int n,m,idx;
+double d[101];
+double maxx;
+int x,y,z;
+
+void relax (int x){
+   for(int i = 0 ; i< graph[x].size(); i++){
+       if( used[graph[x][i].first] == 0){
+           if(d[graph[x][i].first] < (d[x] * graph[x][i].second/100)){
+               d[graph[x][i].first] = (d[x] * graph[x][i].second/100);
+           }
+       }
+   }
+}
+
+int main()
+{
+   cin>>n>>m;
+   used.resize(n+1);
+   graph.resize(n+1);
+
+   for(int i = 1; i <= m; i++){
+       cin>>x>>y>>z;
+
+       graph[x].push_back( make_pair(y,z) );
+       graph[y].push_back( make_pair(x,z) );
+   }
+
+   d[1] = 1.0;
+   used[1] = 1;
+   relax(1);
+
+   while(used[n] == 0){
+       maxx = 0.0;
+       idx = 0;
+
+       for(int i = 1; i <= n; i++){
+           if(used[i] == 0 && (d[i] > maxx)){
+               maxx = d[i];
+               idx = i;
+           }
+       }
+
+       used[idx]=1;
+       relax(idx);
+   }
+
+   cout.setf(ios::fixed);
+   cout.precision(6);
+   cout<<d[n]*100<<" percent"<<endl;
+
+   return 0;
+}

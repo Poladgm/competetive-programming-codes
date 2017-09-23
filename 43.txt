@@ -1,0 +1,23 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+  double k,n,m,d,a;
+  unsigned long long s;
+  cin>>k>>n>>m>>d;
+
+  a=(d*k*n*m)/(k*n*m-m*n-n*k-m*k);
+  s=(d*k*n*m)/(k*n*m-m*n-n*k-m*k);
+
+  if(a!=s)
+  cout<<"-1"<<endl;
+  else
+  cout<<s<<endl;
+
+
+ 
+   return EXIT_SUCCESS;
+}

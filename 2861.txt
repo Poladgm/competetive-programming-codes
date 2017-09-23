@@ -1,0 +1,21 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+
+
+int main(int argc, char *argv[])
+{
+  long long a,b,c,s;
+
+  cin>>a>>b;
+  if(a%2==0)
+  a=a+1;
+  if(b%2==0)
+  b=b-1;
+  s=((a+b)/2)*(((b-a)/2)+1);
+  cout<<s<<endl;
+
+  return EXIT_SUCCESS;
+}

@@ -1,0 +1,21 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   long long a,i,p=1,cem=0;
+   scanf("%lld",&a);
+
+   for(i=1; i<=a; i++)
+   {
+       p=p*i;
+       cem=cem+p;
+   }
+
+   printf("%lld\n",cem);
+
+   
+   return EXIT_SUCCESS;
+}

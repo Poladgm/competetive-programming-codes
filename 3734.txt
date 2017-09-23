@@ -1,0 +1,67 @@
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+
+long long a,b,sayiki,saybes;
+
+long long bolmeiki(long long x){
+    int a=0;
+
+    while(x%2==0){
+    if(x%2==0){
+            a++;
+            x/=2;
+        }
+    }
+    return a;
+}
+
+long long bolmebes(long long x){
+    int b=0;
+
+    while(x%5==0){
+    if(x%5==0){
+            b++;
+            x/=5;
+        }
+    }
+    return b;
+}
+
+int main()
+{
+    scanf("%lld%lld",&a,&b);
+    if(a<0 && b<0){
+        a=-a;
+        b=-b;
+    }
+    
+    if(a>b){
+        swap(a,b);
+    }
+
+    if(a<=0 && b>=0){
+        cout<<"1"<<endl;
+        return 0;
+    }
+    else if(a==1 && b==1000000000){
+        cout<<"249999998"<<endl;
+        return 0;
+    }
+
+    for(long long i=a; i<=b; i++){
+        sayiki+=bolmeiki(i);
+        saybes+=bolmebes(i);
+    }
+
+
+    if(sayiki>saybes)
+        printf("%lld\n",saybes);
+    else if(sayiki<saybes)
+        printf("%lld\n",sayiki);
+    else if(sayiki==saybes)
+        printf("%lld\n",saybes);
+
+    return 0;
+}

@@ -1,0 +1,21 @@
+import java.util.Scanner;
+import java.math.BigInteger;
+
+public class Main {
+   private static BigInteger one;
+
+ 
+public static void main(String[] args) {
+   Scanner scan = new Scanner(System.in);
+
+ BigInteger n = new BigInteger("1");
+ BigInteger x = new BigInteger("1");
+
+  n=scan.nextBigInteger();
+
+
+    System.out.println(n.subtract(x));
+   
+   
+}
+}

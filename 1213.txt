@@ -1,0 +1,18 @@
+#include <cstdlib>
+#include <iostream>
+#include <cmath>
+using namespace std;
+char ch1, ch2;
+int a, b, c, d, n1, n2;
+int main(int argc, char *argv[])
+{
+  cin>>a>>ch1>>b>>c>>ch2>>d;
+  n1 = b*log(a);
+  n2 = d*log(c);
+  if( n1 > n2 )
+      cout<<a<<"^"<<b<<endl;
+  else
+      cout<<c<<"^"<<d<<endl;
+  
+  return EXIT_SUCCESS;
+}

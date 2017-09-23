@@ -1,0 +1,34 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+ char a[32000];
+ long long i,n;
+ cin>>a;
+ n=strlen(a)-1;
+
+if(a[0]=='-')
+a[0]=0;
+
+           if(a[n]%2==0)
+           cout<<"Yes"<<endl;
+           else
+           cout<<"No"<<endl;
+
+           if((10*a[n-1]+a[n])%4==0)
+           cout<<"Yes"<<endl;
+           else
+           cout<<"No"<<endl;
+
+           if((100*a[n-2]+10*a[n-1]+a[n])%8==0)
+           cout<<"Yes"<<endl;
+           else
+           cout<<"No"<<endl;
+
+
+   
+   return EXIT_SUCCESS;
+}

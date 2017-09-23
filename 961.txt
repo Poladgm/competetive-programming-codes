@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+ int n,a,d;
+ scanf("%d",&n);
+ a=n/1000;
+ d=n%10;
+ printf("%d%d\n",a,d);
+ 
+ return 0;
+}

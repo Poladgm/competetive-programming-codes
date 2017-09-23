@@ -1,0 +1,36 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+ /*  unsigned long long n,i,netice1,netice2,netice3,cavab;
+   cin>>n;
+
+   netice1=n/5;
+
+   netice2=n/25;
+
+   netice3=n/125;
+
+   cavab=netice1+netice2+netice3;
+   cout<<cavab<<endl;
+
+   */
+
+  unsigned long long cem=0,n;
+  cin>>n;
+
+   while(n>=5)
+   {
+       n=n/5;
+       cem=cem+n;
+   }
+   cout<<cem<<endl;
+
+
+
+  
+   return EXIT_SUCCESS;
+}

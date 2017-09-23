@@ -1,0 +1,24 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+  long i, n, a[100001], k = 1, j;
+
+ for( i = 1; i <= 100; i++ )
+ {
+           for( j = 1; j <= i; j++ )
+           a[k++] = i;
+ }
+ cin>>n;
+
+ for( i = 1; i < n; i++ )
+ cout<<a[i]<<" ";
+ cout<<a[n]<<endl;
+
+
+  
+   return EXIT_SUCCESS;
+}

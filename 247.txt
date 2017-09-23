@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+    long long a[100001],i,j,k,n,x,say=0;
+    scanf("%lld",&n);
+    for(i=1; i<=n; i++)
+    {
+        scanf("%lld",&x);
+
+        j=1;
+        while(x>0)
+        {
+            a[j++]=x%2;
+            x=x/2;
+        }
+
+        if(a[2]==1)
+        say++;
+    }
+
+    printf("%lld\n",say);
+
+
+
+
+  system("PAUSE");
+  return 0;
+}

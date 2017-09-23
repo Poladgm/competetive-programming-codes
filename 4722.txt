@@ -1,0 +1,36 @@
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class Main {
+   
+   public static void main(String [] args){
+       
+       Scanner in = new Scanner(System.in);
+       
+       /*
+       String [] a = new String [1000001];
+       int n,k;
+       
+       n=in.nextInt();
+       k=in.nextInt();
+       
+       */
+       
+       
+       String ss = in.next();
+       String s = ss;
+       int n = in.nextInt();
+       
+       for(int i=1; i<n; i++){
+           ss +=s; 
+       }
+       
+       //System.out.println(little_little_in_the_middle);
+       
+       BigInteger a = new BigInteger(ss);
+       System.out.println(a.multiply(a));
+       
+       
+   }
+
+}

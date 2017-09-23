@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h>
+int n,s;
+int main(int argc, char *argv[])
+{scanf("%d",&n);
+s=(n+1)*(n+1);
+printf("%d\n",s);
+
+
+return 0;
+}

@@ -1,0 +1,64 @@
+#include <iostream>
+#include <stdio.h>
+#include <cstring>
+#define INF 1000000000
+
+using namespace std;
+
+int a[101][101];
+int used[101];
+int d[101];
+int idx;
+int mnn , ans = INF , id;
+int n,m,x,y,z,say;
+
+void dij(int x)
+{
+   used[x] = 1;
+
+   for(int i=1; i<=n; i++){
+       if(a[x][i] > 0 && used[i] == 0 && d[i] > d[x] + a[x][i]){
+           d[i] = d[x] + a[x][i];
+       }
+   }
+}
+int main()
+{
+   ios_base::sync_with_stdio(false);
+
+   cin>>n>>m;
+   for(int i=1; i<=m; i++){
+       cin>>x>>y>>z;
+       a[x][y] = z;
+       a[y][x] = z;
+   }
+
+   for(int start=1; start<=n; start++){
+
+       memset(used , 0 , sizeof(used));
+       for (int i = 0; i <= n; i++) d[i] = INF;
+
+       d[start] = 0;
+       while(1){
+           mnn = INF; idx = -1;
+           for(int i=1; i<=n; i++){
+               if(used[i] == 0 && mnn > d[i]){
+                   mnn = d[i];
+                   idx = i;
+               }
+           }
+           if (idx == -1) break;
+           dij(idx);
+       }
+       int mnn = 0;
+       for(int i=1; i<=n; i++)
+           mnn = max(mnn , d[i]);
+       if (mnn < ans) {
+           ans = mnn;
+           id = start;
+       }
+
+   }
+   cout << id << " " << ans << endl;
+   return 0;
+}

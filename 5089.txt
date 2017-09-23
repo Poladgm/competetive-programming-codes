@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string.h>
+#include <algorithm>
+
+
+using namespace std;
+
+int main()
+{
+    string a[101];
+    int i,j,n;
+
+    cin>>n;
+    for(i=1; i<=n; i++)
+        cin>>a[i];
+
+    sort(a+1,a+n+1);
+
+    for(i=1; i<=n; i++)
+        cout<<a[i]<<endl;
+
+    return 0;
+}

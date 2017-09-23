@@ -1,0 +1,121 @@
+#include <cstdlib>
+#include <iostream>
+#include <string.h>
+#include <stdio.h>
+using namespace std;
+
+char a[30010], b[30010],d[3000001];
+int c[30001];
+int n,m,l,i,j,k,q,t,x,h;
+
+int main(int argc, char *argv[])
+{
+    scanf("%d",&x);
+    for(h=1; h<=x; h++)
+    {
+        scanf("%s",d);
+
+        j=0;
+        i=0;
+
+        while(d[i]!='+')
+        {
+            a[j]=d[i];
+            j++;
+            i++;
+        }
+
+        a[j]='\0';
+
+        i++;
+        j=0;
+
+        while(i<strlen(d))
+        {
+            b[j]=d[i];
+            j++;
+            i++;
+        }
+
+        b[j]='\0';
+
+        n=strlen(a);    // A ededi
+        m=strlen(b);    // B ededi
+        i=n-1;    // i-ni A ededinin son reqemi gotururuk
+        k=0;      // k-ni C ededinin ilk reqemi gotururuk
+        j=m-1;    // j-ni B ededinin son reqemi gotururuk
+        q=0;      // yadda saxladigimiz 1 reqemi
+         // l, C ededi
+
+        while(i>=0 && j>=0)
+        {
+            t=(int)a[i]-48+(int)b[j]-48+q;
+
+            if(t>=10)
+            {
+                c[k]=t-10;
+                q=1;
+            }
+            else
+            {
+                c[k]=t;
+                q=0;
+            }
+
+            i--;
+            j--;
+            k++;
+        }
+
+        while(i>=0)
+        {
+            t=(int)a[i]-48+q;
+
+            if(t>=10)
+            {
+                c[k]=t-10;
+                q=1;
+            }
+            else
+            {
+                c[k]=t;
+                q=0;
+            }
+
+            i--;
+            k++;
+        }
+
+        while(j>=0)
+        {
+            t=(int)b[j]-48+q;
+
+            if(t>=10)
+            {
+                c[k]=t-10;
+                q=1;
+            }
+            else
+            {
+                c[k]=t;
+                q=0;
+            }
+
+            j--;
+            k++;
+        }
+
+        if(q==1)
+        {
+            c[k]=1;
+            k++;
+        }
+
+        for(l=k-1; l>=0; l--)
+        printf("%d",c[l]);
+        printf("\n");
+    }
+
+    system("pause");
+    return 0;
+}

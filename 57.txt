@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(int argc, char *argv[])
+{
+double x1,Y1,x2,y2,z2,x;
+scanf("%lf%lf%lf%lf%lf",&x1,&Y1,&x2,&y2,&z2);
+
+x=sqrt((x2-x1)*(x2-x1)+(y2-Y1)*(y2-Y1)+z2*z2);
+printf("%.3lf\n",1/x);
+
+return 0;
+}

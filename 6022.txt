@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+
+using namespace std;
+
+int i,j,n,m,flag,say;
+char a[1001];
+
+int main()
+{
+    scanf("%d",&n);
+    for(i=1; i<=n; i++)
+    {
+        flag=0;
+        scanf("%s",a);
+        m=strlen(a);
+
+        for(j=0; j<m; j++)
+            if(a[j]=='C' && a[j+1]=='D')
+            {
+                flag=1;
+                break;
+            }
+
+        if(flag==0)
+            say++;
+    }
+
+    printf("%d\n",say);
+    return 0;
+}

@@ -1,0 +1,52 @@
+#include <iostream>
+#include <cstring>
+#define ll long long
+
+using namespace std;
+
+ll n;
+string s;
+ll used[100];
+
+int main()
+{
+  ios_base::sync_with_stdio(false);
+  cin>>n;
+  for(ll i=1; i<=n; i++){
+      cin>>s;
+      memset(used , 0 , sizeof(used));
+      ll flag=0;
+
+      for(ll j=0; j<s.length(); j++){
+          used[ (ll)s[j] - 65 ] ++ ;
+
+          if(used[ (ll)s[j] - 65 ] == 4){
+              used[ (ll)s[j] - 65 ]=0;
+          }
+
+          if(used[ (ll)s[j] - 65 ] == 3  && (ll)s[j+1] != (ll)s[j]  ){
+              flag = 1;
+          }
+      }
+
+      if(flag==1){
+          cout<<"FAKE"<<endl;
+      }
+      else{
+          for(ll j=0; j<50; j++){
+              if(used[j] == 3){
+                  cout<<"FAKE"<<endl;
+                  flag=1;
+                  break;
+              }
+          }
+
+           cout<<"OK"<<endl;
+      }
+  }
+
+
+
+
+  return 0;
+}

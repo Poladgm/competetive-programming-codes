@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+#define pi 3.141592653589793
+
+int main()
+{
+    double x1,y1,x2,y2,x3,y3,d1,d2,d3,p,sahe,a,b;
+    while(scanf("%llf%llf%llf%llf%llf%llf",&x1,&y1,&x2,&y2,&x3,&y3)!=EOF)
+    {
+        d1=sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+        d2=sqrt((x3-x1)*(x3-x1)+(y3-y1)*(y3-y1));
+        d3=sqrt((x2-x3)*(x2-x3)+(y2-y3)*(y2-y3));
+
+        p=(d1+d2+d3)/2;
+        sahe=sqrt(p*(p-d1)*(p-d2)*(p-d3));
+
+        a=(d1*d2*d3)/(4*sahe);
+        b=2*pi*a;
+
+        printf("%.2llf\n",b);
+    }
+
+    system("pause");
+    return 0;
+}

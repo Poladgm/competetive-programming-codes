@@ -1,0 +1,36 @@
+#include <iostream>
+#include <math.h>
+#include <stdio.h>
+using namespace std;
+
+int l,p,ans;
+
+int gcd(int a,int b){
+    while(b != 0){
+        a %= b;
+        swap(a,b);
+    }
+
+    return a;
+}
+
+int main()
+{
+    while(scanf("%d",&l)!=EOF){
+        ans=0;
+        int x = sqrt(l / 2);
+
+        for(int n=1;n<=x;n++){
+            for(int m=1;m<n;m++){
+                if(gcd(n,m) == 1 && (n-m) %2 == 1){
+                    p = 2*n*(n+m);
+                    ans += (l/p);
+                }
+            }
+        }
+
+        printf("%d\n",ans);
+    }
+
+    return 0;
+}

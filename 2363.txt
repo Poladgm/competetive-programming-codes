@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ()
+{
+int a[1000],j,temp,i,h,k=0;
+
+scanf("%d",&h);
+for (i=0;i<h;i++)
+scanf("%d",&a[i]);
+
+for (i=0;i<h-1;i++)
+for (j=0;j<h-1;j++)
+ if(a[j]>a[j+1])
+ {
+  temp=a[j];
+  a[j]=a[j+1];
+  a[j+1]=temp;
+
+   k=k+1;
+ }
+printf ("%d\n",k);
+
+return 0;
+}

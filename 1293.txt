@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <algorithm>
+
+using namespace std;
+
+int i,n,a[101],orta;
+double orta1;
+
+int main()
+{
+    while(1)
+    {
+        scanf("%d",&n);
+
+        if(n==0)
+            break;
+
+        for(i=0; i<n; i++)
+                scanf("%d",&a[i]);
+
+        sort(a,a+n);
+
+        if(n%2==1)
+            printf("%d\n",a[n/2]);
+        else
+        {
+            orta=(a[n/2-1]+a[n/2])/2;
+            orta1=(double)(a[n/2-1]+a[n/2])/2;
+
+            if((double)orta==orta1)
+                printf("%d\n",orta);
+            else
+                printf("%.1lf\n",orta1);
+        }
+
+    }
+
+
+    return 0;
+}

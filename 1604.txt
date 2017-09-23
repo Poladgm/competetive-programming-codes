@@ -1,0 +1,34 @@
+#include <cstdlib>
+#include <iostream>
+#include <string.h>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   char a[30];
+   long long i,sayan=0,hasil=1;
+   gets(a);
+
+if(a[0]=='-')
+a[0]='1';
+
+for(i=0; i<strlen(a); i++)
+{
+      a[i]=(int)a[i]-48;
+      if(a[i]%2==0)
+      {
+          hasil=hasil*a[i];
+          sayan++;
+      }
+  }
+
+if(sayan!=0)
+printf("%lld\n",hasil);
+else
+printf("-1\n");
+
+
+   
+   return EXIT_SUCCESS;
+}

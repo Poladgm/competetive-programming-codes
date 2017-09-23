@@ -1,0 +1,33 @@
+#include <cstdlib>
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int ebob(int a,int b)
+{
+   int c;
+   while(b!=0)
+   {
+       a=a%b;
+       c=a;
+       a=b;
+       b=c;
+   }
+return a;
+}
+
+int main(int argc, char *argv[])
+{
+   int n,m;
+   while(cin>>n>>m)
+   {
+       if(ebob(n,m)==1)
+       cout<<"YES"<<endl;
+       else
+       cout<<"NO"<<endl;
+   }
+
+
+   return EXIT_SUCCESS;
+}

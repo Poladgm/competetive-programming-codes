@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+    int n, A[100],i,j,temp,x;
+    scanf("%d",&n);
+    for(i=1; i<=n; i++)
+    scanf("%d",&A[i]);
+
+    temp=A[n];
+
+    for(i=n; i>=2; i--)
+    A[i]=A[i-1];
+
+    A[1]=temp;
+
+    for(i=1; i<n; i++)
+    printf("%d ",A[i]);
+    printf("%d\n",A[n]);
+
+    system("pause");
+    return 0;
+}

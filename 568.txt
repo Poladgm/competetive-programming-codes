@@ -1,0 +1,23 @@
+#include <cstdlib>
+#include <iostream>
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   double x,cem=0;
+   long long say=0;
+   
+   while(cin>>x)
+   {
+       say++;
+       cem=cem+x;
+   }
+   
+   cout.setf(ios::fixed);
+   cout.precision(2);
+   cout<<(cem/say)<<endl;
+   
+   
+ 
+   return EXIT_SUCCESS;
+}

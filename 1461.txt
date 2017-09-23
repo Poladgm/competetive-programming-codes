@@ -1,0 +1,45 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long i,n,k,eded,a[1001],hasil,b[1001],c[1001],min,yadda;
+    cin>>n>>k;
+    for(i=1; i<=n; i++)
+    cin>>a[i];
+    
+    for(i=1; i<=n; i++)
+    {
+        hasil=1;
+        eded=a[i];
+        
+        while(eded!=0)
+        {
+            hasil=hasil*(eded%10);
+            eded=eded/10;
+        }
+        
+        b[i]=hasil;
+    }
+    
+    for(i=1; i<=n; i++)
+    c[i]=abs(k-b[i]);
+    
+    min=c[1];
+    for(i=1; i<=n; i++)
+    if(c[i]<min)
+    {
+        min=c[i];
+        yadda=i;
+    }
+    
+    if(yadda==0)
+    yadda=1;
+    
+    cout<<a[yadda]<<endl;
+    
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

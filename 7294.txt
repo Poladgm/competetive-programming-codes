@@ -1,0 +1,22 @@
+#include <iostream>
+#include <stdio.h>
+
+using namespace std;
+
+long long ebob(long long a, long long b){
+    while(b!=0){
+        a=a%b;
+        swap(a,b);
+    }
+
+    return a;
+}
+
+int main()
+{
+    long long a,b,n;
+    cin>>a>>b;
+    cout<<a*b/ebob(a,b)<<endl;
+
+    return 0;
+}

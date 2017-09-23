@@ -1,0 +1,15 @@
+#include <cstdlib>
+#include <iostream>
+#include <cmath>
+using namespace std;
+long n, i;
+double s;
+int main(int argc, char *argv[])
+{
+  cin>>n;
+  for( i = 1; i <= n; i++ )
+       s = s + log(i);
+  cout<<(int)(s/log(10)) + 1<<endl;
+  
+  return EXIT_SUCCESS;
+}

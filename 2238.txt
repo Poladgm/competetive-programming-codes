@@ -1,0 +1,27 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long long a[10001],i,cem=0,orta,n,say=0;
+    cin>>n;
+    for(i=1; i<=n; i++)
+    {
+        cin>>a[i];
+        cem=cem+a[i];
+    }
+    
+    orta=cem/n;
+    
+    for(i=1; i<=n; i++)
+    if(a[i]>orta)
+    say++;
+    
+    cout<<say<<endl;
+    
+    
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

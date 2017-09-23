@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespace std;
+long long n,nn,cem,x,v;
+int main()
+{
+   cin>>n;
+   for(int i =1;i<=n; i++){
+       cin>>cem;
+       cin>>nn;
+       for(int j=1; j<=nn; j++){
+           cin>>x>>v;
+           cem+= (x*v);
+       }
+       cout<<cem<<endl;
+   }
+   return 0;
+}

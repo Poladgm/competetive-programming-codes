@@ -1,0 +1,26 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long n,m,eded=0,say=0;
+    cin>>n>>m;
+
+    while(n!=m)
+    {
+        eded++;
+        n=n-eded;
+        say++;
+    }
+
+    cout<<say<<endl;
+
+
+
+
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

@@ -1,0 +1,42 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    char a[1001],b[27],c[]="ABCDEFGHIJKLMNOPQRSTUVWXYZ",d[1001];
+    int i,j,m,n;
+    gets(a);
+    n=strlen(a);
+    gets(b);
+    m=26;   // strlen(c);
+    
+    for(i=0; i<n; i++)
+    {
+        if(a[i]==' ')
+        d[i]=' ';
+        
+        else
+        {
+            for(j=0; j<m; j++)
+            {
+                if(a[i]==c[j])
+                {
+                    d[i]=b[j];
+                    break;
+                }
+             
+            
+                
+            }
+        }
+    }
+    
+    for(i=0; i<n; i++)
+    cout<<d[i];
+    cout<<endl;
+    
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

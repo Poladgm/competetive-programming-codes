@@ -1,0 +1,24 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int N,M,t,i,c[101],j;
+
+int main(int argc, char *argv[])
+{
+    cin>>t;
+    while(t--)
+    {   cin>>N>>M;
+        if(N%(M+1)==0)
+            c[i] = 2;
+        else
+            c[i] = 1;
+        i++;
+    }
+    for(j=0;j<i;j++)
+    cout<<c[j];
+    cout<<endl;
+
+    return EXIT_SUCCESS;
+}

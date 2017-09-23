@@ -1,0 +1,45 @@
+#include <cstdlib>
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+double mesafe(int a, int b, int c, int d)
+{
+   return sqrt((a-c)*(a-c)+(b-d)*(b-d));
+}
+
+int main(int argc, char *argv[])
+{
+   int i,n,x1,Y1,x2,y2,x3,y3,x4,y4,say=1;
+   double a,b,c,d,e,f; // e ve f diaqonal
+   cin>>n;
+
+   while(n!=0)
+   {
+       cin>>x1>>Y1>>x2>>y2>>x3>>y3>>x4>>y4;
+
+       a=mesafe(x1,Y1,x2,y2);
+       b=mesafe(x2,y2,x3,y3);
+       c=mesafe(x3,y3,x4,y4);
+       d=mesafe(x4,y4,x1,Y1);
+       e=mesafe(x1,Y1,x3,y3);
+       f=mesafe(x2,y2,x4,y4);
+
+       if(a==b && b==c && c==d && e==f)
+       cout<<"Case "<<say<<": Square"<<endl;
+       else if(a==c && b==d && a!=d && e==f)
+       cout<<"Case "<<say<<": Rectangle"<<endl;
+       else if (a==b && b==c && c==d && e!=f)
+       cout<<"Case "<<say<<": Rhombus"<<endl;
+       else
+       cout<<"Case "<<say<<": Other"<<endl;
+
+       //cout<<a<<" "<<b<<" "<<c<<" "<<d<<" "<<e<<" "<<f<<" ";
+       say++;
+       n--;
+   }
+
+
+   return EXIT_SUCCESS;
+}

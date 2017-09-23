@@ -1,0 +1,31 @@
+#include <iostream>
+#define ll long long
+
+using namespace std;
+
+ll n,badst,cur;
+ll a[2002],sum[2002];
+ll flag;
+
+int main()
+{
+   cin>>n>>badst;
+
+   for(int i =1 ; i<= n; i++){
+       a[i] = i;
+       sum[i] = sum[i-1] + i;
+
+       if(sum[i] == badst){
+           flag = 1;
+       }
+   }
+
+   if(flag == 0){
+       cout<<sum[n]<<endl;
+       return 0;
+   }
+
+   cout<<sum[n]-1<<endl;
+
+   return 0;
+}

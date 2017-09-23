@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+int a,b,c,d,n;
+scanf("%d",&n);
+
+a=n/1000;
+b=n%1000/100;
+c=n%1000%100/10;
+d=n%1000%100%10;
+
+n=1000*a+100*b+10*c+d;
+
+printf("%d%d%d%d\n",a,c,b,d);
+
+
+
+return 0;
+}

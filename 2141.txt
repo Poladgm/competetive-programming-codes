@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+double a,b,c,x1,Y1,x2,y2;
+
+int main(int argc, char *argv[])
+{
+scanf("%lf%lf%lf%lf",&x1,&Y1,&x2,&y2);
+a=y2-Y1;
+b=x1-x2;
+c=Y1*x2-y2*x1;
+ printf("%.0lf %.0lf %.0lf\n",a,b,c);
+
+
+return 0;
+}

@@ -1,0 +1,64 @@
+#include <cstdlib>
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+class coordinatlar
+{
+   public:
+   double x,y;
+};
+
+class duzbucaqli
+{
+   coordinatlar A,B,C,D;
+   double mesafe(double x1, double y1, double x2, double y2);
+   double merkez(double a, double b);
+   void input();
+   void output();
+   public:
+   void start();
+};
+
+double duzbucaqli::mesafe(double x1, double y1, double x2, double y2)
+{
+   return sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+}
+
+double duzbucaqli::merkez(double a, double b)
+{
+   return (a+b)/2;
+}
+
+void duzbucaqli::input()
+{
+   cin>>A.x>>A.y>>B.x>>B.y>>C.x>>C.y>>D.x>>D.y;
+}
+
+void duzbucaqli::output()
+{
+   cout.setf(ios::fixed,ios::floatfield);
+   cout.precision(3);
+   cout<<merkez(A.x, C.x)<<" ";
+   cout.precision(3);
+   cout<<merkez(A.y, C.y)<<endl;
+   cout.precision(3);
+   cout<<mesafe(A.x, A.y, C.x, C.y)<<" ";
+   cout.precision(3);
+   cout<<mesafe(B.x, B.y, D.x, D.y)<<endl;
+}
+
+void duzbucaqli::start()
+{
+   input();
+   output();
+}
+
+int main(int argc, char *argv[])
+{
+   duzbucaqli t;
+   t.start();
+
+   return EXIT_SUCCESS;
+}

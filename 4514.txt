@@ -1,0 +1,88 @@
+#include <cstdlib>
+#include <iostream>
+#include <stack>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   stack <int> s;
+   long long i,j=1,k=1,h=1,n,a[10001],b[10001],c[10001],sayc=1,d[10001],sayd=0;
+   cin>>n;
+   for(i=1; i<=n; i++)
+   cin>>a[i];
+
+   s.push(a[1]);
+
+   for(i=2; i<=n; i++)
+   {
+       if(a[i]<s.top())
+       {
+           s.push(a[i]);
+           sayc++;
+       }
+       else
+       {
+           c[k++]=sayc;
+           //printf("1 %lld\n",sayc);
+           sayc=1;
+
+           while(a[i]>s.top())
+           {
+               b[j++]=s.top();
+               s.pop();
+               sayd++;
+
+               if(s.empty())
+               break;
+           }
+
+           d[h++]=sayd;
+           //printf("2 %lld\n",sayd);
+           s.push(a[i]);
+           sayd=0;
+       }
+   }
+
+   c[k++]=sayc;
+   //printf("1 %lld\n",sayc);
+
+   while(!s.empty())
+   {
+       b[j++]=s.top();
+       s.pop();
+       sayd++;
+   }
+
+   d[h++]=sayd;
+   //printf("2 %lld\n",sayd);
+
+   k--;
+   h--;
+   j--;
+
+   /*
+   for(i=1; i<=j; i++)
+   cout<<b[i]<<" ";
+   */
+
+
+   for(i=1; i<j; i++)
+   if(b[i]+1==b[i+1])
+   continue;
+   else
+   break;
+
+   if(i==j)
+   {
+       for(i=1; i<=k; i++)
+       printf("1 %lld\n2 %lld\n",c[i],d[i]);
+   }
+   else
+   printf("0\n");
+
+
+
+
+   return EXIT_SUCCESS;
+}

@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int main(int argc, char *argv[])
+{
+double a,b,c,d,f,S1,S2,p1,p2,S;
+scanf("%lf%lf%lf%lf%lf",&a,&b,&c,&d,&f);
+
+p1=(a+b+f)/2;
+p2=(d+c+f)/2;
+S1=sqrt(p1*(p1-a)*(p1-b)*(p1-f));
+S2=sqrt(p2*(p2-d)*(p2-c)*(p2-f));
+S=S1+S2;
+
+printf("%.4lf\n",S );
+
+return 0;
+}

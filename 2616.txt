@@ -1,0 +1,30 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+unsigned long long a[1000001],i,j,n,b[1000001];
+
+int main(int argc, char *argv[])
+{
+    scanf("%llu",&n);
+    for(i=1; i<n; i++)
+    {
+        scanf("%llu",&a[i]);
+        b[a[i]]++;
+    }
+    
+    for(i=1; i<=n; i++)
+    if(b[i]==0)
+    {
+        printf("%llu\n",i);
+        break;   
+    }
+    
+    
+    
+    
+    
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

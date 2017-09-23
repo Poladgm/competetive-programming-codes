@@ -1,0 +1,20 @@
+#include <iostream>
+
+using namespace std;
+
+long long n,m,temp,say;
+
+int main()
+{
+   cin>>n>>m;
+   temp = n * (n+1) / 2;
+
+   for(int i=1; i<=m; i++){
+       say += (temp *i);
+   }
+
+   cout<<say<<endl;
+
+
+   return 0;
+}

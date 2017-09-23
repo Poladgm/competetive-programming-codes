@@ -1,0 +1,26 @@
+#include <cstdlib>
+#include <iostream>
+#include <map>
+
+using namespace std;
+
+map<long long,long long> m;
+long long bir(long long n, long long p, long long q)
+{
+    if(m[n])
+    return m[n];
+    if(n==0)
+    return 1;
+
+    return m[n]=bir(n/p,p,q)+ bir(n/q,p,q);
+}
+int main(int argc, char *argv[])
+{
+    long long n,q,p;
+    scanf("%lld %lld %lld",&n,&p,&q);
+    printf("%lld\n",bir(n,p,q));
+
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

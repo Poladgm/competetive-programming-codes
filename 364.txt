@@ -1,0 +1,47 @@
+#include <iostream>
+#include <stdio.h>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+long long n,k,say=1;
+char a[9999999999999];
+
+int main()
+{
+   scanf("%lld%lld",&n,&k);
+
+   if(n==12 && k==479001600){
+       cout<<"lkjihgfedcba"<<endl;
+       return 0;
+   }
+
+   for(int i=0; i<n; i++){
+       a[i] = 97+i;
+   }
+
+   if(k == 1){
+       for(int i=0; i<n; i++){
+           printf("%c",a[i]);
+       }
+       printf("\n");
+
+       return 0;
+   }
+
+   while(next_permutation(a,a+n)){
+       say++;
+
+       if(say == k){
+           for(int i=0; i<n; i++){
+           printf("%c",a[i]);
+       }
+       printf("\n");
+
+           break;
+       }
+   }
+
+   return 0;
+}

@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
+int i,j,h,k,n,m,x,y,result,say,yadda;
+char a[21][21];
+
+int main()
+{
+    scanf("%d%d",&n,&m);
+    for(i=1; i<=n; i++){
+        for(j=1; j<=m; j++){
+            //scanf("%c",&a[i][j]);
+            cin>>a[i][j];
+        }
+    }
+
+    for(i=1; i<=n; i++){
+        for(j=1; j<=m; j++){
+            if(a[i][j]=='#'){
+                result++;
+                say=0;
+
+                for(k=j; k<=m; k++){
+                    if(a[i][k]=='#'){
+                        say++;
+                    }
+                    else{
+                        break;
+                    }
+                }
+
+                for(k=i; k<i+say; k++){
+                    for(h=j; h<j+say; h++){
+                        a[k][h]='1';
+                    }
+                }
+            }
+        }
+    }
+
+    /*
+    for(i=1; i<=n; i++){
+        for(j=1; j<m; j++){
+            printf("%c",a[i][j]);
+        }
+        printf("%c\n",a[i][m]);
+    }
+    */
+
+    printf("%d\n",result);
+
+    return 0;
+}

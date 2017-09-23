@@ -1,0 +1,24 @@
+#include <iostream>
+#include <set>
+
+using namespace std;
+
+int main()
+{
+    set <long> s;
+    long n;
+
+    while(1)
+    {
+        cin>>n;
+
+        if(n==0)
+            break;
+
+        s.insert(n);
+    }
+
+    cout<<s.size()<<endl;
+
+    return 0;
+}

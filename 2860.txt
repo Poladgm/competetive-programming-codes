@@ -1,0 +1,16 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+  long long a,b,x;
+  cin>>a>>b;
+
+  x=b*(b+1)/2-a*(a-1)/2;
+
+  cout<<x<<endl;
+
+  return EXIT_SUCCESS;
+}

@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int main(int argc, char *argv[])
+{
+double a,h,s;
+scanf("%lf%lf",&a,&h);
+
+s=2*a*sqrt(h*h+(a*a)/4)+a*a;
+
+printf("%.1lf\n",s);
+
+return 0;
+}

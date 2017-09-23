@@ -1,0 +1,26 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int qaytarmaq=2,gun,i=1,gundelikyemek=2,borcalmaq=2;
+
+    cin>>gun;
+    for(i=2; i<=gun; i++){
+        borcalmaq=2*borcalmaq;
+
+        if(i == gun){
+            qaytarmaq=borcalmaq-(gundelikyemek+borcalmaq)/2;
+        }
+
+        gundelikyemek = gundelikyemek + borcalmaq-(gundelikyemek+borcalmaq)/2;
+
+    }
+
+    cout<<qaytarmaq<<" "<<gundelikyemek<<endl;
+
+
+
+    return 0;
+}

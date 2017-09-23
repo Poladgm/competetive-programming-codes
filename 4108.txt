@@ -1,0 +1,51 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+string a;
+int i,n;
+
+int main()
+{
+    getline(cin,a);
+    n = a.size();
+
+    while(i<n){
+        if(a[i] == '<' && a[i+1] == 'U'){
+            for(int j=i+4; j<n; j++){
+                if(a[j] == '<'){
+                    i = j+5;
+                    break;
+                }
+
+                if(a[j] <= 122 && a[j] >= 97){
+                    a[j] -= 32;
+                }
+
+                cout<<a[j];
+            }
+        }
+        else if(a[i] == '<' && a[i+1] == 'D'){
+            for(int j=i+6; j<n; j++){
+                if(a[j] == '<'){
+                    i = j+7;
+                    break;
+                }
+
+                if(a[j] <= 90 && a[j] >= 65){
+                    a[j] += 32;
+                }
+
+                cout<<a[j];
+            }
+        }
+        else{
+            cout<<a[i];
+            i++;
+        }
+    }
+
+    cout<<endl;
+    return 0;
+}

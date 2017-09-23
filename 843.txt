@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <algorithm>
+#include <string.h>
+
+using namespace std;
+
+int main()
+{
+    char a[9];
+    int i,n;
+    scanf("%s",a);
+    n=strlen(a);
+    sort(a,a+n);
+
+    printf("%s\n",a);
+
+    while(next_permutation(a,a+n))
+    {
+        printf("%s\n",a);
+    }
+
+  return 0;
+}

@@ -1,0 +1,27 @@
+#include <cstdlib>
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int j, i, n, m, q, c[100];
+
+int main(int argc, char *argv[])
+{
+    while( cin>>n>>m ){
+           i = 0;
+           while( m >= 1 ){
+                 c[i] = n/m;
+                 q = n%m;
+                 n = m;
+                 m = q;
+                 i++;
+           }
+           cout<<"["<<c[0]<<";";
+           for( j = 1; j < i-1; j++ )
+                cout<<c[j]<<",";
+           cout<<c[i-1]<<"]"<<endl;
+    }
+    
+    return EXIT_SUCCESS;
+}

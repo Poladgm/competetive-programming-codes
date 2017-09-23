@@ -1,0 +1,40 @@
+#include <iostream>
+#define ll long long
+using namespace std;
+
+ll n,m,k,x,y;
+ll used[100005];
+ll ans[100005];
+ll  cnt;
+int main()
+{
+   cin>>n>>m;
+   for(ll i=1; i<=m; i++){
+       cin>>x>>y;
+       used[x]++;
+       used[y]++;
+   }
+   cin>>k;
+
+   for(ll i=1; i<=n; i++){
+       if(used[i] >= k){
+           cnt++;
+           ans[cnt] = i;
+       }
+   }
+
+   cout<<cnt<<endl;
+   for(ll i=1; i<cnt; i++){
+       cout<<ans[i]<<" ";
+   }
+   
+   if(cnt > 0)
+   cout<<ans[cnt]<<endl;
+
+   if(cnt == 0){
+       cout<<endl;
+   }
+
+
+   return 0;
+}

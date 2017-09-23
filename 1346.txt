@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+using namespace std;
+
+long long cem;
+int i,n,x,minn=33000;
+
+int main()
+{
+    scanf("%d",&n);
+    for(i=1; i<=n; i++)
+    {
+        scanf("%d",&x);
+        cem=cem+x;
+
+        if(x<minn)
+            minn=x;
+    }
+
+    printf("%lld\n",cem-minn);
+
+
+    return 0;
+}

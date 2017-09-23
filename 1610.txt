@@ -1,0 +1,27 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long long n,m,say=0,eded;
+    scanf("%lld%lld",&n,&m);
+
+    if(n>=m)
+    printf("1\n");
+    else
+    {
+        say=m/n;
+
+        if(m%n==0)
+        say--;
+
+        printf("%lld\n",say+1);
+    }
+
+
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

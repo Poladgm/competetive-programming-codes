@@ -1,0 +1,31 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   long long int N,P,Q,K,x,y,cem1=0,cem2,say1=0,say2=0;
+   cin>>N>>P>>Q>>K;
+   x=N/P;
+   y=x/Q;
+   
+   while(cem1<K)
+   {
+       cem1=cem1+x;
+       say1++;   
+   }
+   
+   cem2=(say1-1)*x;
+   
+   while(cem2<K)
+   {
+       cem2=cem2+y;
+       say2++;
+   }
+   
+   cout<<say1<<" "<<say2<<endl; 
+   
+   
+   return EXIT_SUCCESS;
+}

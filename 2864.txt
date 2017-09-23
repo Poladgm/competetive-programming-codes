@@ -1,0 +1,24 @@
+#include <cstdlib>
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   double a,b,h,x,y,i;
+   cin>>a>>b>>h;
+
+   for(i=a; i<=b; i=i+h)
+   {
+       y=3*sin(i);
+   cout.setf(ios::fixed);
+   cout.precision(3);
+   cout<<i<<" "<<y<<endl;
+}
+
+
+
+  
+   return EXIT_SUCCESS;
+}

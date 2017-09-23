@@ -1,0 +1,35 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    char a[]={"1234567890-=WERTYUIOP[]SDFGHJKL;'XCVBNM,./"};
+    char b[]={"`1234567890-QWERTYUIOP[ASDFGHJKL;ZXCVBNM,."};
+    char c[10001];
+    int i,j;
+
+    while(gets(c))
+    {
+        for(i=0; i<strlen(c); i++)
+        {
+            if(c[i]==' ')
+            printf(" ");
+            else
+            {
+                for(j=0; j<strlen(a); j++)
+                if(c[i]==a[j])
+                {
+                    cout<<b[j];
+                    break;
+                }
+            }
+        }
+
+        cout<<endl;
+    }
+
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

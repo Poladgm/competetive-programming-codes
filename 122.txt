@@ -1,0 +1,46 @@
+#include <iostream>
+
+using namespace std;
+
+int n,k,a,b,d,x,y;
+int aa[51][51];
+int used[51];
+int ans;
+
+void dfs ( int x , int length){
+   if( length > d ){
+       return;
+   }
+
+   if(x == b){
+       ans++;
+       return;
+   }
+
+   used[x] = 1;
+
+   for( int i = 1; i <= n; i++){
+       if(aa[x][i] == 1 && used[i] == 0){
+           dfs(i , length+1);
+       }
+   }
+
+   used[x] = 0;
+}
+
+int main()
+{
+   cin>>n>>k>>a>>b>>d;
+   for(int i = 1; i <= k; i++){
+       cin>>x>>y;
+       aa[x][y] = 1;
+   }
+
+   dfs(a , 0);
+
+   cout<<ans<<endl;
+
+
+
+   return 0;
+}

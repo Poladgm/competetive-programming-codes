@@ -1,0 +1,17 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   int n,m,p,qazanc;
+   cin>>n>>m>>p;
+   
+   qazanc=n/m*p;
+   
+   cout<<(n*p-qazanc)<<endl;
+   
+   
+   return EXIT_SUCCESS;
+}

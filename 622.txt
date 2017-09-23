@@ -1,0 +1,37 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    int n,k,p,a[10001],i=0,j,say=0;
+    cin>>n;
+
+    while(n>=2)
+	{
+        a[i]=n%2;
+        i++;
+        n=n/2;
+	}
+	
+	/*
+	cout<<n;
+
+	for(j=i-1; j>=0; j--)
+	cout<<a[j];
+	cout<<endl;
+     */
+     
+     if(n==1)
+     say++;
+            
+     for(j=0; j<=i-1; j++)
+     if(a[j]==1)
+     say++;
+     
+     cout<<say<<endl;
+     
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

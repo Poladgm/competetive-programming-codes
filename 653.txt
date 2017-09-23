@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+float a,b,c;
+scanf("%f %f %f",&a,&b,&c);
+
+if(a+b>c && a+c>b && b+c>a)
+ {
+if(a*a+b*b>c*c && a*a+c*c>b*b && b*b+c*c>a*a)
+printf("ACUTE\n");
+if(a*a+b*b<c*c || a*a+c*c<b*b || b*b+c*c<a*a)
+printf("OBTUSE\n");
+if(a*a+b*b==c*c || a*a+c*c==b*b || b*b+c*c==a*a)
+printf("RIGHT\n");
+  }
+else
+printf("IMPOSSIBLE\n");
+
+
+
+return 0;
+}

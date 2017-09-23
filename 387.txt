@@ -1,0 +1,76 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long long a[1001],b[1001],c[1001],d[1001],x,y,i,j,r,n,maxx,minx,maxy,miny,temp,uzun,en,sahe;
+    //cin>>x>>y>>r>>n;
+    scanf("%lld%lld%lld%lld",&x,&y,&r,&n);
+    for(i=1; i<=n; i++)
+    {
+        //cin>>a[i]>>b[i];
+        scanf("%lld%lld",&a[i],&b[i]);
+        c[i]=a[i];
+        d[i]=b[i];
+    }
+    
+    // x koordinatina gore siralayir
+    
+    for(i=1; i<n; i++)
+    for(j=1; j<n; j++)
+    if(a[j]>a[j+1])
+    {
+        temp=a[j];
+        a[j]=a[j+1];
+        a[j+1]=temp;
+        
+        temp=b[j];
+        b[j]=b[j+1];
+        b[j+1]=temp;
+    }
+    
+    // y koordinatina gore siralayir
+    
+    for(i=1; i<n; i++)
+    for(j=1; j<n; j++)
+    if(d[j]>d[j+1])
+    {
+        temp=c[j];
+        c[j]=c[j+1];
+        c[j+1]=temp;
+        
+        temp=d[j];
+        d[j]=d[j+1];
+        d[j+1]=temp;
+    }
+    
+    /*
+    for(i=1; i<=n; i++)
+    cout<<a[i]<<" "<<b[i]<<endl;
+    
+    cout<<endl;
+    
+    for(i=1; i<=n; i++)
+    cout<<c[i]<<" "<<d[i]<<endl;
+    */
+    
+    maxx=a[n]+r;
+    minx=a[1]-r;
+    maxy=d[n]+r;
+    miny=d[1]-r;
+    
+    uzun=maxx-minx;
+    en=maxy-miny;
+    
+    sahe=uzun*en;
+    
+    cout<<x*y-sahe<<endl;
+    
+    
+    
+    
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

@@ -1,0 +1,23 @@
+#include <cstdlib>
+#include <iostream>
+#include <string.h>
+
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+char a[10001];
+int i,say=0;
+gets(a);
+
+for(i=0; i<strlen(a); i++)
+{
+    if(a[i]=='5')
+    say++;
+}
+
+cout<<say<<endl;
+
+  return EXIT_SUCCESS;
+}

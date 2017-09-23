@@ -1,0 +1,140 @@
+#include <cstdlib>
+#include <iostream>
+#include <string.h>
+#include <ctype.h>
+#include <stdio.h>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    long long a[10001],c[10001],d[10001],e[10001],f[10001],i,j=1,x,say1=0,say2=0,say3=0,say4=0;
+    char b[100];
+
+    // say1 ==> cut ededleri sayir
+    // say2 ==> tekreqemli ededleri sayir
+    // say3==> cutreqemli ededleri sayir
+    // say4 ==> 3-uc boleni olmayan indexleri sayir
+
+    while(scanf("%lld",&a[j++])!=EOF);
+
+    j--;
+
+    if(j==1)  // string tamam bosdusa
+    {
+        for(i=1; i<=6; i++)
+        printf("[]\n");
+
+        return 0;
+    }
+
+
+    printf("[");
+    for(i=1; i<j-1; i++)
+    printf("%lld, ",a[i]*a[i]);
+    printf("%lld]",a[j-1]*a[j-1]);
+    printf("\n");
+
+    printf("[");
+    for(i=1; i<j-1; i++)
+    printf("%lld, ",a[i]%11);
+    printf("%lld]",a[j-1]%11);
+    printf("\n");
+
+    for(i=1; i<j; i++)
+    if(a[i]%2==0)
+    {
+        say1++;
+        d[say1]=i;
+    }
+
+    if(say1==0)
+    {
+        printf("[");
+        printf("]");
+        printf("\n");
+    }
+    else
+    {
+        printf("[");
+        for(i=1; i<say1; i++)
+        printf("%lld, ",a[d[i]]);
+        printf("%lld]",a[d[say1]]);
+        printf("\n");
+    }
+
+    for(i=1; i<j; i++)
+    {
+        itoa(a[i],b,10);
+
+        if(strlen(b)%2==1)
+        {
+            say2++;
+            c[say2]=i;
+        }
+        else
+        {
+            say3++;
+            e[say3]=i;
+        }
+    }
+
+    if(say2==0)
+    {
+        printf("[");
+        printf("]");
+        printf("\n");
+    }
+    else
+    {
+        printf("[");
+        for(i=1; i<say2; i++)
+        printf("%lld, ",a[c[i]]);
+        printf("%lld]",a[c[say2]]);
+        printf("\n");
+    }
+
+    if(say3==0)
+    {
+        printf("[");
+        printf("]");
+        printf("\n");
+    }
+    else
+    {
+        printf("[");
+        for(i=1; i<say3; i++)
+        printf("%lld%lld, ",a[e[i]],a[e[i]]);
+        printf("%lld%lld]",a[e[say3]],a[e[say3]]);
+        printf("\n");
+    }
+
+
+    for(i=0; i<j-1; i++)
+    if(i%3==0)
+    continue;
+    else
+    {
+        say4++;
+        f[say4]=i+1;
+    }
+
+    if(say4==0)
+    {
+        printf("[");
+        printf("]");
+        printf("\n");
+    }
+    else
+    {
+        printf("[");
+        for(i=1; i<say4; i++)
+        printf("%lld, ",a[f[i]]);
+        printf("%lld]",a[f[say4]]);
+        printf("\n");
+    }
+
+
+    system("pause");
+    return EXIT_SUCCESS;
+}

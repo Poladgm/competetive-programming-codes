@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+
+int ebob (int a, int b){
+    while(b!=0){
+        a=a%b;
+        swap(a,b);
+    }
+    return a;
+}
+
+int main()
+{
+    int a[10001],b[10001],i,n,cem=0;
+    cin>>n;
+    for(i=1; i<=n; i++){
+        cin>>a[i];
+        b[i]=a[i];
+    }
+
+    for(i=1; i<n; i++)
+        b[i+1]=ebob(b[i],b[i+1]);
+
+    for(i=1; i<=n; i++)
+        cem+=a[i]/b[n];
+
+    cout<<cem<<endl;
+
+
+    return 0;
+}

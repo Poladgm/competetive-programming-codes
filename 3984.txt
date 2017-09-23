@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int n,m,x,y,a[101][101],flag;
+
+int main()
+{
+   cin>>n>>m;
+   for(int i=1; i<=m; i++){
+       cin>>x>>y;
+       a[x][y]++;
+
+       if(a[x][y] == 2){
+           flag= 1;
+       }
+   }
+
+   if(flag){
+       cout<<"YES"<<endl;
+   }
+   else{
+       cout<<"NO"<<endl;
+   }
+
+
+
+   return 0;
+}

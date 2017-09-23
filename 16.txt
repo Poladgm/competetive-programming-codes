@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(int argc, char *argv[]) {
+    int s,k,a,b,x,y,f=0,n,t;
+        scanf("%d %d %d %d",&s,&k,&a,&b);
+        for(x=1;x<1001;x++)
+        {
+            
+        
+        for(y=1;y<1001;y++)
+        {
+            if(x+k*y-a==0)
+            {
+                t=b-s*x;
+                if(t>=0 && t%y==0)
+                {
+                    n=t/y;
+                printf("%d\n",n);
+                f=1;
+                break;
+                }
+                
+            }
+            
+        }
+        if(f==1)
+        break;
+    }
+        if(f==0)
+        printf("-1\n");
+return 0;
+}

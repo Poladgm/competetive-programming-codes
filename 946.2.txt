@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+  int x1,Y1,x2,y2,x3,y3,x4,y4,S;
+  scanf("%d %d %d %d %d %d %d %d",&x1,&Y1,&x2,&y2,&x3,&y3,&x4,&y4);
+
+  S=(abs(x1*y2+x2*y3+x3*y4+x4*Y1-Y1*x2-y2*x3-y3*x4-y4*x1));
+
+printf("%d\n",S);
+
+  system("PAUSE");
+  return 0;
+}

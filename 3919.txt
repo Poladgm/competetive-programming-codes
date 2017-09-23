@@ -1,0 +1,31 @@
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        BigInteger  n, m;
+        n = in.nextBigInteger();
+        m = in.nextBigInteger();
+        
+        ekob(n,m);
+    }
+    
+    public static void ekob(BigInteger a , BigInteger b){
+        System.out.println(a.multiply(b).divide(ebob(a, b)));
+    }
+    
+    public static BigInteger ebob(BigInteger a , BigInteger b){
+        BigInteger  temp;
+        
+        while(b.compareTo(BigInteger.ZERO) != 0){
+            a = a.mod(b);
+            
+            temp = a;
+            a = b;
+            b = temp;
+        }
+        
+        return a;
+    }
+}

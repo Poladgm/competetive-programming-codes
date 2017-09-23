@@ -1,0 +1,20 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+   int m,k;
+   cin>>m>>k;
+   
+   if(m>k)
+   cout<<k<<endl;
+   else if(k>m)
+   cout<<m<<endl;
+   else if(k==m)
+   cout<<m<<endl;
+   
+
+   return EXIT_SUCCESS;
+}

@@ -1,0 +1,25 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+char a[1000000000];
+long i,j,n,say;
+
+int main(int argc, char *argv[])
+{
+   while(gets(a))
+   {
+       say=0;
+       n=strlen(a);
+   
+       for(i=0, j=n-1; i<n/2, j>=n/2; i++, j--)
+       if(a[i]==a[j])
+       say++;
+   
+       cout<<say<<endl;
+   }
+   
+
+   return EXIT_SUCCESS;
+}

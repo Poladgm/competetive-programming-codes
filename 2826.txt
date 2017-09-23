@@ -1,0 +1,23 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+    long long n,x=1;
+    int i,say=0;
+    cin>>n;
+
+    for(i=1; i<=100; i++){
+
+        if(x>=n){
+            cout<<say<<endl;
+            return 0;
+        }
+
+        x*=2;
+        say++;
+    }
+
+    return 0;
+}

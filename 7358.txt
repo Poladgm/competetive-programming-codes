@@ -1,0 +1,72 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+string a;
+int n,ans1,ans2,cem,j,flag,temp,ans3;
+
+int main()
+{
+   cin>>a;
+   n = a.size();
+
+   for(int i=0; i<n; i++){
+       cem += (a[i] - 48);
+   }
+
+   ans3 = cem;
+
+   for(int i=0; i<n; i++){
+       cem = 0;
+
+       for(j=0; j<=i; j++){
+           if(j == i){
+               cem += (a[j] - 48 - 1);
+           }
+           else{
+               cem += (a[j] - 48);
+           }
+       }
+
+       cem += (n - i - 1) * 9;
+
+       if(cem >= ans1){
+           ans1 = cem;
+           ans2 = j;
+       }
+   }
+
+   //cout<<ans1<<" "<<ans2<<endl;
+   ans2 --;
+
+   if(ans3 >= ans1){
+       cout<<a<<endl;
+   }
+   else{
+       for(int i=0; i<n; i++){
+           if(flag == 0 && i == ans2){
+               a[i] --;
+               if(i==0 && a[i] =='0'){
+                   temp = 1;
+               }
+               else{
+                   cout<<a[i];
+               }
+               flag = 1;
+           }
+           else if(flag ==0){
+               if(a[i] != '0'){
+                   cout<<a[i];
+               }
+           }
+           else{
+               cout<<"9";
+           }
+       }
+
+       cout<<endl;
+   }
+
+   return 0;
+}

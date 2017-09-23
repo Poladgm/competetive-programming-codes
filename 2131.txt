@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(int argc, char *argv[])
+{
+double x1,Y1,x2,y2,norm;
+scanf("%lf%lf%lf%lf",&x1,&Y1,&x2,&y2);
+
+norm=sqrt((x1-x2)*(x1-x2)+(Y1-y2)*(Y1-y2));
+
+printf("%.6lf\n",norm);
+return 0;
+}

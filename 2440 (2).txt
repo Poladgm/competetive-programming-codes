@@ -1,0 +1,35 @@
+#include <iostream>
+#include <algorithm>
+#include <cstring>
+#include <math.h>
+#include <string>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#define ll long long
+#define INF 1000000000
+#pragma comment(linker, "/STACK:100000000")
+
+using namespace std;
+
+int n,a[100];
+
+int main()
+{
+   ios_base::sync_with_stdio(false);
+   cin>>n;
+   for(int i = 1; i<=n; i++){
+       int x;
+       cin>>x;
+
+       for(int j=1; j<=10; j++){
+           cin>>a[j];
+       }
+
+       sort(a+1,a+1+10);
+       cout<<x<<" "<<a[8]<<endl;
+   }
+
+
+   return 0;
+}

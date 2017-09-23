@@ -1,0 +1,32 @@
+#include <cstdlib>
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    int x1,y1,x2,y2,x3,y3,x4,y4;
+    double a,b,c,d,e,f;
+    cin>>x1>>y1>>x2>>y2>>x3>>y3>>x4>>y4;
+    
+    a=sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+    b=sqrt((x3-x2)*(x3-x2)+(y3-y2)*(y3-y2));
+    c=sqrt((x4-x3)*(x4-x3)+(y4-y3)*(y4-y3));
+    d=sqrt((x1-x4)*(x1-x4)+(y1-y4)*(y1-y4));
+    e=sqrt((x1-x3)*(x1-x3)+(y1-y3)*(y1-y3));
+    f=sqrt((x2-x4)*(x2-x4)+(y2-y4)*(y2-y4));
+    
+    if(a==b && b==c && c==d && e==f && a!=0 && e!=0 && a!=e)  // a,b,c,d terefler e,f diaqonal
+    cout<<"YES"<<endl;
+    else if(a==f && f==c && c==e && b==d && a!=0 && b!=0 && a!=b) //a,c,e,f terefler b,d diaqonal
+    cout<<"YES"<<endl;
+    else if(e==b && b==f && f==d && a==c && e!=0 && a!=0 && e!=a) //e,b,f,d terefler a,c diaqonal
+    cout<<"YES"<<endl;
+    else
+    cout<<"NO"<<endl;
+    
+    
+    system("PAUSE");
+    return EXIT_SUCCESS;
+}

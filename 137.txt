@@ -1,0 +1,39 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+unsigned int ebob(unsigned int a, unsigned int b)
+{
+  while(a!=b)
+  {
+      if(a>b)
+      a=a-b;
+      else
+      b=b-a;
+  }
+  return a;
+}
+
+int main(int argc, char *argv[])
+{
+  unsigned n,a[102],i,t;
+
+  cin>>n;
+  for(i=1; i<=n; i++)
+  cin>>a[i];
+
+  if(n==2)
+  cout<<ebob(a[1],a[2])<<endl;
+  else
+  {
+       t=ebob(a[1],a[2]);
+       for(i=3; i<=n; i++)
+       t=ebob(t,a[i]);
+       cout<<t<<endl;
+  }
+
+// for(i=1; i<n; i++)
+// a[i+1]=ebob(a[i],a[i+1]);
+      
+      return EXIT_SUCCESS;
+}

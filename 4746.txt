@@ -1,0 +1,52 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+long long n,a[10002],temp,ans,maxx;
+
+int main()
+{
+    cin>>n;
+    for(int i=0; i<n; i++){
+        cin>>a[i];
+    }
+
+    for(int i=0; i<n; i++){
+        temp = (a[i] - i);
+
+        if(temp < 0){
+            temp = 0;
+        }
+
+        ans += temp;
+    }
+
+    maxx = max( maxx , ans);
+
+    for(int i=0; i<n-1; i++){
+        for(int j=0; j<n-1; j++){
+            if(a[j] < a[j+1]){
+                swap(a[j],a[j+1]);
+            }
+        }
+
+        ans = 0;
+
+        for(int j=0; j<n; j++){
+            temp = (a[j] - j);
+
+            if(temp < 0){
+                temp = 0;
+            }
+
+            ans += temp;
+        }
+
+        maxx = max(maxx , ans);
+    }
+
+    cout<<maxx<<endl;
+
+    return 0;
+}

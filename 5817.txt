@@ -1,0 +1,45 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    long x,y,z,say=0;
+    char ch;
+    cin>>x>>y>>z;
+
+    if(x+y==z)
+    {
+        ch='+';
+        say++;
+    }
+
+    if(x-y==z)
+    {
+        ch='-';
+        say++;
+    }
+
+    if(x*y==z)
+    {
+        ch='*';
+        say++;
+    }
+
+    if(y!=0 && x%y==0 && x/y==z)
+    {
+        ch='/';
+        say++;
+    }
+
+    if(say==1)
+        cout<<ch<<endl;
+    else
+        cout<<"Invalid"<<endl;
+
+
+
+
+
+    return 0;
+}

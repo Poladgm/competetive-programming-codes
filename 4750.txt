@@ -1,0 +1,55 @@
+#include <cstdlib>
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+  long long a[501][501],i,j,n,say;
+  cin>>n;
+  
+  i=1;
+  j=1;
+  say=1;
+  
+  while(1)
+  {
+       while(j<=n)
+       {
+           a[i][j]=say;
+           say++;
+           j++;
+       }
+       
+       j--;
+       i++;
+       
+       if(say==n*n+1)
+       break;
+       
+       while(j>=1)
+       {
+           a[i][j]=say;
+           say++;
+           j--;
+       }
+       
+       j++;
+       i++;
+       
+       if(say==n*n+1)
+       break;
+  }
+  
+  
+  for(i=1; i<=n; i++)
+  {
+  for(j=1; j<=n; j++)
+  {
+  cout<<a[i][j]<<" ";
+  }
+  cout<<endl;
+  } 
+
+  return EXIT_SUCCESS;
+}

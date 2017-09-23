@@ -1,0 +1,36 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int a[55],n,say;
+
+int main()
+{
+   cin>>n;
+   for(int i=1; i<=n; i++){
+       cin>>a[i];
+   }
+
+   sort(a+1,a+n+1);
+
+    if(a[1] == a[n]){
+           cout<<"YES"<<endl;
+           return 0;
+   }
+
+   while(say<=10000 && a[1]!=a[n]){
+       a[1]*=2;
+       sort(a+1,a+n+1);
+       say++;
+
+       if(a[1] == a[n]){
+           cout<<"YES"<<endl;
+           return 0;
+       }
+   }
+
+   cout<<"NO"<<endl;
+
+   return 0;
+}

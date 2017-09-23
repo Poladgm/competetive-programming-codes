@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+int a,b,x,y,z;
+scanf("%d %d %d %d %d",&a,&b,&x,&y,&z);
+
+if(a>x && b>y)
+printf("1\n");
+else if(a>y && b>x)
+printf("1\n");
+else if(a>z && b>y)
+printf("1\n");
+else if(a>y && b>z)
+printf("1\n");
+else if(a>z && b>x)
+printf("1\n");
+else if(a>x && b> z)
+printf("1\n");
+else
+printf("0\n");
+
+
+return 0;
+}

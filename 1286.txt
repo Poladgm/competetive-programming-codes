@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+long int n,a,b,c;
+scanf("%ld %ld %ld",&a,&b,&c);
+
+n=a+b+c;
+printf("%ld\n",n);
+
+
+ return 0;
+}

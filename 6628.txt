@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+string a,b;
+char aa[1005],bb[1005];
+int say;
+int n,m;
+
+int main()
+{
+   while(1){
+       cin>>a;
+       cin>>b;
+
+       if(a.compare("END") == 0 && b.compare("END") ==0){
+           break;
+       }
+       else{
+           say++;
+           n = a.size();
+           m = b.size();
+
+           sort(a.begin(), a.end());
+           sort(b.begin(), b.end());
+
+           if(a.compare(b) == 0){
+               cout<<"Case "<<say<<": same"<<endl;
+           }
+           else{
+               cout<<"Case "<<say<<": different"<<endl;
+           }
+       }
+   }
+
+   return 0;
+}

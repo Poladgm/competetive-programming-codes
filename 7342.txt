@@ -1,0 +1,47 @@
+#include <math.h>
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
+double a,b,n,m,k,ans1,ans2;
+int main(int argc, char *argv[])
+{
+   
+   cin>>a>>b>>n>>m;
+   
+   if(n>m)
+   swap(n,m);
+   
+   k=n/a;
+   if(b*k<=m)
+   {
+       ans1=n;
+       ans2=b*k;
+   }
+   k=m/a;
+   if(b*k<=n && m*k*b>ans1*ans2)
+   {
+       ans1=m;
+       ans2=k*b;
+       
+   }
+   
+   k=n/b;
+   if(a*k<=m && b*k*a>ans1*ans2)
+   {
+       ans1=a*k;
+       ans2=n;
+   }
+   k=m/b;
+   if(a*k<=n && m*k*a>ans1*ans2)
+   {
+       ans1=k*a;
+       ans2=m;
+       
+       
+   }
+   
+   printf("%.3lf %.3lf\n",ans1,ans2);
+   return 0;
+}
